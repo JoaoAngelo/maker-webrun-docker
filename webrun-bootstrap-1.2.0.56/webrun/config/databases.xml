@@ -92,7 +92,7 @@
     <item>
       <item-name>URL</item-name>
       <item-param>
-        jdbc:jtds:sqlserver://$HostName$:$Port:1433$/$DataBase$;charset=$SQLServerCharSet:ISO-8859-1$;useLOBs=false;sendStringParametersAsUnicode=false;useCursors=true
+        jdbc:jtds:sqlserver://$HostName2$:$Port:1433$/$DataBase$;charset=$SQLServerCharSet:ISO-8859-1$;useLOBs=false;sendStringParametersAsUnicode=false;useCursors=true
       </item-param>
     </item>
     
@@ -118,7 +118,7 @@
 
     <item>
       <item-name>ServerField</item-name>
-      <item-param>HostName</item-param>
+      <item-param>HostName2</item-param>
     </item>
 
     <item>
