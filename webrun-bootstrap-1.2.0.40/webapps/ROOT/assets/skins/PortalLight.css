@@ -1,0 +1,484 @@
+/***************TELA DE LOGIN PORTAL LIGHT ******************/
+#BttLogar button {
+  background: #47c156 !important;
+  border-color: #47c156 !important;
+}
+
+[webrun-type="HTMLGroupBox"]#arealogin div {
+  left: 32px !important;
+}
+
+[webrun-type="HTMLGroupBox"]#arealogin [webrun-type="HTMLActionButton"] {
+  left: 147px !important;
+}
+
+/***************FIM TELA DE LOGIN******************/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/***************TELA PRINCIPAL PORTAL LIGHT ******************/
+
+#header {
+  position: fixed !important;
+  width: 100% !important;
+  z-index: 999 !important;
+  border-radius: 0 !important;
+
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.brand-header * {
+  background: transparent !important;
+}
+
+#box-icons > a {
+  left: 3% !important;
+  top: 8px !important;
+  position: relative !important;
+  width: 80px !important;
+  height: 80px !important;
+  float: left;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  border-radius: 2px;
+  border: solid 1px #ececec;
+  margin: 4px 7px;
+  display: -ms-flexbox;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#box-icons > a > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  left: 0%;
+  top: 80%;
+}
+
+#MakerBevel1 > a > img {
+  left: 50%;
+  margin-left: -40px;
+}
+
+#sidebar #MenuPrincipal {
+  width: 100% !important;
+  padding-left: 15px;
+  height: calc(100% - 0px) !important;
+  padding-top: 10px;
+  overflow: hidden;
+  position: absolute !important;
+  z-index: 100 !important;
+}
+
+#sidebar {
+  z-index: 100 !important;
+}
+
+.sidebar-toggle {
+  width: 50px;
+  height: 50px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#hamburgermenuicon {
+  left: 0 !important;
+  top: 0 !important;
+  position: relative !important;
+}
+
+.options-action {
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+  position: initial;
+}
+
+.options-action:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#dropdown-options {
+  display: block;
+  padding: 7px 4px 7px 4px;
+  position: absolute;
+  float: right;
+  top: 46px;
+  right: 0px;
+  border-radius: 2px;
+  min-width: 200px;
+  min-height: 33px;
+  background-color: #fafafa;
+
+  -webkit-box-shadow: 1px 1.732px 3px 0px rgba(5, 3, 5, 0.18);
+  -moz-box-shadow: 1px 1.732px 3px 0px rgba(5, 3, 5, 0.18);
+  -o-box-shadow: 1px 1.732px 3px 0px rgba(5, 3, 5, 0.18);
+  -ms-box-shadow: 1px 1.732px 3px 0px rgba(5, 3, 5, 0.18);
+  box-shadow: 1px 1.732px 3px 0px rgba(5, 3, 5, 0.18);
+}
+
+#maker-option-1 #dropdownMenu {
+  float: right;
+  top: 46px !important;
+  right: 0;
+  animation-name: dropdown;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#maker-option-1 #dropdownMenu > div {
+  width: 100%;
+  float: right;
+}
+
+#maker-option-1 #dropdownMenu li:not(:last-child) {
+  border-bottom: solid 1px #eaeced;
+}
+#maker-option-1 #dropdownMenu > div ul {
+  border: solid 1px #eaeced;
+}
+
+#maker-option-3 {
+  display: none;
+}
+
+.dropdown > div:nth-child(2) {
+  display: block !important;
+  z-index: 9989 !important;
+}
+
+#maker-profile > div {
+  float: right;
+  display: inline-block !important;
+  position: relative !important;
+}
+
+#LblBemvindo {
+  top: 14.5px !important;
+}
+
+#userphoto {
+  border-radius: 50%;
+  overflow: hidden;
+  top: 5px;
+}
+
+/********************************************/
+/*           SISTEMA DE DIVISOES            */
+/********************************************/
+
+[class*="mk-layout-"] {
+  float: left;
+  padding: 7.5px;
+  display: block;
+  height: 100%;
+}
+
+.mk-layout-1 {
+  width: 8.33%;
+}
+.mk-layout-2 {
+  width: 16.66%;
+}
+.mk-layout-3 {
+  width: 25%;
+}
+.mk-layout-4 {
+  width: 33.33%;
+}
+.mk-layout-5 {
+  width: 41.66%;
+}
+.mk-layout-6 {
+  width: 50%;
+}
+.mk-layout-7 {
+  width: 58.33%;
+}
+.mk-layout-8 {
+  width: 66.66%;
+}
+.mk-layout-9 {
+  width: 75%;
+}
+.mk-layout-10 {
+  width: 83.33%;
+}
+.mk-layout-11 {
+  width: 91.66%;
+}
+.mk-layout-12 {
+  width: 100%;
+}
+
+.mk-line:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.mk-box {
+  background-color: #fff;
+  min-height: 100px;
+  border: solid 1px #e9e9e9;
+  display: block;
+  width: 100%;
+  height: auto;
+  float: left;
+  position: relative;
+}
+
+.mk-box > div {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+
+/* CCS Boxer de aÃ¯Â¿Â½Ã¯Â¿Â½es */
+#BoxerActions {
+  height: auto !important;
+  min-height: auto !important;
+  float: right;
+  right: 0;
+  background-color: white;
+  padding: 10px 10px;
+  border-radius: 4px;
+  animation-name: dropdown;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#BoxerActions:after,
+#BoxerActions:before {
+  content: " ";
+  bottom: 100%;
+  right: 67.5px;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+#BoxerActions:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: #fff;
+  border-width: 8px;
+  margin-left: -8px;
+}
+#BoxerActions:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-bottom-color: #fff;
+  border-width: 8px;
+}
+
+#BoxerActions > div {
+  position: relative !important;
+  width: 80px !important;
+  height: 80px !important;
+  float: left;
+  left: 0;
+  top: 0;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  border-radius: 2px;
+  border: solid 1px #ececec;
+}
+
+#BoxerActions > div:hover {
+  background-color: #f0f0f1;
+}
+#BoxerActions > div:active {
+  background-color: #dde1e2;
+}
+
+#maker-profile {
+  padding-right: 10px;
+  height: 50px;
+}
+
+#maker-profile:hover {
+  background-color: #34383c;
+}
+
+#maker-profile > .HTMLLabel > div {
+  float: right;
+}
+
+[class*="collapse"] + [class*="content-dashboard"] {
+  left: 0 !important;
+  margin-left: 0 !important;
+}
+
+#maker-profile label {
+  font-size: 13px !important;
+  font-family: "Open Sans", sans-serif, arial !important;
+  background-color: transparent !important;
+}
+
+#page-wrapper {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding-top: 50px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* BOX GERAL*/
+[class*="mk-layout-"] {
+  float: left;
+  padding: 7.5px;
+  display: block;
+  height: 100%;
+}
+
+.mk-line:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.mk-layout-3 {
+  width: 25%;
+}
+
+.mk-layout-5 {
+  width: 41.66%;
+}
+
+.mk-layout-6 {
+  width: 50%;
+}
+
+.mk-layout-7 {
+  width: 58.33%;
+}
+
+.mk-box {
+  background-color: #fff;
+  min-height: 100px;
+  border: solid 1px #e9e9e9;
+  display: block;
+  width: 100%;
+  height: auto;
+  float: left;
+  position: relative;
+}
+
+.mk-box > div {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+
+/*    BOX ICONS  */
+#box-icons {
+  position: relative;
+  top: 0 !important;
+  width: 100% !important;
+  height: 260px !important;
+  margin-right: 165px;
+  overflow: auto;
+}
+
+/********************************************/
+/*              Animations                 */
+/********************************************/
+
+@-webkit-keyframes dropdown {
+  from {
+    right: -20px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+@-moz-keyframes dropdown {
+  from {
+    right: -20px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+@-o-keyframes dropdown {
+  from {
+    right: -20px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes dropdown {
+  from {
+    right: -20px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+/***********************MEDIA QUERIES************************/
+
+@media (max-width: 767px) {
+  [class*="mk-layout-"] {
+    width: 100% !important;
+    float: left !important;
+  }
+
+  #maker-profile {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  #header .brand-header {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 422px) {
+  #BoxerActions {
+    position: fixed !important;
+    vertical-align: middle;
+    right: auto;
+    left: 0;
+    width: 100% !important;
+    overflow: auto;
+    height: calc(100% - 50px) !important;
+    background-color: rgb(244, 246, 247);
+    padding-top: 10px;
+  }
+}

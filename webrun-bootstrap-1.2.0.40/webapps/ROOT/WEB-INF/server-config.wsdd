@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java"
+    xmlns:handler="http://xml.apache.org/axis/wsdd/providers/handler"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="defaultClientConfig" xsi:type="deployment">
+    <globalConfiguration name="defaultClientConfig">
+        <parameter name="disablePrettyXML" value="true"/>
+        <parameter name="dotNetSoapEncFix" value="true"/>
+        <requestFlow name="RequestFlow1" type="">
+            <handler name="Handler1" type="java:org.apache.axis.handlers.JWSHandler">
+                <parameter name="scope" value="session"/>
+            </handler>
+            <handler name="Handler2" type="java:org.apache.axis.handlers.JWSHandler">
+                <parameter name="scope" value="request"/>
+                <parameter name="extension" value=".jwr"/>
+            </handler>
+        </requestFlow>
+    </globalConfiguration>
+    <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+    <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+    <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+    <transport name="http" type="">
+        <parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+        <parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+        <parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+        <requestFlow name="RequestFlow1" type="">
+            <handler name="Handler1" type="URLMapper"/>
+            <handler name="Handler2" type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+        </requestFlow>
+    </transport>
+    <transport name="local" type="">
+        <responseFlow name="ResponseFlow1" type="">
+            <handler name="Handler1" type="LocalResponder"/>
+        </responseFlow>
+    </transport>
+    <service name="AdminService" type="" provider="java:MSG">
+        <parameter name="allowedMethods" value="AdminService"/>
+        <parameter name="enableRemoteAdmin" value="false"/>
+        <parameter name="className" value="org.apache.axis.utils.Admin"/>
+        <namespace>http://xml.apache.org/axis/wsdd/</namespace>
+    </service>
+    <service name="Version" type="" provider="java:RPC">
+        <parameter name="allowedMethods" value="getVersion"/>
+        <parameter name="className" value="org.apache.axis.Version"/>
+    </service>
+    <service name="WFRWebService" type="" provider="java:RPC"
+        style="rpc" use="encoded">
+        <parameter name="scope" value="Request"/>
+        <parameter name="className" value="wfr.web.WFRWebService"/>
+        <parameter name="allowedMethods" value="callRule, callRuleWithoutParams, test"/>
+        <namespace>http://web.wfr</namespace>
+        <typeMapping xmlns:ns1="http://web.wfr"
+            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+            qname="ns1:ArrayOfString"
+            languageSpecificType="java:java.lang.String[]"
+            serializer="org.apache.axis.encoding.ser.ArraySerializerFactory"
+            deserializer="org.apache.axis.encoding.ser.ArrayDeserializerFactory" name="ArrayOfString"/>
+    </service>
+    <service name="WFRAdminWebService" type="" provider="java:RPC"
+        style="rpc" use="encoded">
+        <parameter name="scope" value="Request"/>
+        <parameter name="className" value="wfr.web.WFRAdminWebService"/>
+        <parameter name="allowedMethods" value="getVersion, getSystems, restartSystem, restartAllSystems, reloadDataDictionary, addWFRE, compileJAR, compileWAR"/>
+        <namespace>http://web.wfr</namespace>
+        <typeMapping xmlns:ns1="http://web.wfr"
+            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+            qname="ns1:ArrayOfString"
+            languageSpecificType="java:java.lang.String[]"
+            serializer="org.apache.axis.encoding.ser.ArraySerializerFactory"
+            deserializer="org.apache.axis.encoding.ser.ArrayDeserializerFactory" name="ArrayOfString"/>
+    </service>
+</deployment>

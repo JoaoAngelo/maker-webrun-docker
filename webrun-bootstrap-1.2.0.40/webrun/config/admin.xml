@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<group>
+		<group-name>Administrador</group-name>
+		<item>
+			<item-name>login</item-name>
+			<item-param>admin</item-param>
+		</item>
+		<item>
+			<item-name>senha</item-name>
+			<item-param>webrun</item-param>
+		</item>
+	</group>
+</config>

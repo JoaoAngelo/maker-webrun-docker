@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+			   xmlns="http://geronimo.apache.org/xml/ns/j2ee/web-1.1">
+	<environment>
+		<moduleId>
+			<artifactId>Webrun</artifactId>
+			<type>war</type>
+		</moduleId>		
+	</environment>	
+	<context-root>/webrun</context-root>
+		
+	<security-realm-name>Webrun</security-realm-name>
+	<security>
+		<default-principal realm-name="Webrun">
+			<principal name="anonymous" class="org.apache.geronimo.security.realm.providers.GeronimoUserPrincipal"/>
+		</default-principal>
+		<role-mappings>
+			<role role-name="admin">
+				<realm realm-name="Webrun">
+					<principal name="system" class="org.apache.geronimo.security.realm.providers.GeronimoUserPrincipal"/>
+				</realm>
+			</role>
+			<role role-name="manager">
+				<realm realm-name="TimeReportRealm">
+					<principal name="ManagerGroup" class="org.apache.geronimo.security.realm.providers.GeronimoGroupPrincipal"/>
+				</realm>
+			</role>
+		</role-mappings>
+	</security>
+</web-app>

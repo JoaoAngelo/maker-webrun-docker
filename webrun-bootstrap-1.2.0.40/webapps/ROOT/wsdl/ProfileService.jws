@@ -1,0 +1,86 @@
+import wfr.com.WFRSystem;
+import wfr.rules.ProfileManager;
+import wfr.sys.WFRLoader;
+import wfr.exceptions.*;
+import wfr.util.*;
+
+public class ProfileService implements java.io.Serializable {  
+  public String start(String systemCode, String sessionID) throws Exception {
+    ProfileManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    ProfileManager profileManager = ProfileManager.getProfileManager(system, sessionID);
+    return profileManager.start();
+  }
+  
+  public void remove(String systemCode, String sessionID) throws Exception {
+    ProfileManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    ProfileManager.removeProfileManager(system, sessionID);
+  }
+  
+  public String snapshot(String systemCode, String sessionID) throws Exception {
+    ProfileManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    ProfileManager profileManager = ProfileManager.getProfileManager(system, sessionID);
+    return profileManager.snapshot();
+  }
+  
+  public String pagedSnapshot(String systemCode, String sessionID, int from, int to) throws Exception {
+    ProfileManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    ProfileManager profileManager = ProfileManager.getProfileManager(system, sessionID);
+    return profileManager.snapshot(from, to);
+  }  
+  
+  public int size(String systemCode, String sessionID) throws Exception {
+    ProfileManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    ProfileManager profileManager = ProfileManager.getProfileManager(system, sessionID);
+    return profileManager.size();
+  }   
+  
+  public String finish(String systemCode, String sessionID) throws Exception {
+    ProfileManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    ProfileManager profileManager = ProfileManager.getProfileManager(system, sessionID);
+    return profileManager.finish();
+  }
+  
+  public void abort(String systemCode, String sessionID) throws Exception {
+    ProfileManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    ProfileManager profileManager = ProfileManager.getProfileManager(system, sessionID);
+    profileManager.abort();
+  }
+  
+  public boolean isActive(String systemCode, String sessionID) throws Exception {
+    ProfileManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    ProfileManager profileManager = ProfileManager.getProfileManager(system, sessionID);
+    return profileManager.isActive();
+  }
+  
+  public void setPaused(String systemCode, String sessionID, boolean paused) throws Exception {
+    ProfileManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    ProfileManager profileManager = ProfileManager.getProfileManager(system, sessionID);
+    profileManager.setPaused(paused);
+  }
+  
+  public boolean isPaused(String systemCode, String sessionID) throws Exception {
+    ProfileManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    ProfileManager profileManager = ProfileManager.getProfileManager(system, sessionID);
+    return profileManager.isPaused();
+  }
+  
+  public String getActiveSessions(String systemCode) throws Exception {
+  	try {
+	    ProfileManager.validateSecurity();
+	    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+	    return ProfileManager.getActiveSessions(system);
+	} catch (SystemNotFoundException ex) {
+      return Functions.exceptionToXML(new WFRException(ExceptionMessage.ERROR_SYSTEM_CODE_NOT_FOUND, systemCode), Resources.getThreadResources());
+    }
+  }
+}

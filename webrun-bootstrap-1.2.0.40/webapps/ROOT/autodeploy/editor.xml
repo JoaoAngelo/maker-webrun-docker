@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<itensEditor>
+
+  <item nome=".HTMLEdit input" descricao="Caixa de Texto">
+ 	<filho nome=".HTMLEdit font" descricao="Descrição da Caixa de Texto"></filho>
+  </item>
+
+   <item nome=".HTMLMemo textarea" descricao="Texto Longo">
+ 	<filho nome=".HTMLMemo font" descricao="Descrição do Texto Longo"></filho>
+  </item> 
+  
+
+   <item nome=".HTMLButton button" descricao="Botão"></item>
+   
+
+  <item nome=".HTMLRadioGroup #HTMLRadioGroupOptions" descricao="Opções">
+ 	<filho nome=".HTMLRadioGroup #HTMLRadioGroupOption label" descricao="Descrição do 'Opções'"></filho>
+ 	<filho nome=".HTMLRadioGroup #HTMLRadioGroupOption input" descricao="Itens do 'Opções'"></filho>
+  </item>   
+
+
+  <item nome=".HTMLLookup input" descricao="Lista Dinâmica"> 
+     <filho nome=".HTMLLookup-ReadOnly input" descricao="Lista Dinâmica - Somente Leitura"></filho>
+    <filho nome=".HTMLLookupDetails" descricao="Área Expandida da Lista Dinâmica"></filho>
+    <filho nome=".HTMLLookupDetails #lookupInput" descricao="Itens da Lista Dinâmica"></filho>
+	<filho nome=".HTMLLookupDetails #lookupSearchQuery " descricao="Busca da Lista Dinâmica"></filho>
+	<filho nome=".HTMLLookupDetails #lookupQueryNavigation" descricao="Navegação da Lista Dinâmica"></filho>
+  </item>
+
+  <item nome=".HTMLComboBox input" descricao="Lista Fixa">
+     <filho nome=".HTMLComboBox-ReadOnly input" descricao="Lista Fixa - Somente Leitura"></filho>
+    <filho nome=".HTMLComboBoxDetails" descricao="Área Expandida da Lista Fixa"></filho>
+    <filho nome=".HTMLComboBoxDetails #lookupInput" descricao="Itens da Lista Fixa"></filho>
+	<filho nome=".HTMLComboBoxDetails #lookupSearchQuery " descricao="Busca da Lista Fixa"></filho>
+	<filho nome=".HTMLComboBoxDetails #lookupQueryNavigation" descricao="Navegação da Lista Fixa"></filho>
+  </item>
+
+
+
+  <item nome=".HTMLNavigationFormBar" descricao="Barra de Navegação"></item>
+  
+  <item nome=".HTMLCheckBox #chkLabel" descricao="Descrição dos Itens do Check"></item>
+
+  <item nome=".HTMLTabArea" descricao="Área dos Componentes"></item>
+  
+
+  <item nome=".HTMLTab input" descricao="Abas do Formulário">
+       <filho nome=".HTMLTab" descricao="Aba não selecionada"></filho>
+       <filho nome=".HTMLTab-Selected" descricao="Aba selecionada"></filho>
+  </item>
+  
+
+  <item nome=".HTMLGroupBox" descricao="Moldura">
+  <filho nome=".HTMLGroupBox-Top" descricao="Borda Superior da Moldura"></filho>
+  <filho nome=".HTMLGroupBox-Left" descricao="Borda Esquerda da Moldura"></filho>
+  <filho nome=".HTMLGroupBox-Right" descricao="Borda Direita da Moldura"></filho>
+  <filho nome=".HTMLGroupBox-Bottom" descricao="Borda Inferior da Moldura"></filho>
+  <filho nome=".HTMLGroupBox-Bottom" descricao="Borda Inferior da Moldura"></filho>
+  </item>
+  <item nome=".HTMLLabel>div>div" descricao="Descrição da Moldura (Opções e Check)"></item>
+  
+
+  <item nome=".HTMLTreeview" descricao="Árvore">
+	<filho nome=".HTMLTreeviewSelectedItem" descricao="Seleção de Item da Árvore"></filho>
+	<filho nome=".HTMLTreeview span" descricao="Itens da Árvore"></filho>
+
+  </item>
+
+  <item nome=".HTMLImage #HTMLImageSelf" descricao="Imagem"></item>
+  
+
+  <item nome=".WFRQueryForm" descricao="Componentes da Aba Localizar">
+    <filho nome=".WFRQueryForm #BodySearch" descricao="Área do 'Parâmetros para busca'"></filho>    
+	<filho nome=".tabBack" descricao="Área da Grade com Resultados"></filho>
+  </item>
+  
+   
+    
+  <item nome="div[id&#42;=&#34;HTMLInteraction&#34;]" descricao="Mensagem de Interação">
+	<filho nome="div[id&#42;=&#34;HTMLInteraction&#34;] #intBtnCancel button" descricao="Botão Cancelar do Alerta"></filho>
+	<filho nome="div[id&#42;=&#34;HTMLInteraction&#34;] #intBtnOk button" descricao="Botão Ok do Alerta"></filho>
+	<filho nome="div[id&#42;=&#34;HTMLInteraction&#34;] # intBtnDetails button" descricao="Botão Detalhes do Alerta"></filho>
+  </item>
+  
+ <item nome=".HTMLDualList" descricao="Lista Dupla">
+           <filho nome=".HTMLDualList select " descricao="Área Interna"></filho>  
+  </item>
+
+ </itensEditor>

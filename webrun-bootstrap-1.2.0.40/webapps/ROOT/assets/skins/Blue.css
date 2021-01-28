@@ -1,0 +1,235 @@
+/*************** TELA DE LOGIN BLUE ******************/
+#lay{
+  position: unset !important;
+}
+
+[webrun-type="HTMLContainer"]#Menu
+  [webrun-type="HTMLEdit"]
+  input:not([type="checkbox"]) {
+  height: 37px;
+  font-size: 16px;
+}
+[webrun-type="HTMLContainer"]#Menu {
+  max-width: 40% !important;
+  min-width: 40% !important;
+  margin: 0 auto;
+  left: 0 !important;
+  right: 0 !important;
+  box-sizing: border-box;
+  padding: 3%;
+  position: absolute !important;
+  top: 99px !important;
+}
+#EdtLogin,
+#EdtSenha,
+#biometric {
+  position: relative !important;
+  top: 0 !important;
+  margin-bottom: 15px;
+}
+#biometric {
+  display: inline-block !important;
+  height: 40px !important;
+  margin-bottom: 0;
+  min-width: unset !important;
+}
+#biometric img {
+  height: 40px !important;
+  min-width: 40px;
+}
+
+#ImageLogar {
+  position: relative !important;
+  top: 0 !important;
+  display: inline-block !important;
+}
+
+#ImageLogar button {
+  border: 1px solid #4197cc;
+  color: #ffffff;
+  background: #4197cc;
+}
+
+/*************** MEDIA QUERIES TELA DE LOGIN ***********/
+
+@media (max-width: 575.98px) {
+  #Menu {
+    box-shadow: none !important;
+    width: 100% !important;
+  }
+  [webrun-type="HTMLContainer"]#Menu {
+    max-width: 90% !important;
+    min-width: 90% !important;
+    padding-top: 5% !important;
+  }
+
+  #EdtLogin,
+  #EdtSenha {
+    width: 100% !important;
+    left: 0 !important;
+  }
+
+  #ImageLogar {
+    left: 0% !important;
+    width: 100% !important;
+    top: 0 !important;
+  }
+  #biometric {
+    left: unset !important;
+    float: right;
+    right: -1%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1100px) {
+  [webrun-type="HTMLContainer"]#Menu {
+    max-width: 70% !important;
+    min-width: 70% !important;
+  }
+}
+
+/*************** FIM TELA DE LOGIN ******************/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*************** TELA PRINCIPAL BLUE ******************/
+
+#Menu {
+  top: 58px !important;
+  width: 235px !important;
+}
+
+div#topbar [webrun-type="HTMLActionButton"] {
+  top: 2.5px !important;
+}
+
+div#topbar [webrun-type="HTMLActionButton"] img {
+  width: auto !important;
+  max-width: auto !important;
+}
+
+#box-overlay {
+  height: 100vh !important;
+}
+div#Configuracoes {
+  left: 87% !important;
+  position: absolute;
+}
+
+div#Imgsair {
+  left: 92.401% !important;
+  position: absolute;
+}
+
+#configbar {
+  left: unset !important;
+  right: 0;
+}
+
+#configbar [webrun-type="HTMLActionButton"] {
+  min-width: 100% !important;
+  display: inline-block !important;
+  position: relative !important;
+}
+
+#abrirFormSistema{
+  top: 50px !important;
+}
+ 
+ #ListaSistemas{
+  top: 48px !important;
+ }
+ 
+
+/*************** MEDIA QUERIES TELA PRINCIPAL ***********/
+
+@media (min-width: 576px) {
+  div#topbar #botaoMenu,
+  #botaoFechar {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  div#topbar .form-label {
+    display: none !important;
+  }
+
+  div#topbar [webrun-type="HTMLActionButton"] {
+    position: relative !important;
+    left: 0 !important;
+    min-width: 10% !important;
+    float: left;
+  }
+  #topbar {
+    width: 93% !important;
+    left: 1% !important;
+    margin-bottom: 10px !important;
+  }
+
+  #topbar #botaoFechar,
+  #topbar #botaoMenu {
+    border-right: solid 1px;
+    padding-right: 5px;
+  }
+
+  div#topbar #Imgmasterskin {
+    left: 0% !important;
+  }
+
+  div#topbar #Imgsair {
+    left: 85% !important;
+    position: absolute !important;
+  }
+
+  div#topbar #Configuracoes {
+    left: 72% !important;
+    position: absolute !important;
+  }
+
+  div#configbar [webrun-type="HTMLActionButton"] {
+    width: 99% !important;
+    top: 0 !important;
+    position: relative !important;
+    left: 0 !important;
+    min-width: 10% !important;
+    float: left;
+  }
+
+  div#configbar .form-label {
+    display: inline-block !important;
+    top: 5px !important;
+    float: left;
+  }
+
+  #Menu {
+    left: -70% !important;
+    top: 58px !important;
+    width: 235px !important;
+    box-sizing: border-box !important;
+    transition: left 0.3s linear;
+    -webkit-transition: left 0.3s linear;
+    -moz-transition: left 0.3s linear;
+    -ms-transition: left 0.3s linear;
+    -o-transition: left 0.3s linear;
+  }
+
+  #Menu.is-open {
+    left: 3% !important;
+    transition: left 0.3s linear;
+    -webkit-transition: left 0.3s linear;
+    -moz-transition: left 0.3s linear;
+    -ms-transition: left 0.3s linear;
+    -o-transition: left 0.3s linear;
+  }
+
+  #Menu.is-close {
+    top: 60px !important;
+    left: -70% !important;
+    transition: left 0.3s linear;
+    -webkit-transition: left 0.3s linear;
+    -moz-transition: left 0.3s linear;
+    -ms-transition: left 0.3s linear;
+    -o-transition: left 0.3s linear;
+  }
+}

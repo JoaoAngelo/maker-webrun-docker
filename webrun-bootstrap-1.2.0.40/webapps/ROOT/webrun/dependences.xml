@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- não modifcar a string do encoding [ encoding="UTF-8"] por causa do ant -->
+
+<dependences>
+  <group name="Biometria">
+    <file>apps/DigitalCapture.jar</file>
+    <file>apps/DigitalCaptureNativeWin.jar</file>
+    <file>apps/SDigitalCapture.jar</file>
+  </group>
+
+  <group name="Conector DB2">
+    <file>WEB-INF/lib/db2jcc.jar</file>
+    <file>WEB-INF/lib/db2jcc_license_cu.jar</file>
+  </group>
+
+  <group name="Conector DBF">
+    <file>WEB-INF/lib/DBF_JDBC30.jar</file>
+  </group>
+
+  <group name="Conector Firebird">
+    <file>WEB-INF/lib/jaybird-full-2.1.6.jar</file>
+  </group>
+
+  <group name="Conector MySQL">
+    <file>WEB-INF/lib/mysql-connector-java-5.1.17-bin.jar</file>
+  </group>
+
+  <group name="Conector Postgres">
+    <file>WEB-INF/lib/postgresql-9.0-801.jdbc3.jar</file>
+  </group>
+
+  <group name="Conector SQL Server">
+    <file>WEB-INF/lib/jtds-1.2.5.jar</file>
+    <file>WEB-INF/lib/sqljdbc.jar</file>
+  </group>
+
+  <group name="Gerador de código fonte">
+    <file>autodeploy</file>
+  </group>
+
+  <group name="Gerador de relatório Local">
+    <file>apps/LocalReport.jar</file>
+    <file>apps/LocalReportLibs.jar</file>
+    <file>apps/SLocalReport.jar</file>
+  </group>
+
+  <group name="Gerador de relatório Local 7.0 IE">
+    <file>apps/WebrunReports.cab</file>
+  </group>
+
+  <group name="Gerador de relatório Local 10.0 IE">
+    <file>apps/MakerReports.cab</file>
+  </group>
+
+  <group name="Impressora Bematech">
+    <file>apps/BematechPrinter.jar</file>
+    <file>apps/BematechWin32.jar</file>
+    <file>apps/SBematechPrinter.jar</file>
+  </group>
+
+  <group name="Impressora Local">
+    <file>apps/STextPrinter.jar</file>
+    <file>apps/TextPrinter.jar</file>
+  </group>
+
+  <group name="Jasper">
+    <file>WEB-INF/lib/jasperreports-3.1.2.jar</file>
+    <file>WEB-INF/lib/jfreechart-1.0.10.jar</file>
+  </group>
+
+  <group name="Linux">
+    <file>WEB-INF/lib/xalan.jar</file>
+  </group>
+
+</dependences>

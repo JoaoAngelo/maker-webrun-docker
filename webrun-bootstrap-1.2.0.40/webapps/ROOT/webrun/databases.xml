@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <group>
+    <group-name>Interbase</group-name>
+
+    <item>
+      <item-name>Driver</item-name>
+      <item-param>org.firebirdsql.jdbc.FBDriver</item-param>
+    </item>
+
+    <item>
+      <item-name>URL</item-name>
+      <item-param>jdbc:firebirdsql:$Database$?lc_ctype=$ServerCharSet$</item-param>
+    </item>
+
+    <item>
+      <item-name>UserField</item-name>
+      <item-param>User_Name</item-param>
+    </item>
+
+    <item>
+      <item-name>PasswordField</item-name>
+      <item-param>Password</item-param>
+    </item>
+
+    <item>
+      <item-name>ServerField</item-name>
+      <item-param>Database</item-param>
+    </item>
+
+    <item>
+      <item-name>AutoCommit</item-name>
+      <item-param>0</item-param>
+    </item>
+
+    <item>
+      <item-name>CommitClausule</item-name>
+      <item-param>COMMIT RETAIN</item-param>
+    </item>
+
+    <item>
+      <item-name>TrimString</item-name>
+      <item-param>0</item-param>
+    </item>
+
+    <item>
+      <item-name>FetchSize</item-name>
+      <item-param>100</item-param>
+    </item>
+
+    <item>
+      <item-name>TimeOut</item-name>
+      <item-param>-1</item-param>
+    </item>
+
+    <item>
+      <item-name>Generator</item-name>
+      <item-param>SELECT GEN_ID($generator$,1) FROM RDB$DATABASE</item-param>
+    </item>
+
+    <item>
+      <item-name>AutoincSupport</item-name>
+      <item-param>false</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionPrimaryKey</item-name>
+      <item-param>violation of PRIMARY</item-param>
+      <item-param>UNIQUE KEY</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionForeignKey</item-name>
+      <item-param>violation of FOREIGN KEY</item-param>
+    </item>
+
+    <item>
+      <item-name>CaseSensitive</item-name>
+      <item-param>1</item-param>
+    </item>
+
+  </group>
+
+  <group>
+    <group-name>MSSQL</group-name>
+
+    <item>
+      <item-name>Driver</item-name>
+      <item-param>net.sourceforge.jtds.jdbc.Driver</item-param>
+    </item>
+
+    <item>
+      <item-name>URL</item-name>
+      <item-param>
+        jdbc:jtds:sqlserver://$HostName$:$Port:1433$/$DataBase$;charset=$SQLServerCharSet:ISO-8859-1$;useLOBs=false;sendStringParametersAsUnicode=false;useCursors=true
+      </item-param>
+    </item>
+    
+    <!--item>
+      <item-name>Driver</item-name>
+      <item-param>com.microsoft.sqlserver.jdbc.SQLServerDriver</item-param>
+    </item>
+
+    <item>
+      <item-name>URL</item-name>
+      <item-param>jdbc:sqlserver://$HostName$:$Port:1433$;database=$DataBase$;instanceName=$INSTANCIA$;sendStringParametersAsUnicode=false</item-param>
+    </item-->
+
+    <item>
+      <item-name>UserField</item-name>
+      <item-param>User_Name</item-param>
+    </item>
+
+    <item>
+      <item-name>PasswordField</item-name>
+      <item-param>Password</item-param>
+    </item>
+
+    <item>
+      <item-name>ServerField</item-name>
+      <item-param>HostName</item-param>
+    </item>
+
+    <item>
+      <item-name>DatabaseField</item-name>
+      <item-param>DataBase</item-param>
+    </item>
+
+    <item>
+      <item-name>AutoCommit</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>TrimString</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>FetchSize</item-name>
+      <item-param>100</item-param>
+    </item>
+
+    <item>
+      <item-name>TimeOut</item-name>
+      <item-param>-1</item-param>
+    </item>
+
+    <item>
+      <item-name>AppendSQL4MetaData</item-name>
+      <item-param>FOR BROWSE</item-param>
+    </item>
+
+    <item>
+      <item-name>ModifySQL4MetaData</item-name>
+      <item-param>top 0</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionPrimaryKey</item-name>
+      <item-param>Violation of PRIMARY</item-param>
+      <item-param>duplicate key</item-param>
+      <item-param>UNIQUE KEY</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionForeignKey</item-name>
+      <item-param>REFERENCE constraint</item-param>
+      <item-param>FOREIGN KEY constraint</item-param>
+      <item-param>COLUMN REFERENCE constraint</item-param>
+    </item>
+
+    <item>
+      <item-name>Generator</item-name>
+      <item-param>DECLARE @AUTOINC INT EXEC SP_GEN_ID '$generator$', 1, @AUTOINC OUT SELECT @AUTOINC</item-param>
+    </item>
+
+    <item>
+      <item-name>SafeChars</item-name>
+      <item-param>-</item-param>
+    </item>
+
+    <item>
+      <item-name>EscapeCharStart</item-name>
+      <item-param>[</item-param>
+    </item>
+
+    <item>
+      <item-name>EscapeCharEnd</item-name>
+      <item-param>]</item-param>
+    </item>
+
+  </group>
+
+  <group>
+    <group-name>PostgreSQL</group-name>
+
+    <item>
+      <item-name>Driver</item-name>
+      <item-param>org.postgresql.Driver</item-param>
+    </item>
+
+    <item>
+      <item-name>URL</item-name>
+      <item-param>jdbc:postgresql://$HostName$:$Port:5432$/$DataBase$?charSet=$ServerCharSet:LATIN1$</item-param>
+    </item>
+
+    <item>
+      <item-name>UserField</item-name>
+      <item-param>User_Name</item-param>
+    </item>
+
+    <item>
+      <item-name>PasswordField</item-name>
+      <item-param>Password</item-param>
+    </item>
+
+    <item>
+      <item-name>ServerField</item-name>
+      <item-param>HostName</item-param>
+    </item>
+
+    <item>
+      <item-name>DatabaseField</item-name>
+      <item-param>DataBase</item-param>
+    </item>
+
+    <item>
+      <item-name>AutoCommit</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>TrimString</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>FetchSize</item-name>
+      <item-param>100</item-param>
+    </item>
+
+    <item>
+      <item-name>TimeOut</item-name>
+      <item-param>-1</item-param>
+    </item>
+
+    <item>
+      <item-name>InsertOnStarSQL4MetaData</item-name>
+      <item-param>SELECT * FROM (</item-param>
+    </item>
+
+    <item>
+      <item-name>AppendSQL4MetaData</item-name>
+      <item-param>) SPGSQLS LIMIT 0</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionPrimaryKey</item-name>
+      <item-param>unique constraint</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionForeignKey</item-name>
+      <item-param>foreign key constraint</item-param>
+    </item>
+
+    <item>
+      <item-name>Generator</item-name>
+      <item-param>SELECT NEXTVAL('$generator$')</item-param>
+    </item>
+
+    <item>
+      <item-name>Autoinc</item-name>
+      <item-param>SELECT CURRVAL('$table$_$field$_seq')</item-param>
+    </item>
+
+    <item>
+      <item-name>SchemaField</item-name>
+      <item-param>RoleName</item-param>
+    </item>
+
+    <item>
+      <item-name>Schema</item-name>
+      <item-param>SET search_path=$schema$</item-param>
+    </item>
+
+	<!-- CaseSensitive le-se CaseInsensitive !-->
+    <item>
+      <item-name>CaseSensitive</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>UpperFunctionStart</item-name>
+      <item-param>UPPER(to_ascii(</item-param>
+    </item>
+
+    <item>
+      <item-name>UpperFunctionEnd</item-name>
+      <item-param>))</item-param>
+    </item>
+
+    <item>
+      <item-name>removeNonAsciiCharsOnTextSearch</item-name>
+      <item-param>1</item-param>
+    </item>
+   
+    <item>
+      <item-name>CommitClausule</item-name>
+      <item-param>COMMIT;</item-param>
+    </item>
+
+    <item>
+      <item-name>StartTransactionClausule</item-name>
+      <item-param>BEGIN;</item-param>
+    </item>
+
+    <item>
+      <item-name>RollbackTransactionClausule</item-name>
+      <item-param>ROLLBACK;</item-param>
+    </item>
+
+    <item>
+      <item-name>SafeChars</item-name>
+      <item-param>-</item-param>
+    </item>
+
+    <item>
+      <item-name>EscapeCharStart</item-name>
+      <item-param>"</item-param>
+    </item>
+
+    <item>
+      <item-name>EscapeCharEnd</item-name>
+      <item-param>"</item-param>
+    </item>
+    
+  </group>
+
+
+  <group>
+
+    <group-name>Oracle</group-name>
+
+    <item>
+      <item-name>Driver</item-name>
+      <item-param>oracle.jdbc.driver.OracleDriver</item-param>
+    </item>
+
+    <item>
+      <item-name>URL</item-name>
+      <item-param>jdbc:oracle:thin:@$DataBase$</item-param>
+    </item>
+
+    <item>
+      <item-name>UserField</item-name>
+      <item-param>User_Name</item-param>
+    </item>
+
+    <item>
+      <item-name>PasswordField</item-name>
+      <item-param>Password</item-param>
+    </item>
+
+    <item>
+      <item-name>ServerField</item-name>
+      <item-param>HostName</item-param>
+    </item>
+
+    <item>
+      <item-name>DatabaseField</item-name>
+      <item-param>DataBase</item-param>
+    </item>
+
+    <item>
+      <item-name>UpdateDateFormat</item-name>
+      <item-param>MM/dd/yyyy</item-param>
+    </item>
+
+    <item>
+      <item-name>UpdateDateTimeFormat</item-name>
+      <item-param>MM/dd/yyyy HH:mm:ss</item-param>
+    </item>
+
+    <item>
+      <item-name>ParseDateFormat</item-name>
+      <item-param>yyyy-M-d</item-param>
+    </item>
+
+    <item>
+      <item-name>ParseDateTimeFormat</item-name>
+      <item-param>yyyy-M-d H:m:s</item-param>
+    </item>
+
+    <item>
+      <item-name>AutoCommit</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>TrimString</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>FetchSize</item-name>
+      <item-param>100</item-param>
+    </item>
+
+    <item>
+      <item-name>TimeOut</item-name>
+      <item-param>-1</item-param>
+    </item>
+
+    <item>
+      <item-name>InsertOnStarSQL4MetaData</item-name>
+      <item-param>select * from (</item-param>
+    </item>
+
+    <item>
+      <item-name>AppendSQL4MetaData</item-name>
+      <item-param>) where (rownum &lt; 1)</item-param>
+    </item>
+
+    <item>
+      <item-name>Generator</item-name>
+      <item-param>SELECT $generator$.NEXTVAL FROM dual</item-param>
+    </item>
+
+    <item>
+      <item-name>AutoincSupport</item-name>
+      <item-param>0</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionPrimaryKey</item-name>
+      <item-param>ORA-00001</item-param>
+      <item-param>ORA-01400</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionForeignKey</item-name>
+      <item-param>ORA-02291</item-param>
+      <item-param>ORA-02292</item-param>
+    </item>
+
+  </group>
+
+  <group>
+
+    <group-name>MySQL</group-name>
+
+    <item>
+      <item-name>Driver</item-name>
+      <item-param>com.mysql.cj.jdbc.Driver</item-param>
+    </item>
+
+    <item>
+      <item-name>URL</item-name>
+      <item-param>jdbc:mysql://$HostName$:$Port:3306$/$DataBase$?useTimezone=true&amp;serverTimezone=America/Sao_Paulo</item-param>
+    </item>
+
+    <item>
+      <item-name>UserField</item-name>
+      <item-param>User_Name</item-param>
+    </item>
+
+    <item>
+      <item-name>PasswordField</item-name>
+      <item-param>Password</item-param>
+    </item>
+
+    <item>
+      <item-name>ServerField</item-name>
+      <item-param>HostName</item-param>
+    </item>
+
+    <item>
+      <item-name>DatabaseField</item-name>
+      <item-param>DataBase</item-param>
+    </item>
+
+    <item>
+      <item-name>AutoCommit</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>TrimString</item-name>
+      <item-param>0</item-param>
+    </item>
+
+    <item>
+      <item-name>FetchSize</item-name>
+      <item-param>100</item-param>
+    </item>
+
+    <item>
+      <item-name>TimeOut</item-name>
+      <item-param>-1</item-param>
+    </item>
+
+    <item>
+      <item-name>ConcatOperator</item-name>
+      <item-param>concat</item-param>
+    </item>
+
+    <item>
+      <item-name>ConcatIsOperator</item-name>
+      <item-param>0</item-param>
+    </item>
+
+    <item>
+      <item-name>InsertOnStarSQL4MetaData</item-name>
+      <item-param>SELECT * FROM ((</item-param>
+    </item>
+
+    <item>
+      <item-name>AppendSQL4MetaData</item-name>
+      <item-param>) LIMIT 0,0) SMYSQLS LIMIT 0,0</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionForeignKey</item-name>
+      <item-param>foreign key constraint</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionPrimaryKey</item-name>
+      <item-param>Duplicate entry</item-param>
+    </item>
+
+  </group>
+
+  <group>
+
+    <group-name>DB2</group-name>
+
+    <item>
+      <item-name>Driver</item-name>
+      <item-param>com.ibm.db2.jcc.DB2Driver</item-param>
+    </item>
+
+    <item>
+      <item-name>URL</item-name>
+      <item-param>jdbc:db2j:net://$HostName$:$Port:50000$/$DataBase$</item-param>
+    </item>
+
+    <item>
+      <item-name>UserField</item-name>
+      <item-param>User_Name</item-param>
+    </item>
+
+    <item>
+      <item-name>PasswordField</item-name>
+      <item-param>Password</item-param>
+    </item>
+
+    <item>
+      <item-name>ServerField</item-name>
+      <item-param>HostName</item-param>
+    </item>
+
+    <item>
+      <item-name>DatabaseField</item-name>
+      <item-param>DataBase</item-param>
+    </item>
+
+    <item>
+      <item-name>AutoCommit</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>TrimString</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>FetchSize</item-name>
+      <item-param>100</item-param>
+    </item>
+
+    <item>
+      <item-name>TimeOut</item-name>
+      <item-param>-1</item-param>
+    </item>
+
+    <item>
+      <item-name>AppendSQL4MetaData</item-name>
+      <item-param>FETCH FIRST 1 ROWS ONLY</item-param>
+    </item>
+
+    <item>
+      <item-name>Generator</item-name>
+      <item-param>SELECT NEXTVAL FOR $generator$ FROM SYSIBM.DUAL</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionForeignKey</item-name>
+      <item-param>DB2 SQL error: SQLCODE: -532</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionPrimaryKey</item-name>
+      <item-param>DB2 SQL error: SQLCODE: -803</item-param>
+    </item>
+
+	<!-- CaseSensitive lÃª-se CaseInsensitive !-->
+    <item>
+      <item-name>CaseSensitive</item-name>
+      <item-param>1</item-param>
+    </item>
+	
+    <item>
+      <item-name>ConcatOperator</item-name>
+      <item-param>||</item-param>
+    </item>
+
+    <item>
+      <item-name>UpperFunctionStart</item-name>
+      <item-param>UPPER(</item-param>
+    </item>
+
+    <item>
+      <item-name>UpperFunctionEnd</item-name>
+      <item-param>)</item-param>
+    </item>
+
+    <item>
+      <item-name>removeNonAsciiCharsOnTextSearch</item-name>
+      <item-param>1</item-param>
+    </item>	
+
+  </group>
+
+  <group>
+    <group-name>ODBC</group-name>
+
+    <item>
+      <item-name>Driver</item-name>
+      <item-param>sun.jdbc.odbc.JdbcOdbcDriver</item-param>
+    </item>
+
+    <item>
+      <item-name>URL</item-name>
+      <item-param>jdbc:odbc:$DataBase$;Server=$HostName$</item-param>
+    </item>
+
+    <item>
+      <item-name>UserField</item-name>
+      <item-param>User_Name</item-param>
+    </item>
+
+    <item>
+      <item-name>PasswordField</item-name>
+      <item-param>Password</item-param>
+    </item>
+
+    <item>
+      <item-name>ServerField</item-name>
+      <item-param>HostName</item-param>
+    </item>
+
+    <item>
+      <item-name>DatabaseField</item-name>
+      <item-param>DataBase</item-param>
+    </item>
+
+    <item>
+      <item-name>AutoCommit</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>TrimString</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>FetchSize</item-name>
+      <item-param>0</item-param>
+    </item>
+
+    <item>
+      <item-name>TimeOut</item-name>
+      <item-param>-1</item-param>
+    </item>
+
+    <item>
+      <item-name>SupportTransaction</item-name>
+      <item-param>0</item-param>
+    </item>
+  </group>
+  
+  <group>
+
+    <group-name>Informix</group-name>
+
+    <item>
+      <item-name>ADOProvider</item-name>
+      <item-param>Ifxoledbc.2</item-param>
+    </item>    
+
+    <item>
+      <item-name>Driver</item-name>
+      <item-param>com.informix.jdbc.IfxDriver</item-param>
+    </item>
+
+    <item>
+      <item-name>URL</item-name>
+      <item-param>jdbc:informix-sqli://$HostName:localhost$:$Port:9088$/$DatabaseServer$:INFORMIXSERVER=$INFORMIX_SERVER$</item-param>
+    </item>
+
+    <item>
+      <item-name>UserField</item-name>
+      <item-param>User_Name</item-param>
+    </item>
+    <item>
+      <item-name>PasswordField</item-name>
+      <item-param>Password</item-param>
+    </item>
+
+    <item>
+      <item-name>ServerField</item-name>
+      <item-param>HostName</item-param>
+    </item>
+
+    <item>
+      <item-name>DatabaseField</item-name>
+      <item-param>DatabaseServer</item-param>
+    </item>
+
+    <item>
+      <item-name>AutoCommit</item-name>
+      <item-param>0</item-param>
+    </item>
+
+    <item>
+      <item-name>CommitClausule</item-name>
+      <item-param>COMMIT WORK</item-param>
+    </item>
+
+    <item>
+      <item-name>StartTransactionClausule</item-name>
+      <item-param>;</item-param>
+    </item>
+
+    <item>
+      <item-name>RollbackTransactionClausule</item-name>
+      <item-param>ROLLBACK WORK</item-param>
+    </item>
+
+    <item>
+      <item-name>TrimString</item-name>
+      <item-param>1</item-param>
+    </item>
+
+    <item>
+      <item-name>FetchSize</item-name>
+      <item-param>100</item-param>
+    </item>
+
+    <item>
+      <item-name>TimeOut</item-name>
+      <item-param>-1</item-param>
+    </item>
+
+    <item>
+      <item-name>AddCondition4MetaData</item-name> 
+      <item-param>1 &lt;&gt; 1</item-param> 
+    </item>
+
+    <item>
+      <item-name>RemoveOrderBy4MetaData</item-name> 
+      <item-param>1</item-param> 
+    </item>
+
+    <item>
+      <item-name>ExceptionPrimaryKey</item-name>
+      <item-param>Unique constraint</item-param>
+    </item>
+
+    <item>
+      <item-name>ExceptionForeignKey</item-name>
+      <item-param>Key value for constraint</item-param>
+    </item>
+
+    <item>
+      <item-name>SchemaField</item-name>
+      <item-param>RoleName</item-param>
+    </item>
+
+    <item>
+      <item-name>removeNonAsciiCharsOnTextSearch</item-name>
+      <item-param>1</item-param>
+    </item>   
+
+    <item>
+      <item-name>ConcatOperator</item-name> 
+      <item-param>concat(CAST({0} AS LVARCHAR(5000)), CAST({1} AS LVARCHAR(5000)))</item-param> 
+    </item>
+
+    <item>
+      <item-name>CaseSensitive</item-name> 
+      <item-param>1</item-param> 
+    </item> 
+
+    <item>
+      <item-name>UpperFunctionStart</item-name> 
+      <item-param>UPPER(CAST(</item-param> 
+    </item> 
+
+    <item>
+      <item-name>UpperFunctionEnd</item-name> 
+      <item-param> AS LVARCHAR(5000)))</item-param> 
+    </item> 
+  </group>
+  
+  <group>
+    <group-name>Progress</group-name>
+    <item>
+      <item-name>ADOProvider</item-name>
+      <item-param>MSDASQL.1</item-param>
+    </item>
+    <item>
+      <item-name>Driver</item-name>
+      <item-param>com.ddtek.jdbc.openedge.OpenEdgeDriver</item-param>
+    </item>
+    <item>
+      <item-name>URL</item-name>
+    <item-param>jdbc:datadirect:openedge://$HostName:localhost$:$Port:25000$;DatabaseName=$Database$</item-param>
+    </item>
+    <item>
+      <item-name>UserField</item-name>
+      <item-param>User_Name</item-param>
+    </item>
+    <item>
+      <item-name>PasswordField</item-name>
+      <item-param>Password</item-param>
+    </item>
+    <item>
+      <item-name>ServerField</item-name>
+      <item-param>HostName</item-param>
+    </item>
+    <item>
+      <item-name>DatabaseField</item-name>
+      <item-param>Database</item-param>
+    </item>
+    <item>
+      <item-name>AutoCommit</item-name>
+      <item-param>1</item-param>
+    </item>
+    <item>
+      <item-name>TrimString</item-name>
+      <item-param>1</item-param>
+    </item>
+    <item>
+      <item-name>FetchSize</item-name>
+      <item-param>100</item-param>
+    </item>
+    <item>
+      <item-name>StartTransactionClausule</item-name>
+      <item-param>;</item-param>
+    </item>
+    <item>
+      <item-name>ConcatOperator</item-name>
+      <item-param>concat</item-param>
+    </item>
+    <item>
+      <item-name>ConcatIsOperator</item-name>
+      <item-param>0</item-param>
+    </item>
+    <item>
+      <item-name>TimeOut</item-name>
+      <item-param>-1</item-param>
+    </item>
+    <item>
+      <item-name>ModifySQL4MetaData</item-name>
+      <item-param>TOP 0</item-param>
+    </item>
+    <item>
+      <item-name>ExceptionPrimaryKey</item-name>
+      <item-param>7518</item-param>
+      <item-param>uniqueness constraint violation</item-param>
+    </item>
+    <item>
+      <item-name>ExceptionForeignKey</item-name>
+      <item-param>foreign key constraint</item-param>
+    </item>
+    <item>
+      <item-name>Generator</item-name>
+      <item-param>SELECT $generator$.NEXTVAL FROM SYSPROGRESS.SYSTABLES</item-param>
+    </item>
+    <item>
+      <item-name>Autoinc</item-name>
+      <item-param>SELECT $generator$.CURRVAL FROM SYSPROGRESS.SYSTABLES</item-param>
+    </item>
+    <item>
+      <item-name>CaseSensitive</item-name>
+      <item-param>1</item-param>
+    </item>
+    <item>
+      <item-name>ForceLowerCase</item-name>
+      <item-param>1</item-param>
+    </item>
+    <item>
+      <item-name>UpperFunctionStart</item-name>
+      <item-param>LOWER(</item-param>
+    </item>
+    <item>
+      <item-name>UpperFunctionEnd</item-name>
+      <item-param>)</item-param>
+    </item>
+  </group>
+</config>

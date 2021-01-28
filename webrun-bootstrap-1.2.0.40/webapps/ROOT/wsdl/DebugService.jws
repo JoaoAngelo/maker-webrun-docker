@@ -1,0 +1,86 @@
+import wfr.com.WFRSystem;
+import wfr.rules.DebugManager;
+import wfr.sys.WFRLoader;
+import wfr.exceptions.*;
+import wfr.util.*;
+
+public class DebugService implements java.io.Serializable {
+  public String activate(String systemCode, String sessionID, boolean active) throws Exception {
+    DebugManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    DebugManager debugManager = DebugManager.getDebugManager(sessionID, system);
+    return debugManager.setActive(active);
+  }
+  
+  public void remove(String systemCode, String sessionID) throws Exception {
+    DebugManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    DebugManager.removeDebugManager(sessionID, system);
+  }
+  
+  public void defineBreakPoints(String systemCode, String sessionID, String XML) throws Exception {
+    DebugManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    DebugManager debugManager = DebugManager.getDebugManager(sessionID, system);
+    debugManager.defineBreakPoints(XML);
+  }
+  
+  public String debugInformation(String systemCode, String sessionID) throws Exception {
+    DebugManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    DebugManager debugManager = DebugManager.getDebugManager(sessionID, system);
+    return debugManager.getDebugInfo();
+  }
+  
+  public String debugState(String systemCode, String sessionID) throws Exception {
+    DebugManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    DebugManager debugManager = DebugManager.getDebugManager(sessionID, system);
+    return debugManager.getDebugState();  
+  }
+  
+  public void defineNextDebugStep(String systemCode, String sessionID, int RID, int action) throws Exception {
+    DebugManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    DebugManager debugManager = DebugManager.getDebugManager(sessionID, system);
+    debugManager.defineNextDebugStep(RID, action);
+  }
+  
+  public void defineVariableValue(String systemCode, String sessionID, int RID, String name, String value, String type, String encode, boolean isNull) throws Exception {
+    DebugManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    DebugManager debugManager = DebugManager.getDebugManager(sessionID, system);
+    debugManager.defineVariableValue(RID, name, value, type, encode, isNull);
+  }
+  
+  public String getActiveSessions(String systemCode) throws Exception {
+    try {
+      DebugManager.validateSecurity();
+      WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+      return DebugManager.getActiveSessions(system);
+    } catch (SystemNotFoundException ex) {
+      return Functions.exceptionToXML(new WFRException(ExceptionMessage.ERROR_SYSTEM_CODE_NOT_FOUND, systemCode), Resources.getThreadResources());
+    }
+  }
+  
+  public String getVariableValue(String systemCode, String sessionID, int RID, String name) throws Exception {
+    DebugManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    DebugManager debugManager = DebugManager.getDebugManager(sessionID, system);
+    return debugManager.getVariableValue(RID, name);
+  }
+  
+  public boolean defineExpression(String systemCode, String sessionID, String xml) throws Exception {
+    DebugManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    DebugManager debugManager = DebugManager.getDebugManager(sessionID, system);
+    return debugManager.defineExpression(xml);
+  }
+  
+  public String runExpression(String systemCode, String sessionID, String expressionName, int parentRID) throws Exception {
+    DebugManager.validateSecurity();
+    WFRSystem system = WFRLoader.getWFR(systemCode).getSystem();
+    DebugManager debugManager = DebugManager.getDebugManager(sessionID, system);
+    return debugManager.runExpression(expressionName, parentRID);
+  }
+}

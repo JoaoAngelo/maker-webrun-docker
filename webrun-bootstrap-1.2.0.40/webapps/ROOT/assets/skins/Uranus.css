@@ -1,0 +1,58 @@
+/****************TELA DE LOGIN ***************/
+
+[webrun-type="HTMLGroupBox"]#Menu {
+  border-top: 23px solid rgb(239, 239, 239) !important;
+  border-right: none !important;
+  border-bottom: 8px solid rgb(239, 239, 239) !important;
+  border-left: none !important;
+  border-image: initial !important;
+}
+
+[webrun-type="HTMLGroupBox"]#Menu div {
+  position: absolute;
+}
+
+/*************** FIM TELA DE LOGIN ******************/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/***************TELA PRINCIPAL URANUS******************/
+
+#Dock {
+  height: 100vh !important;
+  width: 76px !important;
+  border: 0px solid !important;
+  position: absolute !important;
+}
+
+#barra_me_nu{
+  top: 0px; 
+}
+
+#settings_maker_uranus {
+  left: 220px !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+#LblBemvindo {
+  width: 5rem !important;
+}
+
+@-webkit-keyframes openAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

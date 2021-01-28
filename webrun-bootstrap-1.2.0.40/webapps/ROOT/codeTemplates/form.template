@@ -1,0 +1,116 @@
+package <%PACKAGE%>;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
+import wfr.com.WFRAction;
+import wfr.com.WFRComponent;
+import wfr.com.WFRForm;
+import wfr.com.WFRSystem;
+import wfr.com.WebrunProperties;
+import wfr.database.DBConnection;
+import wfr.sys.HTMLInterface.ComponentProperty;
+import wfr.util.Functions;
+import wfr.com.ActionType;
+import wfr.exceptions.*;
+
+/**
+ * Essa classe representa o formulário <%FORM_NAME%> do sistema <%SYSTEM_NAME%>.
+ * @author Webrun
+ * @version 1.0
+ */
+public class <%CLASS%> extends WFRForm {
+  
+  //Obtém-se o diretório da classe compilada
+  
+  private static String                    dir                  = Functions.classFolder(<%CLASS%>.class) + File.separatorChar;
+  protected Map<ComponentProperty, String> componentProperties;
+  protected Map<String, List<WFRAction>>   actions;
+
+  /**
+   * Construtor do formulário <%FORM_NAME%>.
+   * @param sys Sistema pai.
+   * @param db Conexão corrente.
+   * @throws Exception
+   */
+  public <%CLASS%>(WFRSystem sys, DBConnection db) throws Exception {
+    super(sys, db, <%CODE%>);
+  }
+  
+  /**
+   * Carregam-se as propriedades do formulário. Essas propriedades devem estar</br>
+   * definidas no arquivo <%CLASS%>.xml que está presente na pasta da classe compilada.
+   * @see wfr.com.WFRForm#createFormProperties()
+   */
+  @Override
+  protected WebrunProperties createFormProperties() throws Exception {
+    /*Carregam-se as propriedades*/
+<%CREATE_FORM_PROPERTIES%>
+    /*Extraem-se as propriedades de componente*/
+    componentProperties = properties.getComponentProperties();
+
+    /*Carregam-se as ações*/
+<%CREATE_FORM_ACTIONS%>    
+    return properties;
+  }
+
+  /**
+   * Carrega-se a lista de componentes presentes no formulário.
+   * @see wfr.com.WFRForm#createComponentsList()
+   */
+  @Override
+  protected List<WFRComponent> createComponentsList() throws Exception {
+    List<WFRComponent> components = new ArrayList<WFRComponent>();
+<%CREATE_COMPONENT_LIST_BODY%>    
+    return components;
+  }  
+  
+  /**
+   * Esse método retorna ele mesmo, pois não se aplica a essa classe. 
+   * @see wfr.com.WFRForm#getForm()
+   */
+  @Override
+  public WFRForm getForm() {
+    return this;
+  }
+
+  /**
+   * Esse método retorna todas as ações do sistema;
+   * @see wfr.com.WFRForm#getAllActions()
+   */
+  @Override
+  public Map<String, List<WFRAction>> getAllActions() {
+    return actions;
+  }
+
+  /**
+   * Retorna uma propriedade do sistema.
+   * @see wfr.com.WFRForm#getProperty(wfr.sys.HTMLInterface.ComponentProperty)
+   */
+  @Override
+  public String getProperty(ComponentProperty p) {
+    String value = componentProperties.get(p);
+    if ((p == ComponentProperty.FONTEDEDADOS) && (value == null || value.trim().length() == 0 || value.trim().equalsIgnoreCase(DBConnection.MAIN_CONNECTION))) {
+      value = "";
+    }
+    return (value != null) ? value : "";
+  }
+
+  /**
+   * Retorna uma lista de ações para um determinado evento.
+   * @see wfr.com.WFRForm#getActions(java.lang.String)
+   */
+  @Override
+  public List<WFRAction> getActions(String moment) {
+    return actions.get(moment);
+  }
+  
+  protected void updateLog(boolean logable, DBConnection db) throws Exception {
+    formProperties.put("FRM_LOG", logable ? "S" : "N");
+    formProperties.save(dir + "<%CLASS%>.xml");
+  }
+}

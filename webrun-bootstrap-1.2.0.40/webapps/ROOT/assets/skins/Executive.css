@@ -1,0 +1,635 @@
+/***************TELA DE LOGIN EXECUTIVE******************/
+.login {
+  margin: 0 auto;
+  position: relative !important;
+  left: -102px !important;
+  float: right;
+  width: 351px !important;
+}
+
+#btnlogin img {
+  width: 174px !important;
+  height: 38px !important;
+}
+
+.login div img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.bemvindo {
+  margin: 0 auto;
+  position: relative !important;
+  left: -105px !important;
+  float: right;
+  width: 351px !important;
+}
+
+[webrun-type="HTMLGroupBox"]#Menu {
+  border: 0px solid !important;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 25.5777%;
+  display: none !important;
+}
+
+.mao {
+  position: absolute !important;
+  left: 27.4725% !important;
+}
+
+.TextoBemVindo {
+  position: absolute !important;
+  width: 88.2784% !important;
+  left: 6.95971% !important;
+}
+
+.TextoBemVindo label {
+  text-align: center;
+}
+
+.topologin {
+  background: #3173ad !important;
+  position: absolute;
+  width: 100% !important;
+}
+
+.EdtLogin,
+.EdtSenha {
+  position: absolute !important;
+}
+
+#arrowLeft img {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
+#arrowLeft {
+  display: none !important;
+  margin: 0 0 0 10px !important;
+}
+
+#arrowRight {
+  left: unset !important;
+  top: 0 !important;
+  width: 25px !important;
+  height: 25px !important;
+  float: right;
+}
+
+#arrowRight img {
+  filter: invert(70%);
+  -webkit-filter: invert(70%);
+}
+
+.logocomp {
+  left: 10% !important;
+}
+
+#btnlogin {
+  left: 11.5% !important;
+  display: inline-block !important;
+  position: relative !important;
+  margin: 0px !important;
+}
+#biometric {
+  left: 57% !important;
+}
+
+/*************** MEDIA QUERIES TELA DE LOGIN ***********/
+
+@media (min-width: 777px) {
+  #arrowLeft,
+  #arrowRight {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1390px) {
+  .logocomp {
+    top: 5% !important;
+    position: absolute !important;
+    left: 0 !important;
+    width: 100% !important;
+    transition: all ease-in-out 0.2s;
+    -webkit-transition: all ease-in-out 0.2s;
+    -moz-transition: all ease-in-out 0.2s;
+    -ms-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s;
+  }
+  .logocomp img {
+    margin: 0 auto !important;
+    display: block !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .login,
+  .bemvindo {
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+  }
+  .login {
+    width: 90% !important;
+    float: none !important;
+    left: 0px !important;
+    top: 50% !important;
+    transform: translateY(-50%);
+  }
+  .box-open {
+    display: block !important;
+    -webkit-animation: slide-left 0.3s ease-out;
+    -moz-animation: slide-left 0.3s ease-out;
+  }
+  .box-close {
+    display: none !important;
+    -webkit-animation: slide-left 0.3s ease-out;
+    -moz-animation: slide-left 0.3s ease-out;
+  }
+  #usuario {
+    top: 72px !important;
+    left: 30px !important;
+  }
+  .EdtLogin,
+  .EdtSenha {
+    width: 70% !important;
+    left: 21% !important;
+  }
+  #senha {
+    top: 85px !important;
+    left: 31px !important;
+  }
+  .login input {
+    width: 100% !important;
+    border: solid 1px #919b9c !important;
+    font-size: 16px !important;
+  }
+  #arrowLeft {
+    margin: 15px 0 0 10px !important;
+    display: block !important;
+    position: absolute !important;
+    left: 2px !important;
+    top: 0px !important;
+    width: inherit !important;
+  }
+  #arrowRight {
+    left: unset !important;
+    top: 0 !important;
+    width: 25px !important;
+    height: 25px !important;
+    float: right !important;
+    margin: 10px !important;
+  }
+  #btnlogin,
+  #biometric {
+    position: absolute !important;
+    top: unset !important;
+    bottom: 15% !important;
+    display: inline-block !important;
+    left: 80% !important;
+  }
+
+  #btnlogin {
+    left: 20.5% !important;
+  }
+
+  .bemvindo {
+    width: 90% !important;
+    position: relative !important;
+    left: unset !important;
+    display: none;
+    float: none !important;
+  }
+  .logocomp {
+    left: 0 !important;
+    position: absolute !important;
+    width: 100% !important;
+    top: 10% !important;
+  }
+  .logocomp img {
+    max-width: 60% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  div.login [webrun-type="HTMLImage"] {
+    position: relative !important;
+    left: 2px !important;
+    margin: 2px !important;
+    min-width: unset !important;
+    display: block !important;
+    float: none !important;
+  }
+}
+
+/*************** FIM TELA DE LOGIN ******************/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*************** TELA PRINCIPAL EXECUTIVE ******************/
+
+.MenuConf {
+  width: 100% !important;
+  min-width: 838px;
+  border-radius: 0px !important;
+  background: #e3e3e3 !important;
+  z-index: 1 !important;
+  position: absolute;
+  left: 0px;
+  top: 53px;
+  min-height: 37px;
+  height: 41px !important;
+  display: block;
+}
+
+.top {
+  position: absolute;
+  width: 100% !important;
+  border-radius: 0px !important;
+  min-width: 560px;
+}
+
+#Aba {
+  height: 496px;
+  top: 89px;
+  background: transparent;
+  z-index: 0;
+  position: absolute;
+  width: calc(100% - 183px) !important;
+  position: relative !important;
+  left: 183px !important;
+}
+
+#Aba ul {
+  border-bottom: none;
+}
+
+#disableAba {
+  background: transparent;
+  z-index: 0;
+  position: absolute;
+  display: none;
+  top: 89px;
+  width: 100% !important;
+  left: 0px !important;
+}
+
+.menudiv {
+  left: 0px;
+  top: 94px;
+  width: 185px;
+  min-height: 91px;
+  display: block;
+  position: absolute;
+  height: calc(100% - 95px) !important;
+  border-radius: 0px !important;
+  z-index: 0 !important;
+  background: #333333 !important;
+}
+
+.infousr1,
+.infousr2 {
+  display: none !important;
+}
+
+.infousr {
+  top: 0px;
+  width: 250px;
+  min-height: 53px;
+  z-index: 3;
+  display: block;
+  background-color: rgb(73, 142, 207);
+  position: relative !important;
+  left: 0px !important;
+  float: right;
+}
+
+#fotousr {
+  width: 44px;
+  height: 44px;
+  z-index: 24;
+  display: block;
+  pointer-events: none;
+  position: relative !important;
+  float: right;
+  left: -70px !important;
+  top: 5px !important;
+  background-color: transparent;
+  border: 0 !important;
+}
+
+#fotousr .card-footer{
+  display: none !important;
+}
+
+.SetaUp {
+  left: 231px !important;
+  display: none;
+}
+.SetaDown {
+  left: 231px !important;
+}
+
+.SetaDown,
+.SetaUp {
+  top: 0px;
+  position: absolute;
+  z-index: 100000;
+  pointer-events: all;
+  cursor: pointer;
+  float: right !important;
+  left: unset !important;
+  width: 52px !important;
+  height: 52px !important;
+  right: 0;
+}
+
+.LblBemvindo {
+  position: relative !important;
+  float: right;
+  left: -70px !important;
+}
+
+.usrlogin {
+  left: 20px !important;
+  position: absolute !important;
+}
+
+.Imgsair {
+  position: relative !important;
+  left: -13px !important;
+  top: 0px !important;
+  float: right;
+}
+.Imgrcistema {
+  position: relative !important;
+  left: -13px !important;
+  top: 0px !important;
+  float: right;
+}
+
+.Imggrupos {
+  position: relative !important;
+  left: -13px !important;
+  top: 0px !important;
+  float: right;
+}
+
+.Imgusuarios {
+  position: relative !important;
+  left: -13px !important;
+  top: 0px !important;
+  float: right;
+}
+
+#alterarSenha {
+  position: relative !important;
+  top: 0 !important;
+  float: right !important;
+  left: unset !important;
+}
+
+.Imglog,
+.Imgmdprojeto {
+  position: absolute;
+}
+
+#Menu {
+  z-index: 1 !important;
+}
+
+.top #MakerImage1 img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+#Menu .menu-search {
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: relative;
+  min-height: 40px;
+  background-color: rgba(10, 13, 16, 0.85);
+  z-index: 100000;
+}
+
+#MenuPrincipal {
+  overflow: visible !important;
+}
+
+#Menu div.menu-search {
+  background-color: transparent;
+}
+
+.HTMLMenuShortCut {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 1000;
+}
+
+.HTMLMenuShortCut > span {
+  position: absolute;
+  top: 40px;
+  text-align: center;
+  width: 80px;
+  left: -50%;
+}
+
+.HTMLMenuShortCut > i {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+
+div div label.mb-0 {
+  margin-bottom: 0.5rem !important;
+}
+
+/*************** MEDIA QUERIES TELA PRINCIPAL ***********/
+
+@media (max-width: 768px) {
+  .MenuConf {
+    top: -100% !important;
+    position: fixed !important;
+    width: 70px !important;
+    min-width: 70px;
+    float: right;
+    left: unset !important;
+    right: 0 !important;
+    height: calc(100% - 45px) !important;
+    max-height: 100% !important;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  .MenuConf [webrun-type="HTMLActionButton"] {
+    display: block !important;
+    position: relative !important;
+    top: 0 !important;
+    left: unset !important;
+    right: unset !important;
+    float: none !important;
+    width: auto !important;
+    height: 50px !important;
+  }
+  .MenuConf [webrun-type="HTMLActionButton"] img {
+    width: 70px !important;
+    height: 51px !important;
+    position: absolute;
+    top: 0px;
+  }
+  .openMenu {
+    top: 55px !important;
+    transition: all ease-in-out 0.1s;
+    -webkit-transition: all ease-in-out 0.1s;
+    -moz-transition: all ease-in-out 0.1s;
+    -ms-transition: all ease-in-out 0.1s;
+    -o-transition: all ease-in-out 0.1s;
+  }
+  .top {
+    min-width: 100% !important;
+    background-color: rgb(73, 142, 207) !important;
+  }
+  #fotousr {
+    float: right !important;
+    display: none !important;
+  }
+  #buttonMenu,
+  #buttonClose {
+    position: absolute !important;
+    width: 32px !important;
+    height: 32px !important;
+    left: 10px !important;
+    top: 10px !important;
+    -ms-filter: brightness(200%);
+    -webkit-filter: brightness(200%);
+    -moz-filter: brightness(200%);
+    -o-filter: brightness(200%);
+    filter: brightness(200%);
+  }
+  .top #MakerImage1 {
+    margin: 0 auto !important;
+    width: 30% !important;
+    left: unset !important;
+    display: block !important;
+    position: relative !important;
+  }
+  .top #MakerImage1 img {
+    top: calc(50% - 8px);
+    width: 100% !important;
+    height: auto !important;
+  }
+  .hiddenElement {
+    display: none !important;
+  }
+  .showElement {
+    display: block !important;
+  }
+  #alterarSenha {
+    float: none !important;
+  }
+  #Aba {
+    left: unset !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #Menu {
+    left: -100% !important;
+  }
+
+  .MenuConf [webrun-type="HTMLActionButton"] {
+    position: relative !important;
+    margin: 2px;
+    min-width: unset !important;
+    float: none !important;
+  }
+
+  #Menu.is-open {
+    left: 8px !important;
+    transition: left 0.3s linear;
+    top: 60px !important;
+    height: calc(100% - 60px) !important;
+    overflow: hidden;
+    width: 70% !important;
+    overflow-y: auto;
+    -webkit-transition: left 0.3s linear;
+    -moz-transition: left 0.3s linear;
+    -ms-transition: left 0.3s linear;
+    -o-transition: left 0.3s linear;
+  }
+
+  #Menu.is-close {
+    left: -70% !important;
+    transition: left 0.3s linear;
+    top: 52px !important;
+    width: 70% !important;
+  }
+
+  .LblBemvindo,
+  .usrlogin {
+    display: none !important;
+  }
+  .showElement {
+    display: block !important;
+  }
+  .hiddenElement {
+    display: none !important;
+  }
+  #menudiv {
+    width: 70% !important;
+    height: 100% !important;
+    left: -70% !important;
+    margin: 0 auto;
+    top: 40px !important;
+    box-sizing: border-box;
+    max-width: 70% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #fotousr {
+    position: relative !important;
+    float: right;
+    left: 0px !important;
+    margin-left: 10px;
+  }
+
+  #SetaDown,
+  #SetaUp {
+    display: none !important;
+  }
+
+  #buttonMenu,
+  #buttonClose {
+    display: none !important;
+  }
+
+  .LblBemvindo {
+    float: right;
+    left: 0px !important;
+  }
+  .showElement {
+    display: block !important;
+  }
+
+  .openMenu {
+    top: 55px !important;
+    transition: all ease-in-out 0.1s;
+    -webkit-transition: all ease-in-out 0.1s;
+    -moz-transition: all ease-in-out 0.1s;
+    -ms-transition: all ease-in-out 0.1s;
+    -o-transition: all ease-in-out 0.1s;
+  }
+  #MenuPrincipal {
+    border: none;
+  }
+}

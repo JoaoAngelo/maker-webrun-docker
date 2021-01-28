@@ -1,0 +1,101 @@
+/*************** TELA DE LOGIN GREEN ******************/
+[webrun-type="HTMLGroupBox"]#Menu {
+  border: 4px solid rgb(255, 255, 255) !important;
+  top: 30vh !important;
+  position: absolute !important;
+  right: 0;
+}
+
+#BttLogar button {
+  height: auto !important;
+}
+
+/*************** FIM TELA DE LOGIN ******************/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*************** TELA PRINCIPAL GREEN ******************/
+
+#Dock {
+  border: 1px solid #bfb8bf !important;
+  box-sizing: border-box !important;
+  border-radius: 4px !important;
+  left: 0.534045% !important;
+  width: 3.73832% !important;
+  border-style: none !important;
+  display: block;
+  position: absolute;
+  width: 50px !important;
+  left: 5px !important;
+  height: auto !important;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+#Dock [webrun-type="HTMLActionButton"] {
+  position: relative !important;
+  top: 0 !important;
+  margin: 0px 0px 4px 0px !important;
+  left: 0.801068% !important;
+  display: block !important;
+  margin-left: 5px !important;
+  margin-top: 5px !important;
+  width: auto !important;
+}
+
+#Dock [webrun-type="HTMLActionButton"] img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+#botaoMenu,
+#botaoFechar {
+  display: none !important;
+}
+
+/*************** MEDIA QUERIES TELA PRINCIPAL ***********/
+
+@media (max-width: 575.98px) {
+  #MenuPrincipal {
+    width: 87% !important;
+  }
+
+  #MenuPrincipal #Menu-content {
+    padding: 2% !important;
+  }
+  #MenuPrincipal .menu-search {
+    margin: 2% !important;
+  }
+
+  #MenuPrincipal .menu-item-text {
+    white-space: normal !important;
+  }
+
+  [webrun-type="HTMLMenu"]#Menu {
+    top: 2px !important;
+    left: -4px !important;
+  }
+
+  #Dock {
+    width: 52px !important;
+    position: absolute !important;
+    top: 0px !important;
+    float: right !important;
+    left: auto !important;
+    z-index: 1000000000000000;
+    padding: 10px 0;
+    right: 6px !important;
+    height: calc(98% - 20px) !important;
+    min-height: unset !important;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+  }
+
+  #Dock [webrun-type="HTMLActionButton"] {
+    left: 2px !important;
+    margin: 2px 2px 6px 2px !important;
+  }
+}

@@ -1,0 +1,114 @@
+/*************** TELA DE LOGIN DEFAULT ******************/
+
+#MenuContainer {
+  box-shadow: 3px 3px 15px #ccc;
+  position: relative !important;
+  min-height: 162px !important;
+  box-sizing: border-box;
+  left: unset !important;
+  margin: auto !important;
+}
+
+/*************** MEDIA QUERIES TELA DE LOGIN ***********/
+@media (min-width: 576px) {
+  #biometric {
+    left: 65% !important;
+  }
+
+  #BttLogar {
+    left: 25% !important;
+  }
+}
+
+@media (min-width: 576px) {
+  div#MenuContainer {
+    min-width: 60%;
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 1080px) and (max-width: 479px) {
+  div#MenuContainer {
+    width: 95% !important;
+    max-width: 95%;
+    min-width: 95%;
+    transform: translateY(60%);
+  }
+  #biometric {
+    margin-left: 84% !important;
+  }
+}
+
+/*************** FIM TELA DE LOGIN ******************/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*************** TELA PRINCIPAL DEFAULT ******************/
+
+#Dock [webrun-type="HTMLActionButton"] {
+  position: relative !important;
+  top: 0 !important;
+  margin-bottom: 4px;
+  width: 48px !important;
+}
+
+#Dock {
+  left: unset !important;
+  right: 25px !important;
+  position: absolute !important;
+}
+
+#Menu.menu-vertical {
+  height: auto !important;
+  width: 250px !important;
+}
+
+#LblBemvindo {
+  left: 60.3205% !important;
+  width: 30.2545% !important;
+}
+
+#botaoMenu,
+#botaoFechar {
+  display: none !important;
+}
+
+#abrirFormSistema{
+  left: 655px !important;
+  width: 20px !important;
+}
+ 
+ #ListaSistemas{
+  left: 450px !important;
+  width: 200px !important;
+ }
+ 
+
+@media (min-width: 576px) {
+  #Dock [webrun-type="HTMLActionButton"] img {
+    width: auto !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #Dock {
+    width: 52px !important;
+    position: absolute !important;
+    top: 0px !important;
+    float: right !important;
+    left: auto !important;
+    z-index: 1000000000000000;
+    padding: 10px 0;
+    right: 6px !important;
+    height: calc(100% - 20px) !important;
+    min-height: 100% !important;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+  }
+
+  #LblBemvindo {
+    display: none !important;
+  }
+}

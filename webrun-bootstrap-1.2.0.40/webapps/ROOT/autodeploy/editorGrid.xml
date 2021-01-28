@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<itensEditor>  <item nome=".active-box-item" descricao="Cabeçalho da Grade"></item>
+  <item nome=".active-header-over .active-box-item" descricao="Cabeçalho Grade ao Passar o Mouse"></item>
+  <item nome=".active-selection-true,.active-selection-true .active-row-cell" descricao="Cor da Linha Selecionada"></item>
+ <item nome=".active-box-normal" descricao="Cor das Divisões"></item>
+</itensEditor>

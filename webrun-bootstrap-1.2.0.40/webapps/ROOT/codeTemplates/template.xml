@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- não modifcar a string do encoding [ encoding="UTF-8"] por causa do ant -->
+<PROPERTIES>
+  <PROPERTY KEY="PreferXMLProperties">true</PROPERTY>
+</PROPERTIES>

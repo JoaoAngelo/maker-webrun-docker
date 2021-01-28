@@ -1,0 +1,418 @@
+/*****************/
+/* Tela de Login */
+/*****************/
+
+#lay {
+  width: 100% !important;
+}
+
+#ContainerLogin {
+  border-top: 12px solid #8b53c6;
+  border-bottom: 8px solid #8b53c6;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 15px;
+}
+
+.HTMLEdit input:not([type="checkbox"]) {
+  border: none;
+  background-image: linear-gradient(#9966cc, #9966cc),
+    linear-gradient(rgba(165, 181, 203, 0.5), rgba(165, 181, 203, 0.5));
+  background-size: 0% 2px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom, center calc(100% - 1px);
+  background-color: transparent;
+  transition: background 0s ease-out;
+}
+
+.HTMLEdit div:first-child {
+  height: auto !important;
+  margin-bottom: 0px;
+  top: 0 !important;
+  transition: top 0s ease-out;
+  transition-duration: 0.2s;
+}
+
+.HTMLEdit div:first-child font {
+  font-size: 12px;
+  font-weight: 400;
+  transition: color 0s ease-out;
+}
+
+.HTMLEdit.isActive div input {
+  background-size: 100% 2px, 100% 1px;
+  transition-duration: 0.3s;
+}
+
+.HTMLEdit.isActive div:first-child {
+  top: -20px !important;
+  transition-duration: 0.3s;
+}
+
+.HTMLEdit.isActive div font {
+  font-size: 11px;
+  color: #9966cc;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+
+.HTMLEdit.notEmpty div font {
+  font-size: 11px;
+}
+
+.HTMLEdit.notEmpty div:first-child {
+  top: -20px !important;
+}
+
+#Logo_login {
+  margin: 2em 0;
+}
+
+#txtBottom {
+  width: 100% !important;
+  top: auto !important;
+  bottom: 0;
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+}
+
+#txtBottom div div {
+  text-align: center !important;
+  font-size: 12px !important;
+  font-weight: normal;
+}
+
+#BttLogar button {
+  border-radius: 15px 2px 15px 2px;
+  background: #8b53c6;
+  border-color: #8b53c6;
+}
+
+#biometric {
+  width: auto !important;
+  height: auto !important;
+}
+
+#biometric button {
+  background-color: #8b53c6;
+  box-shadow: 1px 1px 5px #828181;
+  width: 48px !important;
+  height: 48px !important;
+  padding: 0;
+  border-radius: 50%;
+}
+
+#biometric img {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.HTMLNavigationMenu {
+  display: none;
+}
+
+/* Vertical */
+@media (max-width: 575.98px) {
+  #ContainerLogin {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    margin: auto !important;
+  }
+  #biometric button:disabled {
+    top: 0px !important;
+  }
+
+  #ContainerLogin div {
+    left: 0 !important;
+  }
+}
+
+/********** MEDIA QUERIES ***********/
+
+@media (max-width: 320px) {
+  #ContainerLogin {
+    width: 100% !important;
+    min-height: 500px !important;
+    border-radius: 15px !important;
+    top: 15px !important;
+    margin: 0 !important;
+    justify-content: space-evenly;
+  }
+}
+
+/*Horizontal*/
+
+@media (min-width: 560px) {
+  #ContainerLogin {
+    top: 80vh !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #ContainerLogin {
+    top: 50vh !important;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  #ContainerLogin {
+    top: 70vh !important;
+  }
+}
+
+/*************** FIM TELA DE LOGIN ******************/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/***************TELA PRINCIPAL AMETISTA******************/
+
+#userInfo:hover {
+  background-color: #c071f31c;
+  transition: background-color 0.2s linear;
+}
+
+#userImage {
+  border-radius: 50%;
+  margin-bottom: 0 !important;
+}
+
+#userInfo {
+  left: unset !important;
+  position: absolute !important;
+  top: 3px !important;
+  width: 230px !important;
+}
+
+#controlActions {
+  position: absolute !important;
+  height: 65px !important;
+  width: auto !important;
+  left: unset !important;
+}
+
+#header {
+  position: fixed !important;
+}
+
+#MenuPrincipal {
+  position: fixed !important;
+  width: 273px !important;
+  background: white;
+  position: absolute;
+  height: 100% !important;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  left: -273px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  --webkit-transition: left 0.2s linear;
+  -moz-transition: left 0.2s linear;
+  -ms-transition: left 0.2s linear;
+  -o-transition: left 0.2s linear;
+  transition: left 0.2s linear;
+}
+
+#MenuPrincipal.is-open {
+  left: 0 !important;
+  --webkit-transition: left 0.2s linear;
+  -moz-transition: left 0.2s linear;
+  -ms-transition: left 0.2s linear;
+  -o-transition: left 0.2s linear;
+  transition: left 0.2s linear;
+}
+
+#menuOpen {
+  width: 41px !important;
+  text-align: center;
+  min-width: auto;
+}
+
+#menuOpen:hover {
+  background-color: #c5c5c57d;
+  border-radius: 4px;
+  transition: background-color 0.3s linear;
+}
+
+#menuOpen img {
+  display: none;
+}
+
+#menuOpen:before {
+  content: "\f0c9";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+#openAcoes {
+  width: 41px !important;
+  left: auto !important;
+  right: 5px;
+  text-align: center;
+}
+
+#openAcoes:hover {
+  background-color: #c5c5c57d;
+  border-radius: 4px;
+  transition: background-color 0.3s linear;
+}
+
+#openAcoes img {
+  display: none;
+}
+
+#openAcoes:before {
+  content: "\f142";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+#openInfo {
+  width: 25px !important;
+  left: auto !important;
+  right: 15px !important;
+}
+
+#openInfo img {
+  display: none;
+}
+
+#openInfo:before {
+  content: "\f0dd";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+#MenuAcoes {
+  position: absolute !important;
+  left: auto !important;
+  right: 0;
+  width: 80px !important;
+  display: none !important;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
+  z-index: 100002 !important;
+  height: calc(100% - 65px);
+  min-height: auto !important;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0;
+}
+
+#MenuAcoes.is-open {
+  display: block !important;
+}
+
+#MenuAcoes [webrun-type="HTMLActionButton"] {
+  width: 58px !important;
+  height: 58px !important;
+  position: sticky !important;
+  margin: 5px 10px !important;
+  padding: 13px;
+  top: unset !important;
+}
+
+#MenuAcoes .HTMLImage #HTMLImageSelf {
+  position: relative;
+}
+
+#MenuAcoes .HTMLImage:hover {
+  background-color: #c071f3;
+  box-shadow: 0 14px 26px -12px rgba(157, 108, 206, 0.42),
+    0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(157, 108, 206, 0.2);
+  transition: all 0.2s linear;
+}
+#MenuAcoes .HTMLImage:hover img {
+  filter: invert(100%);
+  transition: all 0.2s linear;
+}
+
+#menuInfo {
+  height: auto !important;
+  top: 60px !important;
+  right: 0;
+  left: unset !important;
+  background-color: #fff;
+  position: absolute !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  transition: all 0.2s linear;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+}
+
+#menuInfo.is-open {
+  -ms-transform: scale(1);
+  transform: scale(1);
+  transition: all 0.2s linear;
+}
+
+#menuInfo ul {
+  margin: 0;
+  padding: 0;
+  padding: 5px;
+}
+
+#menuInfo ul li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+#menuInfo ul li a {
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: #000000;
+}
+
+#menuInfo ul li a:hover {
+  background-color: #c071f3;
+  color: #fff;
+  transition: all 0.2s linear;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+#backdrop {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #8496ad;
+  position: fixed;
+  opacity: 0.3;
+  overflow: hidden;
+  z-index: 100001;
+  -webkit-animation: fadeInFromNone 250ms ease-out;
+  -moz-animation: fadeInFromNone 250ms ease-out;
+  -o-animation: fadeInFromNone 250ms ease-out;
+  animation: fadeInFromNone 250ms ease-out;
+}
+
+/************ MEDIA QUERIES ******************/
+@media (max-width: 575.98px) {
+  #userInfo {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  #userInfo img {
+    min-width: auto;
+  }
+
+  #userName {
+    margin-bottom: 0 !important;
+  }
+}
