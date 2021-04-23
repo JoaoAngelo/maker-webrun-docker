@@ -1,0 +1,573 @@
+/* -------------------------------------------------*/
+/* ---------->>> TELA DE LOGIN PROTON <<<-----------*/
+/* -------------------------------------------------*/
+#formLogin {
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  animation: fadeLogin 1000ms;
+}
+
+@keyframes fadeLogin {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/**
+* @Media Queries -TELA DE LOGIN
+*/
+
+@media (min-width: 576px) {
+  #formLogin {
+    height: 545px !important;
+    width: 761px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #formLogin {
+    flex-direction: column-reverse !important;
+    min-height: auto !important;
+    top: 4rem !important;
+    width: 95% !important;
+    height: 80% !important;
+  }
+
+  #topoLogin {
+    padding: 2rem !important;
+  }
+}
+
+/* --------------------------------------------------*/
+/* ---------->>> TELA PRINCIPAL PROTON <<<-----------*/
+/* --------------------------------------------------*/
+
+#toast-container-br {
+  bottom: 5rem !important;
+}
+
+#optionsSystem + [data-original-title="HTMLButton"] {
+  display: none !important;
+}
+
+#MolduraSPA {
+  width: 96vw !important;
+  height: calc(100vh - 140px) !important;
+  margin: auto !important;
+  top: 8.5rem !important;
+}
+
+#MolduraSPA iframe{
+  height: calc(100vh - 143px) !important;
+}
+
+/* DEFINIÃ?Ã?ES DE CORES
+//////////////////////////////////////*/
+
+:root {
+  --proton-color: #c54e4e;
+}
+
+.bg-proton,
+.btn-proton {
+  background-color: var(--proton-color);
+}
+
+.btn-proton:hover {
+  background-color: var(--proton-color);
+}
+
+#MenuHorizontalProtonPrincipal .nav-item:hover,
+#MenuHorizontalProtonPrincipal .dropdown-menu li:hover,
+#MenuHorizontalProtonPrincipal .nav-link:hover,
+#MenuHorizontalProtonPrincipal .nav-item:hover a,
+#iconModal .nav-item:hover a, #optionsUser .nav-item:hover a,
+#iconModal .nav-item:hover, #optionsUser .nav-item:hover,
+#iconModal .nav-link:hover a,  #optionsUser .nav-link:hover a{
+  background-color: var(--proton-color);
+  color: white !important;
+}
+
+#atalhosListaContainer a {
+  color: var(--proton-color) !important;
+}
+
+#atalhosListaContainer a .menu-item-text {
+  font-size: 0.95rem;
+  max-width: 100% !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+#MenuHorizontalProtonPrincipal .navbar-collapse,
+#MenuHorizontalProtonPrincipal div.navbar-header {
+  background-color: var(--light);
+}
+
+/* ------------------------------------------------*/
+/* ---------->>> ANIMAÃ?Ã?O DOS ICONES <<<-----------*/
+/* ------------------------------------------------*/
+
+#atalhosListaContainer i:hover,
+#icons i:hover {
+  filter: drop-shadow(0px 1px 2px rgb(184, 184, 184));
+  transform: translateY(-3px);
+}
+
+/* -----------------------------------------------------*/
+/* ---------->>> MENU ICONS - MENU USERS  <<<-----------*/
+/*          OPÃ?Ã?ES DO SITEMA / MENU DO USUARIO
+/* -----------------------------------------------------*/
+
+#iconsPrincipal {
+  border-radius: 0.25rem !important;
+}
+
+#optionsUserPrincipal {
+  display: none;
+  border-radius: 0.3rem;
+}
+
+#userImage img {
+  border-radius: 50% !important;
+}
+
+#optionsUser {
+  top: 4.5rem !important;
+  left: 0 !important;
+  width: initial !important;
+  position: relative;
+}
+
+#optionsUserPrincipal ul {
+  height: auto !important;
+}
+
+#optionsUserPrincipal .menu-icon {
+  float: left;
+}
+
+.user-button {
+  height: 86px !important;
+  top: 0 !important;
+  z-index: 1000003 !important;
+}
+
+.user-button:hover #optionsUserPrincipal {
+  display: block !important;
+  width: 14rem;
+}
+
+#optionsUserPrincipal li {
+  width: 100%;
+  text-align: center;
+  border-radius: 0.3rem;
+}
+
+#optionsUserPrincipal a {
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.3rem;
+}
+#optionsUserPrincipal a {
+  padding-left: 1.5rem;
+}
+
+/* OPÃ?Ã?ES DO SISTEMA - MODAL
+//////////////////////////////////////*/
+
+#closeModal {
+  right: 1.8rem !important;
+  outline: none !important;
+  z-index: 99999999 !important;
+}
+
+#iconModal button {
+  padding: 0.2rem !important;
+}
+
+@keyframes fadeModal {
+  from {
+    opacity: 0;
+    top: -100px;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  top: 0 !important;
+  left: 0 !important;
+  animation: fadeModal 400ms;
+  position: fixed !important;
+  z-index: 99999999 !important;
+}
+
+#icons {
+  width: initial !important;
+}
+
+#iconModalBody {
+  width: 51% !important;
+  left: 0% !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  margin: auto !important;
+}
+
+#icons ul {
+  justify-content: center !important;
+  height: auto !important;
+  margin: 1.5rem auto !important;
+}
+
+#icons a {
+  text-align: center;
+  padding: 0.8rem 2.5rem;
+  flex-direction: column;
+}
+
+#icons i {
+  display: block;
+  font-size: 2rem;
+  margin: 0 !important;
+}
+
+/* -------------------------------------------------*/
+/* ---------->>>  ATALHOS DO SISTEMA  <<<-----------*/
+/*            FAB - FLOAT ACTION BUTTON 
+/* -------------------------------------------------*/
+
+@keyframes fadeLista {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#atalhosListaContainer {
+  width: 4rem !important;
+  max-height: 65% !important;
+  min-height: auto !important;
+  left: unset !important;
+  top: inherit !important;
+  bottom: 5.5rem !important;
+  right: 1.5rem !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  background: transparent !important;
+  z-index: 99999999 !important;
+  padding: 0 !important;
+}
+
+#atalhosListaContainer a {
+  margin-bottom: 1rem;
+  animation: fadeLista 200ms ease-out;
+  animation-fill-mode: both;
+}
+
+#atalhosFAB {
+  width: 64px !important;
+  height: 64px !important;
+  top: inherit !important;
+  bottom: 1.5rem;
+  left: unset !important;
+  right: -2.7rem !important;
+  z-index: 100000000 !important; 
+}
+
+#atalhosFAB:focus-within {
+  width: 64px !important;
+  height: 64px !important;
+  top: inherit !important;
+  bottom: 1.5rem;
+  left: unset !important;
+  right: 1.5rem !important;
+  z-index: 100000000 !important;   
+  transition: right 500ms ease-in-out;
+}
+
+#atalhosFAB .fa-chevron-left{
+    right: 45px;
+    bottom: 24px;
+    position: absolute;
+}
+
+#atalhosFAB button[aria-expanded="true"] .fa-chevron-left, 
+#atalhosFAB:focus-within .fa-chevron-left{
+  display: none;
+}
+
+#atalhosListaContainer .menu-shortcut:focus-within{
+  filter: drop-shadow(0px 8px 2px rgb(184, 184, 184));
+}
+
+#atalhosFAB button {
+  box-shadow: none !important;
+}
+
+#atalhosFAB button[aria-expanded="true"] .fa-reply-all {
+  display: none;
+}
+
+#atalhosFAB button[aria-expanded="false"] .fa-times {
+  display: none;
+}
+
+#atalhosFAB + [data-original-title="HTMLButton"] {
+  display: none !important;
+}
+
+#atalhosListaContainer a:nth-child(2n + 1) {
+  animation-delay: 50ms;
+}
+
+#atalhosListaContainer a:nth-child(2n) {
+  animation-delay: 150ms;
+}
+
+.backdrop-shortcut {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.backdrop-shortcut.show {
+  opacity: 0.85;
+  pointer-events: all;
+}
+
+/**
+* PesonalizaÃ§Ã£o da Barra de Rolagem - ATALHOS
+*/
+
+#atalhosListaContainer::-webkit-scrollbar {
+  width: 2px !important;
+}
+
+#atalhosListaContainer::-webkit-scrollbar-thumb {
+  background: #dad7d7;
+}
+
+/* ---------------------------------------------------*/
+/* ---------->>> PROTON MENU HORIZONTAL <<<-----------*/
+/* ---------------------------------------------------*/
+
+#MenuHorizontalProtonPrincipal {
+  width: 100vw;
+}
+
+#MenuHorizontalProtonPrincipal .navbar-collapse {
+  width: 100% !important;
+}
+
+#MenuHorizontalProtonPrincipal ul.dropdown-menu {
+  position: static !important;
+}
+
+#MenuHorizontalProtonPrincipal ul {
+  overflow: auto !important;
+  flex-wrap: initial !important;
+}
+
+/* ---------------------------------------------------*/
+/* ---------->>> PERSONALIZAÃ?Ã?O DO SCROLL <<<-----------*/
+/*                PROTON MENU HORIZONTAL
+/* ---------------------------------------------------*/
+
+#MenuHorizontalProtonPrincipal ul::-webkit-scrollbar {
+  height: 7px;
+  width: 4px;
+}
+
+#MenuHorizontalProtonPrincipal ul::-webkit-scrollbar-thumb {
+  background: #dad7d7;
+}
+
+#MenuHorizontalProtonPrincipal i {
+  display: inline !important;
+}
+
+#MenuHorizontalProtonPrincipal [data-original-title="Editar PermissÃµes"] {
+  padding: 0.3rem !important;
+  font-size: 0.9rem !important;
+}
+
+#iconsPrincipal .menu-item-text,
+#atalhosListaContainer .menu-item-text {
+  white-space: normal !important;
+  text-align: center;
+}
+
+#MenuHorizontalProtonPrincipal .nav-item,
+#iconModal .nav-item,
+#optionsUser .nav-item {
+  text-decoration: none !important;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+}
+
+/**
+* @Media Queries -TELA PRINCIPAL
+*/
+
+@media (min-width: 576px) {
+  .user-button {
+    left: 77.8125% !important;
+    width: 13.69141% !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #iconModal.modal {
+    overflow: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  #icons {
+    top: 2.5vh !important;
+    left: 2.5vw !important;
+  }
+
+  #iconModalBody {
+    width: 96% !important;
+  }
+
+  #icons ul {
+    max-height: 36vh !important;
+    overflow: auto !important;
+    flex-wrap: initial !important;
+    padding-top: 16rem !important;
+    box-sizing: content-box;
+  }
+
+  #icons ul::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  #icons ul::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+  }
+
+  #iconModalBody .collapse:not(.show) {
+    display: block !important;
+  }
+
+  #iconModalBody .navbar-header {
+    display: none !important;
+  }
+
+  #MolduraSPA{
+    top: 2rem !important;    
+    height: calc(100% - 136px) !important;
+    min-height: unset !important;
+  }
+
+  #MolduraSPA iframe{
+    height: calc(100vh - 143px) !important;
+  }
+  
+  #MenuHorizontalProton {
+    height: auto !important;
+    width: 100vw !important;
+  }
+
+  #MenuHorizontalProtonPrincipal ul {
+    height: 75vh !important;
+  }
+
+  #MenuHorizontalProtonPrincipal div.navbar-header {
+    border-radius: 10%;
+  }
+
+  #userImageContainer,
+  .user-button {
+    width: 70% !important;
+    top: -1rem !important;
+    padding: 0 !important;
+    float: left;
+    z-index: 1000001 !important;
+  }
+
+  #optionsUser {
+    top: 5.4rem !important;
+    left: 2.5rem !important;
+    position: absolute !important;
+  }
+
+  #userImageContainer::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    color: white;
+    content: "\f0dd";
+    line-height: 4.1;
+    margin-left: -0.5rem;
+    position: absolute;
+  }
+
+  #optionsUserPrincipal .collapse:not(.show) {
+    display: block !important;
+  }
+
+  #optionsUserPrincipal .navbar-header {
+    display: none !important;
+  }
+
+  #IconButtonContainer {
+    float: right;
+    top: -1rem !important;
+    width: 5.5rem !important;
+    border: none !important;
+  }
+
+  #userImage {
+    top: -0.3rem !important;
+    width: 30% !important;
+    float: left;
+  }
+
+  #userName {
+    width: 40% !important;
+    float: left;
+    top: 0.6rem !important;
+    margin: 0 !important;
+  }
+
+  #userName div {
+    justify-content: start !important;
+  }
+
+  #atalhosListaContainer .menu-item-text {
+    max-width: unset !important;
+  }
+}

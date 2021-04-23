@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!-- não modifcar a string do charset "charset=ISO-8859-1" por causa do ant -->
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<title>Servidor de impressão matricial (CLIENTE)</title>
+</head>
+<body>
+<p>wfr.sys.HTMLInterface.HTMLTextPrinterApplet will appear below in a Java enabled browser.<br></p>
+<APPLET CODEBASE="."
+      NAME="WEBRUNTextPrinter"
+      CODE="wfr.sys.HTMLInterface.HTMLTextPrinterApplet.class"
+      ARCHIVE="STextPrinter.jar"
+      WIDTH=0
+      HEIGHT=0 MAYSCRIPT>
+</applet>
+<script language="JavaScript">
+
+function getURLParam(name) {
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var tmpURL = window.location.href;
+  var results = regex.exec(tmpURL);
+  if( results == null )
+    return "";
+  else
+    return unescape(results[1]);
+}
+
+var text = getURLParam('text');
+var port = getURLParam('port');
+
+if(text != "") {
+  document.WEBRUNTextPrinter.print(text, port); 
+}
+</script>  
+</body>
+</html>

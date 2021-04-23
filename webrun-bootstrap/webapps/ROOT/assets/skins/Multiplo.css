@@ -1,0 +1,96 @@
+
+/***************TELA DE LOGIN MULTIPLO******************/
+
+#divmenu {
+  position: absolute !important;
+  right: 0;
+}
+
+#BttLogar button {
+  height: 26px !important;
+}
+
+/*************** FIM TELA DE LOGIN ******************/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/***************TELA PRINCIPAL MULTIPLO******************/
+
+#Dock {
+  height: 104px !important;
+  position: absolute !important;
+  right: 0;
+}
+
+#Menu {
+  top: 105px !important;
+}
+
+#Dock .form-label {
+  height: 42px !important;
+  text-align: center !important;
+  width: 60px !important;
+}
+
+/*************** MEDIA QUERIES ***********/
+
+@media (max-width: 960px) and (min-width: 576px) {
+  #Dock {
+    overflow: hidden;
+    overflow-x: auto;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #Dock {
+    width: 65px !important;
+    position: absolute !important;
+    top: 0px !important;
+    border: none !important;
+    float: right !important;
+    left: auto !important;
+    z-index: 1000000000000000;
+    padding: 10px 0;
+    right: 6px !important;
+    height: calc(100% - 20px) !important;
+    min-height: 100% !important;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+  }
+
+  #Dock [webrun-type="HTMLActionButton"] {
+    position: relative !important;
+    left: unset !important;
+    right: unset !important;
+    top: 0 !important;
+    margin: 4px;
+  }
+
+  #MenuPrincipal {
+    width: 82% !important;
+  }
+
+
+  #MenuPrincipal #Menu-content {
+    padding: 2% !important;
+  }
+  #MenuPrincipal .menu-search {
+    margin: 2% !important;
+  }
+
+  #MenuPrincipal .menu-item-text {
+    white-space: normal !important;
+  }
+
+  #Menu {
+    top: 10px !important;
+    left: 10px !important;
+  }
+
+  #Dock .form-label {
+    display: none !important;
+  }
+}

@@ -1,9 +1,16 @@
 version: '3'
 services:
   webrun:
-    image: 'joaoangelo92/maker-webrun-bootstrap:latest'
+    image: 'makerskin/webrun-bootstrap:latest'
     restart: always
     ports:
       - 8080:8080
     volumes:
-      - /home/docker/compose/webrun/systems:/usr/local/tomcat/webrun/systems
+      - /home/docker/compose/webrun:/usr/local/tomcat/webrun
+  webrunutf8:
+    image: 'makerskin/webrun-bootstrap-utf8:latest'
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - /home/docker/compose/webrun:/usr/local/tomcat/webrun

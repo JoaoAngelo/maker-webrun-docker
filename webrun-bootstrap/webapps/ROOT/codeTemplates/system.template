@@ -1,0 +1,323 @@
+package <%PACKAGE%>;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.input.SAXBuilder;
+import org.jdom.xpath.XPath;
+
+import wfr.database.DBConnection;
+import wfr.sys.HTMLInterface.ComponentProperty;
+import wfr.util.Functions;
+import wfr.util.Logger;
+import wfr.com.*;
+import wfr.exceptions.*;
+<%IMPORTS%>
+
+/**
+ * Essa classe representa o sistema <%SYSTEM_NAME%>. A sigla que identifica o sistema <%SYSTEM_NAME%> é <%SYSTEM_CODE%>.</br> 
+ * O sistema <%SYSTEM_NAME%> é carregado através de um arquivo *.wfre que que é um arquivo XML criptografado que contém</br>
+ * informações de acesso ao banco (servidor, login, senha), codificação (ISO, UFT), sigla do</br>
+ * sistema entre outras.</br>
+ * Um sitema é todo carregado na memória por questões de performance.<br/>
+ * 
+ * @author Webrun
+ * @version 1.0
+ */
+public class <%CLASS%> extends WFRSystem {
+  private static Logger                    logger  = Logger.getLogger(<%CLASS%>.class);
+  /*Obtém-se o diretório da classe compilada*/
+  private static String                    dir     = Functions.classFolder(<%CLASS%>.class) + File.separatorChar;
+  protected Map<String, List<WFRAction>>   actions;
+  protected Map<ComponentProperty, String> systemProperties;
+
+  /**
+   * Construtor do sistema <%SYSTEM_NAME%>.
+   * @param file Arquivo *.wfre que representa os parâmetros de conexão com o banco de dados do sistema <%SYSTEM_NAME%>.
+   * @throws Exception
+   */  
+  public <%CLASS%>(WFREFile file) throws Exception {
+    super(file);
+  }
+
+  /**
+   * Esse método é responsável pela carga da definição dos tipos de dados utilizado pelo sistema.</br> 
+   * Exemplo: CPF, CEP, etc. 
+   * @see wfr.com.WFRSystem#createSystemDataTypes()
+   */  
+  protected List<WebrunProperties> createSystemDataDictionary() throws Exception {
+
+    List<WebrunProperties> dataList = new ArrayList<WebrunProperties>();
+
+    Document doc = null;
+    try {
+      SAXBuilder builder = new SAXBuilder();
+      doc = builder.build(new File(Functions.classFolder(this.getClass()) + "/dictionary.xml"));
+
+      List<Element> elems = doc.getRootElement().getChildren("DICTIONARY");
+
+      for (Element e : elems) {
+        WebrunProperties properties = new WebrunProperties();
+        /*Código do tipo de dados*/
+        properties.put("TPD_CODIGO", e.getChild("CODE").getValue());
+        /*Descrição do tipo de dados*/
+        properties.put("CMP_DESCRICAO", e.getChild("DESCRIPTION").getValue());
+        /*Nome da tabela*/
+        properties.put("TAB_NOME", e.getChild("TABLENAME").getValue());
+        /*Nome do campo*/
+        properties.put("CMP_NOME", e.getChild("FIELDNAME").getValue());
+        /*Valor Padrão*/
+        properties.put("CMP_VALORPADRAO", e.getChild("DEFAULT").getValue());
+        dataList.add(properties);
+      }
+
+    } catch (Exception e) {
+      logger.error(WFRSystem.DEFAULT_USER, code, e);
+    }
+
+    return dataList;
+  }
+
+  /**
+   * Esse método é responsável pela carga do dicionário de dados do sistema <%SYSTEM_NAME%>.</br>
+   * Todas as definições do dicionário estão armazenados em um arquivo chamado dictionary.xml</br>
+   * que deve estar no mesmo diretório da classe compilada. 
+   * @see wfr.com.WFRSystem#createSystemDataDictionary()
+   */  
+  protected List<WebrunProperties> createSystemDataTypes() throws Exception {
+    
+    List<WebrunProperties> dataList = new ArrayList<WebrunProperties>();
+
+    Document doc = null;
+    try {
+      SAXBuilder builder = new SAXBuilder();
+      doc = builder.build(new File(Functions.classFolder(this.getClass()) + "/dataTypes.xml"));
+
+      List<Element> elems = doc.getRootElement().getChildren("DATATYPE");
+
+      for (Element e : elems) {
+        WebrunProperties properties = new WebrunProperties();
+        /*Código do tipo de dados*/
+        properties.put("TPD_CODIGO", e.getChild("CODE").getValue());
+        /*Descrição do tipo de dados*/
+        properties.put("TPD_DESCRICAO", e.getChild("DESCRIPTION").getValue());
+        /*Definições do tipo de dados*/
+        properties.put("TPD_MASCARAFORMATACAO", e.getChild("DEFINITION").getValue());
+        /*Máscara de edição*/
+        properties.put("TPD_MASCARAEDICAO", e.getChild("EDITMASK").getValue());
+
+        dataList.add(properties);
+      }
+
+    } catch (Exception e) {
+      logger.error(WFRSystem.DEFAULT_USER, code, e);
+    }
+
+    return dataList;    
+  }
+
+  /**
+   * Esse método é responsável pela carga das propriedades do sistema. As propriedades do sistema</br>
+   * ficam armazenadas em um arquivo xml chamado <%SYSTEM_CODE%>.xml que deve estar no mesmo diretório</br>
+   * da classe compilada. O formato do arquivo é o definido pela classe WebrunProperties. Ele também faz a </br>
+   * carga das ações do sistema que fica no arquivo <%SYSTEM_CODE%>.actions.xml.
+   * @see wfr.com.WFRSystem#createSystemProperties()
+   * @see wfr.com.WebrunProperties
+   */
+  protected void createSystemProperties() throws Exception {
+    /*Criam-se as propriedades do sistema <%SYSTEM_NAME%>*/
+<%CREATE_SYSTEM_PROPERTIES%>    
+    /*Extrai-se as propriedades de componente do sistema*/
+    systemProperties = properties.getComponentProperties();
+
+    /*Criam-se as ações do sistema <%SYSTEM_NAME%>*/    
+<%CREATE_SYSTEM_ACTIONS%>    
+  }
+
+
+  /**
+   * Esse método é responsável pela carga da lista de formulários que o sistema.
+   * @see wfr.com.WFRSystem#createFormList()
+   */  
+  protected List<WFRForm> createFormList() throws Exception {
+    List<WFRForm> formList = new ArrayList<WFRForm>();
+<%CREATE_FORM_LIST_BODY%>
+    return formList;
+  }
+
+  /**
+   * Esse método é responsável pela criação da árvore de menus do sistema.</br> 
+   * Essa árvore é armazenada em um arquivo chamado menu.xml presente no diretório</br>
+   * da classe compilada.
+   * @see wfr.com.WFRSystem#createSystemMenus(wfr.database.DBConnection)
+   */  
+  protected List<WFRMenu> createSystemMenus(DBConnection db) throws Exception {
+    return WFRMenu.getListMenu(db, this, Functions.classFolder(this.getClass())+"/menu.xml");
+  }
+
+  /**
+   * Esse método deve subir uma exceção, informando que a busca dinâmica de um formulário</br>
+   * não é permitida.
+   * @see wfr.com.WFRSystem#loadForm(wfr.database.DBConnection, java.lang.String)
+   */  
+  protected WFRForm loadForm(DBConnection db, String id) throws Exception {
+    throw new WFRException(ExceptionMessage.ERROR_FORM_CODE_NOT_FOUND, new Object[] { id });
+  }
+
+  /**
+   * Esse método deve subir uma exceção, informando que a recarga de um formulário não é possível.
+   * @see wfr.com.WFRSystem#reloadForm(java.lang.String, wfr.database.DBConnection)
+   */  
+  public void reloadForm(String id, DBConnection d) throws Exception {
+    throw new WFRException(ExceptionMessage.ERROR_CANNOT_RELOAD_COMPILED_FORM);
+  }
+
+  /**
+   * Esse método deve subir uma exceção, informando que a recarga de um relatório não é possível.
+   * @see wfr.com.WFRSystem#reloadReport(java.lang.String)
+   */  
+  public synchronized void reloadReport(String id) throws Exception {
+    Object report = reports.get(id);
+
+    if (report == null)
+      report = reportsByName.get(id);
+
+    if (report != null) {
+      if (report instanceof WFRMenuReport) {
+        ((WFRMenuReport) report).reload();
+      } else {
+        reports.remove(id);
+        reportsByName.remove(((WFRReport) report).getName());
+      }
+    }
+  }  
+  
+  /**
+   * Essa função sempre retorna falso, pois o sistema não tem a propriedade de recarga.
+   * @see wfr.com.WFRSystem#isReloadable()
+   */  
+  public boolean isReloadable() {
+    return false;
+  }  
+  
+  /**
+   * Retorna um relatório dado um identificador.
+   * @param id String Identificador do relatório.
+   * @param db Conexão corrente.
+   * @return WFRReport Relatório.
+   * @throws Exception
+   */
+  public WFRReport getReport(String id, DBConnection db) throws Exception {
+    Object report = reports.get(id);
+
+    if (report == null)
+      report = reportsByName.get(id);
+
+    if (report != null) {
+      if (report instanceof WFRMenuReport) {
+        return ((WFRMenuReport) report).getReport(db);
+      } else {
+        return (WFRReport) report;
+      }
+    } else {
+      synchronized (this) {
+        if (!reports.containsKey(id)) {
+          report = WFRReportFactory.getInstance(this, id, db);
+          reports.put(((WFRReport) report).getID(), report);
+          reportsByName.put(((WFRReport) report).getName(), report);
+        }
+      }
+      return (WFRReport) report;
+    }
+  }
+  
+  /**
+   * Esse método retorna nulo, pois não se aplica a essa classe.
+   * @see wfr.com.WFRSystem#getForm()
+   */
+  public WFRForm getForm() {
+    return null;
+  }
+
+  /**
+   * Esse método retorna todas as ações do sistema;
+   * @see wfr.com.WFRSystem#getAllActions()
+   */
+  public Map<String, List<WFRAction>> getAllActions() {
+    return actions;
+  }
+
+  /**
+   * Retorna uma propriedade do sistema.
+   * @see wfr.com.WFRSystem#getProperty(wfr.sys.HTMLInterface.ComponentProperty)
+   */
+  public String getProperty(ComponentProperty p) {
+    String value = systemProperties.get(p);
+    return (value!=null)?value:"";
+  }
+
+  /**
+   * Retorna uma lista de ações para um determinado evento.
+   * @see wfr.com.WFRSystem#getActions(java.lang.String)
+   */
+  public List<WFRAction> getActions(String moment) {
+    if (actions.containsKey(moment))
+      return actions.get(moment);
+    else
+      return Collections.EMPTY_LIST;
+  } 
+  
+  /**
+   * Criam-se os formulários de definição de controle de  acesso.
+   * @see wfr.com.WFRSystem#createAccessForms()
+   */
+  protected void createAccessForms() {
+    /*
+     * Não necessita implementação.
+     */
+  }
+
+  /**
+   * Atualiza a subconexão do sistema
+   * @param pSubConCode Número para identificar a subconexão. Usado na criação do parametro "Conexao1WFRE"
+   * @param pSysCode Código do sistema que terá a subconexão atualizada.
+   * @param pFile Arquivo representando a subconexão.
+   * @param pTemporary Caso verdadeiro, não atualiza os dados persistidos em XML.
+   * @throws java.lang.Exception
+   */
+  @Override
+  public void updateSubconection(Integer pSubConCode, String pSysCode, WFREFile pFile, Boolean pTemporary) throws Exception {
+    
+    // Modificar definições da conexão em memoria
+    ComponentProperty propertyWFRE = ComponentProperty.getByDescription("Conexao" + pSubConCode + "WFRE");
+    systemProperties.put(propertyWFRE, pFile.getBase64WFRE());
+    
+    // Persistir na XML
+    if (!pTemporary) {
+      String nomedoarquivo = Functions.classFolder(this.getClass()) + File.separator + this.getClass().getSimpleName() + ".xml";
+      Document doc = Functions.parseXML(nomedoarquivo, null, false);
+      String key = "Conexao" + pSubConCode + "WFRE";
+      XPath xp = XPath.newInstance("PROPERTIES/PROPERTY[@KEY = '" + key + "']");
+      Element element = (Element) xp.selectSingleNode(doc);
+      if (element != null) {
+        element.setText(pFile.getBase64WFRE());
+        Functions.documentToXMLFile(doc, nomedoarquivo);
+      } else {
+        throw new WFRException(ExceptionMessage.ERROR_SUBCONNECTION_NOT_FOUND);
+      }
+      
+      File permanentFile = new File(wfr.util.WFRConfig.configDir() + "/saved/" + getFolderSettingsCode() + "/subConnections", (pFile.getName() + ".wfre"));
+      permanentFile.getParentFile().mkdirs();
+
+      logger.info(WFRSystem.DEFAULT_USER, getCode(), "Salvando conexão adicional em cache: " + (permanentFile.getAbsoluteFile()));
+      
+      pFile.saveAs(permanentFile);
+    }
+  }
+}

@@ -1,0 +1,432 @@
+/*************** TELA DE LOGIN METRO ******************/
+
+#txtDescript {
+  overflow: visible !important;
+  top: 134px !important;
+}
+
+#txtTitle label {
+  overflow: visible !important;
+}
+
+#login,
+#login-hide {
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+#Menu {
+  border: none !important;
+}
+
+#UpDescript,
+#upLoginArrow {
+  display: none !important;
+}
+#txtTitle {
+  top: 57px !important;
+}
+
+.description-text > div {
+  width: 80% !important;
+  display: table !important;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.description-text > div > div {
+  display: table-cell !important;
+}
+
+#txtSlogan {
+  top: 94px !important;
+}
+
+#EdtLogin,
+#EdtSenha,
+#BttLogar {
+  box-sizing: unset !important;
+  width: calc(100% - 80px) !important;
+}
+.login-area [webrun-type="HTMLEdit"] input {
+  width: 100% !important;
+  background: #a2b2bf;
+  border: none;
+  color: #161d30;
+  line-height: 20px;
+  height: 37px !important;
+  border-radius: 5px;
+  text-indent: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 0px !important;
+}
+.login-area [webrun-type="HTMLButton"] button {
+  height: 37px !important;
+  letter-spacing: 0.5px;
+  position: absolute;
+  left: 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/*************** MEDIA QUERIES TELA DE LOGIN ***********/
+
+@media screen and (max-width: 1023px) {
+  .description-text > div {
+    left: 40px !important;
+    width: 51.5% !important;
+    margin-left: 0 !important;
+  }
+  #txtDescript {
+    top: 145px !important;
+  }
+
+  #txtDescript label {
+    text-align: left !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  #txtTitle {
+    top: 70px !important;
+  }
+  #txtSlogan {
+    top: 108px !important;
+  }
+  .description-text > div > div > label {
+    text-align: left !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .container-login {
+    left: 0 !important;
+    width: 100% !important;
+    border: none !important;
+    height: 100% !important;
+  }
+  #UpDescript,
+  #upLoginArrow {
+    display: block !important;
+    left: calc(15% + 40px) !important;
+  }
+  .container-descript {
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .description-text {
+    top: 170px !important;
+    margin-left: 15% !important;
+    margin-right: 15% !important;
+  }
+  #login-hide {
+    position: fixed;
+    left: 100% !important;
+    top: 0 !important;
+    width: 42% !important;
+    height: 100% !important;
+    background-color: #161d30 !important;
+    border-left: 15px solid #121829 !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  #UpDescript,
+  #upLoginArrow {
+    left: 40px !important;
+  }
+  .description-text {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .description-text > div {
+    width: 87% !important;
+  }
+  .login-area {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/*************** FIM TELA DE LOGIN ******************/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/*************** TELA PRINCIPAL METRO ******************/
+
+.HTMLIcon-menu img:hover {
+  background-color: rgb(39, 39, 39);
+}
+
+#menu-metro,
+#menu-metro-visible {
+  width: 270px;
+  position: fixed;
+  height: 100%;
+  padding-right: 1px;
+  z-index: 800;
+  background-color: rgba(10, 13, 16, 0.85);
+
+  -webkit-transition: left 0.3s, background-color 0.1s 0s;
+  -moz-transition: left 0.3s, background-color 0.1s 0s;
+  -ms-transition: left 0.3s, background-color 0.1s 0s;
+  -o-transition: left 0.3s, background-color 0.1s 0s;
+  transition: left 0.3s, background-color 0.1s 0s;
+}
+
+#menu-metro:hover {
+  left: 0 !important;
+
+  -webkit-transition-delay: 0.4s;
+  -moz-transition-delay: 0.4s;
+  -ms-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+#menu-metro {
+  left: -270px;
+  top: 0;
+}
+#menu-metro-visible {
+  left: 0;
+  top: 0;
+}
+
+#menu-metro:hover #menuprincipal {
+  opacity: 1;
+
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  -transform: scale(1);
+}
+
+#menuprincipalPrincipal {
+  width: 100%;
+}
+
+#menuprincipal {
+  position: relative !important;
+  width: 100% !important;
+  height: calc(100% - 40px) !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 60px !important;
+  padding: 2%;
+}
+
+#user-name-metro {
+  display: block !important;
+  overflow: hidden;
+  left: 45% !important;
+}
+
+#boxes [webrun-type="HTMLActionButton"]:hover {
+  -webkit-box-shadow: 0px 0px 0px 1.5px rgb(255, 255, 255);
+  -moz-box-shadow: 0px 0px 0px 1.5px rgb(255, 255, 255);
+  -ms-box-shadow: 0px 0px 0px 1.5px rgb(255, 255, 255);
+  -o-box-shadow: 0px 0px 0px 1.5px rgb(255, 255, 255);
+  box-shadow: 0px 0px 0px 1.5px rgb(255, 255, 255);
+}
+
+#boxes [webrun-type="HTMLActionButton"] {
+  list-style: outside;
+  float: left;
+  cursor: pointer;
+  display: inline;
+  white-space: nowrap;
+  padding: 0px;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#menuIcon {
+  z-index: 100000 !important;
+  left: 0 !important;
+  top: 0 !important;
+  position: absolute !important;
+  padding: 15px 12px;
+  width: auto !important;
+  height: auto !important;
+  cursor: pointer;
+}
+
+#menuIcon:hover {
+  background-color: rgb(39, 39, 39);
+}
+
+/* -- CSS Barra de rolagem -- */
+#menuprincipal::-webkit-scrollbar {
+  width: 8px;
+}
+#menuprincipal::-webkit-scrollbar-button {
+  display: none;
+}
+#menuprincipal::-webkit-scrollbar-track-piece {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+#menuprincipal::-webkit-scrollbar-thumb {
+  background-color: rgba(80, 80, 80, 0);
+  border-radius: 1px;
+}
+#menuprincipal:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(110, 110, 110, 1);
+}
+
+.box {
+  list-style: outside;
+  float: left;
+  position: relative !important;
+  margin: 0 8px 8px 0;
+  cursor: pointer;
+  display: inline;
+  white-space: nowrap;
+  padding: 0px;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  width: auto !important;
+}
+
+img {
+  border: none !important;
+}
+
+.box-medium {
+  height: 110px;
+  min-width: 228px;
+}
+
+.box-small {
+  height: 110px;
+  min-width: 110px;
+}
+
+#box-icons {
+  position: relative;
+  top: 0 !important;
+  height: 464px !important;
+  margin-right: 165px;
+  overflow: hidden;
+}
+
+#box-icons {
+  min-height: calc(100% - 27px) !important;
+  border-left: 0px solid #919b9c;
+  border-bottom: 0px solid #919b9c;
+  top: 0px !important;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#calendar-inboxer span {
+  right: 15px;
+  top: -4px;
+  color: #fff;
+  text-align: right;
+  float: right;
+  position: relative;
+}
+
+/*************** MEDIA QUERIES TELA PRINCIPAL ***********/
+@media (max-width: 780px) and (min-width: 480px) {
+  #container-box {
+    left: 0% !important;
+    width: 95% !important;
+    right: 0;
+    margin: 0 auto !important;
+    top: 10% !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: unset !important;
+  }
+  #boxes {
+    left: 0 !important;
+    height: auto !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+  .box {
+    list-style: outside;
+    float: left;
+    margin: 0 4px 4px 0;
+  }
+  .box-small {
+    width: 128px;
+    min-width: 128px;
+    height: 128px;
+  }
+  .box-medium {
+    width: 266px;
+    min-width: 266px;
+    height: 128px;
+  }
+  .box-medium img,
+  .box-small img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  div#container-box {
+    top: 0 !important;
+    margin-top: 65px !important;
+  }
+  #container-box {
+    left: 12px !important;
+    display: initial !important;
+  }
+  #boxes {
+    position: relative;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    width: auto;
+    height: 464px;
+  }
+  .box {
+    margin: 0 4px 3px 0 !important;
+    overflow: hidden;
+  }
+  .box img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .box-small {
+    min-width: 31.5% !important;
+    max-width: 31.5% !important;
+    float: left !important;
+  }
+  .box-medium {
+    width: 64% !important;
+    max-width: 64% !important;
+    min-width: 64% !important;
+  }
+}

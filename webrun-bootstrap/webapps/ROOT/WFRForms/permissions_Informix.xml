@@ -1,0 +1,1092 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<!-- não modifcar a string do encoding [  encoding="ISO-8859-1"] por causa do ant -->
+
+<fmaker version="2.1" maker_version="2.3.4.460">
+    <global>
+    </global>
+    <system SIS_CODIGO="USR">
+        <property name="SIS_DESCRICAO">Controle de Usuários do Webrun</property>
+        <property name="SIS_SQLDATALIMITE"></property>
+        <property name="SIS_SQLDADOSENTIDADE"></property>
+        <property name="IMG_CODIGO"></property>
+        <property name="IMG_CODIGO_ICONE"></property>
+        <form FRM_CODIGO="7146" FRM_GUID="{E670B962-BBE6-4A56-A8AA-C404EC84250A}">
+            <property name="IMG_INCLUIR">1</property>
+            <property name="IMG_ALTERAR">2</property>
+            <property name="IMG_EXCLUIR">8</property>
+            <property name="IMG_GRAVAR">12</property>
+            <property name="IMG_CANCELAR">13</property>
+            <property name="IMG_ATUALIZAR">7</property>
+            <property name="IMG_UTILITARIO">1</property>
+            <property name="IMG_SAIR">11</property>
+            <property name="IMG_IMPRIMIR">10</property>
+            <property name="IMG_AJUDA">14</property>
+            <property name="IMG_PROXIMO">5</property>
+            <property name="IMG_ULTIMO">6</property>
+            <property name="IMG_PRIMEIRO">3</property>
+            <property name="IMG_ANTERIOR">4</property>
+            <property name="FRM_DESCRICAO">Usuários</property>
+            <property name="FRM_POSICAOX">92</property>
+            <property name="FRM_POSICAOY">138</property>
+            <property name="FRM_TAMANHO">668</property>
+            <property name="FRM_ALTURA">673</property>
+            <property name="FRM_TIPO_CRIACAO">0</property>
+            <property name="FNT_CAMPOCHAVE">USR_CODIGO</property>
+            <property name="FNT_TABELA">FR_USUARIO</property>
+            <property name="FNT_SQLSELECT">Select&#13;&#10;  U.USR_CODIGO,&#13;&#10;  U.USR_LOGIN,&#13;&#10;  U.USR_SENHA,&#13;&#10;  U.USR_ADMINISTRADOR,&#13;&#10;  U.USR_TIPO_EXPIRACAO,&#13;&#10;  U.USR_DIAS_EXPIRACAO,&#13;&#10;  U.USR_IMAGEM_DIGITAL,&#13;&#10;  U.USR_FOTO,&#13;&#10;  U.USR_NOME,&#13;&#10;  U.USR_EMAIL,&#13;&#10;  U.USR_DIGITAL,&#13;&#10;  U.USR_INICIO_EXPIRACAO,&#13;&#10;  U.USR_LOGIN As Login,&#13;&#10;  U.USR_NOME As Nome&#13;&#10;From&#13;&#10;  FR_USUARIO U&#13;&#10;Where&#13;&#10;  (((Select FU1.USR_ADMINISTRADOR From FR_USUARIO FU1 WHERE FU1.USR_LOGIN = :MAKER_LOGIN_USUARIO) = 'S') Or&#13;&#10;  U.USR_CODIGO In (Select U2.USR_CODIGO From FR_USUARIO FU Inner Join FR_USUARIO_SISTEMA On FR_USUARIO_SISTEMA.USR_CODIGO = FU.USR_CODIGO Inner Join FR_USUARIO_SISTEMA U2 On U2.SIS_CODIGO = FR_USUARIO_SISTEMA.SIS_CODIGO Where FU.USR_LOGIN = :MAKER_LOGIN_USUARIO AND FR_USUARIO_SISTEMA.USS_ADMINISTRADOR = 'S') And&#13;&#10;  U.USR_ADMINISTRADOR = 'N')&#13;&#10;/*WHERE_ADD*/&#13;&#10;/*ORDER_NEW*/</property>
+            <property name="FNT_SQLINSERT"></property>
+            <property name="FNT_SQLUPDATE">USR_CODIGO&#13;&#10;USR_LOGIN&#13;&#10;USR_ADMINISTRADOR&#13;&#10;USR_TIPO_EXPIRACAO&#13;&#10;USR_NOME&#13;&#10;</property>
+            <property name="FNT_SQLDELETE"></property>
+            <property name="FNT_CAMPOINCREMENTO"></property>
+            <property name="FNT_CAMPOGRADE">Login&#59;Nome</property>
+            <property name="FNT_CAMPOPESQUISA">Login&#59;Nome</property>
+            <property name="FNT_SQLDEFAULT">USR_CODIGO=SQL("SELECT NVL(MAX(USR_CODIGO),0)+1 FROM FR_USUARIO")&#13;&#10;USR_SENHA='softwell'&#13;&#10;USR_ADMINISTRADOR=N&#13;&#10;USR_TIPO_EXPIRACAO=N&#13;&#10;</property>
+            <property name="FNT_SQLMASCARA"></property>
+            <property name="REL_CODIGO"></property>
+            <component COM_CODIGO="48464" COM_TIPO="F" name="">
+                <property name="Imagem"></property>
+                <property name="Ajuda"></property>
+                <property name="ExibicaoImagemFundo"></property>
+                <property name="FonteDeDados"></property>
+                <property name="Apresentacao">0</property>
+                <property name="BarraDeRolagem">False</property>
+                <property name="BotaoMaximizar">False</property>
+                <property name="EntrarComoPesquisa">FALSE</property>
+                <property name="BotaoMinimizar">True</property>
+                <property name="Centralizado">True</property>
+                <property name="Navegacao">TRUE</property>
+                <property name="AbaLocalizar">TRUE</property>
+                <property name="Abas">TRUE</property>
+                <property name="BotaoFechar">True</property>
+                <property name="Cor">-16777201</property>
+                <event name="Ao Navegar">
+                    <action name="3">
+                        <property name="ACC_CONDICAO"></property>
+                        <param name="Lista de Objetos"><![CDATA[MakerEdit8=USR_TIPO_EXPIRACAO='T' | USR_TIPO_EXPIRACAO='E'
+MakerEdit4=USR_TIPO_EXPIRACAO='T' | USR_TIPO_EXPIRACAO='E']]></param>
+                    </action>
+                </event>
+                <event name="Ao Navegar">
+                    <action name="6">
+                        <property name="ACC_CONDICAO"></property>
+                        <param name="Lista de Objetos"><![CDATA[USR_INICIO_EXPIRACAO=	USR_TIPO_EXPIRACAO='N'
+USR_DIAS_EXPIRACAO=	USR_TIPO_EXPIRACAO='N']]></param>
+                    </action>
+                </event>
+            </component>
+            <component COM_CODIGO="48465" COM_TIPO="B" name="MakerButton1">
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="Ordem">11</property>
+                <property name="Tabulacao">11</property>
+                <property name="Codigo">48465</property>
+                <property name="Altura">26</property>
+                <property name="PosicaoX">411</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Parametros">FR_USUARIO_SISTEMA.USR_CODIGO=USR_CODIGO</property>
+                <property name="Nome">MakerButton1</property>
+                <property name="PosicaoY">187</property>
+                <property name="Descricao">Grupos aos quais pertence</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Campo"></property>
+                <property name="Dica"></property>
+                <property name="Imagem"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="Tamanho">236</property>
+                <property name="CodigoForm">{43AEED6B-15F1-45CC-9EAA-0D73B622BE71}</property>
+            </component>
+            <component COM_CODIGO="48466" COM_TIPO="C" name="MakerComboBox1">
+                <property name="Descricao">Administrador Geral</property>
+                <property name="Campo">USR_ADMINISTRADOR</property>
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Tabulacao">2</property>
+                <property name="Nome">MakerComboBox1</property>
+                <property name="Valores">S&#10;N</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="PosicaoY">27</property>
+                <property name="Altura">21</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Tamanho">102</property>
+                <property name="Tipo">#ApenasMasterGeral=true</property>
+                <property name="Cor">-16777211</property>
+                <property name="Lista">Sim&#13;&#10;Não&#13;&#10;</property>
+                <property name="Ordem">12</property>
+                <property name="PosicaoX">298</property>
+                <property name="Codigo">48466</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+            </component>
+            <component COM_CODIGO="48467" COM_TIPO="E" name="MakerEdit1">
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="Tipo">#Password=true</property>
+                <property name="Cor">-16777211</property>
+                <property name="Ordem">13</property>
+                <property name="Codigo">48467</property>
+                <property name="Descricao">Senha</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Senha">False</property>
+                <property name="Altura">21</property>
+                <property name="PosicaoY">27</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Nome">MakerEdit1</property>
+                <property name="Conteudo">0</property>
+                <property name="TamanhoMaximo">0</property>
+                <property name="Campo">USR_SENHA</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Tabulacao">1</property>
+                <property name="Tamanho">121</property>
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="PosicaoX">144</property>
+            </component>
+            <component COM_CODIGO="48468" COM_TIPO="E" name="MakerEdit2">
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="Tamanho">110</property>
+                <property name="Codigo">48468</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Nome">MakerEdit2</property>
+                <property name="TamanhoMaximo">0</property>
+                <property name="Conteudo">0</property>
+                <property name="Ordem">0</property>
+                <property name="Tabulacao">0</property>
+                <property name="PosicaoY">27</property>
+                <property name="Altura">21</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Senha">False</property>
+                <property name="Campo">USR_LOGIN</property>
+                <property name="Descricao">Login</property>
+                <property name="Cor">-16777211</property>
+                <property name="PosicaoX">11</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+            </component>
+            <component COM_CODIGO="48469" COM_TIPO="E" name="MakerEdit4">
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="Cor">-16777211</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Senha">False</property>
+                <property name="Altura">21</property>
+                <property name="Codigo">48469</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Tamanho">93</property>
+                <property name="Conteudo">0</property>
+                <property name="TamanhoMaximo">0</property>
+                <property name="Nome">MakerEdit4</property>
+                <property name="PosicaoX">283</property>
+                <property name="Tabulacao">6</property>
+                <property name="Campo">USR_DIAS_EXPIRACAO</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="PosicaoY">152</property>
+                <property name="Ordem">1</property>
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Descricao">Dias para expiração</property>
+                <property name="Tipo"></property>
+            </component>
+            <component COM_CODIGO="48470" COM_TIPO="E" name="MakerEdit5">
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="Tamanho">389</property>
+                <property name="Codigo">48470</property>
+                <property name="Tabulacao">3</property>
+                <property name="Nome">MakerEdit5</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Conteudo">0</property>
+                <property name="TamanhoMaximo">0</property>
+                <property name="Descricao">Nome do Usuário</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Altura">21</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Senha">False</property>
+                <property name="Campo">USR_NOME</property>
+                <property name="PosicaoY">67</property>
+                <property name="Ordem">4</property>
+                <property name="Cor">-16777211</property>
+                <property name="PosicaoX">11</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+            </component>
+            <component COM_CODIGO="48471" COM_TIPO="E" name="MakerEdit6">
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="PosicaoX">11</property>
+                <property name="Nome">MakerEdit6</property>
+                <property name="Cor">-16777211</property>
+                <property name="Tabulacao">4</property>
+                <property name="PosicaoY">107</property>
+                <property name="Ordem">5</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Senha">False</property>
+                <property name="Altura">21</property>
+                <property name="Codigo">48471</property>
+                <property name="Conteudo">0</property>
+                <property name="Campo">USR_EMAIL</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Descricao">E-mail</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="TamanhoMaximo">0</property>
+                <property name="Tamanho">389</property>
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+            </component>
+            <component COM_CODIGO="48472" COM_TIPO="E" name="MakerEdit8">
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="Conteudo">0</property>
+                <property name="TamanhoMaximo">0</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Descricao">Data de Referência</property>
+                <property name="Nome">MakerEdit8</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Ordem">6</property>
+                <property name="Tabulacao">7</property>
+                <property name="PosicaoX">283</property>
+                <property name="Senha">False</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Altura">21</property>
+                <property name="Tamanho">94</property>
+                <property name="Campo">USR_INICIO_EXPIRACAO</property>
+                <property name="Codigo">48472</property>
+                <property name="Cor">-16777211</property>
+                <property name="PosicaoY">192</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+            </component>
+            <component COM_CODIGO="48473" COM_TIPO="G" name="MakerGrid1">
+                <property name="Editavel">True</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="PosicaoX">14</property>
+                <property name="Cor">-16777211</property>
+                <property name="Tabulacao">8</property>
+                <property name="Nome">MakerGrid1</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="ChamaSubForm">False</property>
+                <property name="Parametros">FR_USUARIO_SISTEMA.USR_CODIGO=USR_CODIGO</property>
+                <property name="Codigo">48473</property>
+                <property name="CodigoForm">{095943CE-6FA4-4A3D-86C2-184D4F187776}</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Ordem">10</property>
+                <property name="Altura">324</property>
+                <property name="Tamanho">636</property>
+                <property name="Paginacao">0</property>
+                <property name="PosicaoY">229</property>
+                <property name="Atributos"></property>
+                <property name="Colunas"></property>
+                <property name="CorCondicional"></property>
+                <property name="Descricao"></property>
+                <property name="Dica"></property>
+                <property name="Tipo"></property>
+            </component>
+            <component COM_CODIGO="48474" COM_TIPO="I" name="MakerImage1">
+                <property name="Altura">147</property>
+                <property name="Dica"></property>
+                <property name="GravarEmArquivo"></property>
+                <property name="Imagem"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="URL"></property>
+                <property name="Codigo">48474</property>
+                <property name="AlturaZoom">0</property>
+                <property name="LarguraZoom">0</property>
+                <property name="TipoExibicao">0</property>
+                <property name="Campo">USR_IMAGEM_DIGITAL</property>
+                <property name="Descricao">USR_IMAGEM_DIGITAL</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Tamanho">115</property>
+                <property name="Ordem">2</property>
+                <property name="Nome">MakerImage1</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Exibicao">Estender</property>
+                <property name="CampoCodImpDigital">USR_DIGITAL</property>
+                <property name="PosicaoY">27</property>
+                <property name="PosicaoX">411</property>
+                <property name="Tabulacao">9</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+            </component>
+            <component COM_CODIGO="48475" COM_TIPO="I" name="MakerImage2">
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Codigo">48475</property>
+                <property name="PosicaoX">531</property>
+                <property name="Visivel">True</property>
+                <property name="Campo">USR_FOTO</property>
+                <property name="Descricao">USR_FOTO</property>
+                <property name="PosicaoY">27</property>
+                <property name="Exibicao">Estender</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Tamanho">115</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Tabulacao">10</property>
+                <property name="Nome">MakerImage2</property>
+                <property name="AlturaZoom">0</property>
+                <property name="LarguraZoom">0</property>
+                <property name="TipoExibicao">0</property>
+                <property name="Ordem">3</property>
+                <property name="Altura">147</property>
+                <property name="URL"></property>
+                <property name="Imagem"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="CampoCodImpDigital"></property>
+                <property name="Dica"></property>
+                <property name="GravarEmArquivo"></property>
+            </component>
+            <component COM_CODIGO="48476" COM_TIPO="L" name="MakerLabel1">
+                <property name="Campo"></property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="Descricao">Fotografia do usuário</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Nome">MakerLabel1</property>
+                <property name="Tamanho">108</property>
+                <property name="Codigo">48476</property>
+                <property name="Ordem">8</property>
+                <property name="Habilitado">True</property>
+                <property name="Visivel">True</property>
+                <property name="PosicaoX">539</property>
+                <property name="PosicaoY">11</property>
+                <property name="Altura">17</property>
+                <property name="Cor">-16777201</property>
+            </component>
+            <component COM_CODIGO="48477" COM_TIPO="L" name="MakerLabel2">
+                <property name="Cor">-16777201</property>
+                <property name="Altura">17</property>
+                <property name="PosicaoY">11</property>
+                <property name="Ordem">9</property>
+                <property name="Tamanho">83</property>
+                <property name="Nome">MakerLabel2</property>
+                <property name="Habilitado">True</property>
+                <property name="Visivel">True</property>
+                <property name="Descricao">Impressão digital</property>
+                <property name="Codigo">48477</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Campo"></property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="PosicaoX">427</property>
+            </component>
+            <component COM_CODIGO="48478" COM_TIPO="R" name="MakerRadioGroup1">
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Descricao">Limite de Senha</property>
+                <property name="QtdeColunas">1</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Ordem">7</property>
+                <property name="Nome">MakerRadioGroup1</property>
+                <property name="Tamanho">262</property>
+                <property name="Tabulacao">5</property>
+                <property name="Codigo">48478</property>
+                <property name="Visivel">True</property>
+                <property name="Habilitado">True</property>
+                <property name="Lista">Nunca expira&#13;&#10;Expira em determinado número de dias&#13;&#10;Troca de senha a cada número de dias&#13;&#10;</property>
+                <property name="Valores">N&#13;&#10;E&#13;&#10;T&#13;&#10;</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Tabular">False</property>
+                <property name="PosicaoY">131</property>
+                <property name="Campo">USR_TIPO_EXPIRACAO</property>
+                <property name="PosicaoX">11</property>
+                <property name="Altura">89</property>
+                <property name="Cor">-16777201</property>
+                <event name="Ao Modificar">
+                    <action name="3">
+                        <property name="ACC_CONDICAO"></property>
+                        <param name="Lista de Objetos"><![CDATA[MakerEdit8=USR_TIPO_EXPIRACAO='T' | USR_TIPO_EXPIRACAO='E'
+MakerEdit4=USR_TIPO_EXPIRACAO='T' | USR_TIPO_EXPIRACAO='E']]></param>
+                    </action>
+                </event>
+                <event name="Ao Modificar">
+                    <action name="7">
+                        <property name="ACC_CONDICAO"></property>
+                        <param name="Lista de Campos"><![CDATA[USR_INICIO_EXPIRACAO=	USR_TIPO_EXPIRACAO='N'
+USR_DIAS_EXPIRACAO=	USR_TIPO_EXPIRACAO='N']]></param>
+                    </action>
+                </event>
+            </component>
+        </form>
+        <form FRM_CODIGO="7147" FRM_GUID="{095943CE-6FA4-4A3D-86C2-184D4F187776}">
+            <property name="IMG_INCLUIR">1</property>
+            <property name="IMG_ALTERAR">2</property>
+            <property name="IMG_EXCLUIR">8</property>
+            <property name="IMG_GRAVAR">12</property>
+            <property name="IMG_CANCELAR">13</property>
+            <property name="IMG_ATUALIZAR">7</property>
+            <property name="IMG_UTILITARIO">1</property>
+            <property name="IMG_SAIR">11</property>
+            <property name="IMG_IMPRIMIR">10</property>
+            <property name="IMG_AJUDA">14</property>
+            <property name="IMG_PROXIMO">5</property>
+            <property name="IMG_ULTIMO">6</property>
+            <property name="IMG_PRIMEIRO">3</property>
+            <property name="IMG_ANTERIOR">4</property>
+            <property name="FRM_DESCRICAO">Usuários X Sistemas</property>
+            <property name="FRM_POSICAOX">391</property>
+            <property name="FRM_POSICAOY">243</property>
+            <property name="FRM_TAMANHO">264</property>
+            <property name="FRM_ALTURA">247</property>
+            <property name="FRM_TIPO_CRIACAO">0</property>
+            <property name="FNT_CAMPOCHAVE">USR_CODIGO&#59;SIS_CODIGO</property>
+            <property name="FNT_TABELA">FR_USUARIO_SISTEMA</property>
+            <property name="FNT_SQLSELECT">Select&#13;&#10;  FR_USUARIO_SISTEMA.USR_CODIGO,&#13;&#10;  FR_USUARIO_SISTEMA.SIS_CODIGO,&#13;&#10;  FR_USUARIO_SISTEMA.USS_ACESSO_EXTERNO,&#13;&#10;  FR_USUARIO_SISTEMA.USS_ADMINISTRADOR,&#13;&#10;  FR_USUARIO_SISTEMA.USS_ACESSAR,&#13;&#10;  FR_SISTEMA.SIS_DESCRICAO&#13;&#10;From&#13;&#10;  FR_USUARIO_SISTEMA Inner Join&#13;&#10;  FR_USUARIO On FR_USUARIO_SISTEMA.USR_CODIGO = FR_USUARIO.USR_CODIGO Inner Join&#13;&#10;  FR_SISTEMA On FR_SISTEMA.SIS_CODIGO = FR_USUARIO_SISTEMA.SIS_CODIGO&#13;&#10;Where&#13;&#10;  (((Select FR_USUARIO.USR_ADMINISTRADOR From FR_USUARIO Where (FR_USUARIO.USR_CODIGO = :MAKER_CODIGO_USUARIO)) = 'S') Or&#13;&#10;  (FR_USUARIO_SISTEMA.SIS_CODIGO In (Select FR_USUARIO_SISTEMA.SIS_CODIGO From FR_USUARIO_SISTEMA Where (FR_USUARIO_SISTEMA.USR_CODIGO = :MAKER_CODIGO_USUARIO) And (FR_USUARIO_SISTEMA.USS_ADMINISTRADOR = 'S')))&#13;&#10;)&#13;&#10;/*WHERE_ADD*/&#13;&#10;Order By&#13;&#10;  FR_SISTEMA.SIS_DESCRICAO&#13;&#10;/*ORDER_ADD*/</property>
+            <property name="FNT_SQLINSERT"></property>
+            <property name="FNT_SQLUPDATE">USR_CODIGO&#13;&#10;SIS_CODIGO&#13;&#10;USS_ACESSO_EXTERNO&#13;&#10;USS_ADMINISTRADOR&#13;&#10;USS_ACESSAR&#13;&#10;</property>
+            <property name="FNT_SQLDELETE"></property>
+            <property name="FNT_CAMPOINCREMENTO"></property>
+            <property name="FNT_CAMPOGRADE"></property>
+            <property name="FNT_CAMPOPESQUISA"></property>
+            <property name="FNT_SQLDEFAULT">USS_ACESSO_EXTERNO=N&#13;&#10;USS_ADMINISTRADOR=N&#13;&#10;USS_ACESSAR=N&#13;&#10;</property>
+            <property name="FNT_SQLMASCARA"></property>
+            <property name="REL_CODIGO"></property>
+            <component COM_CODIGO="48479" COM_TIPO="F" name="">
+                <property name="Ajuda"></property>
+                <property name="FonteDeDados"></property>
+                <property name="Imagem"></property>
+                <property name="Apresentacao">0</property>
+                <property name="BarraDeRolagem">False</property>
+                <property name="BotaoMaximizar">False</property>
+                <property name="EntrarComoPesquisa">FALSE</property>
+                <property name="BotaoMinimizar">True</property>
+                <property name="Centralizado">True</property>
+                <property name="Navegacao">TRUE</property>
+                <property name="AbaLocalizar">TRUE</property>
+                <property name="Abas">TRUE</property>
+                <property name="BotaoFechar">True</property>
+                <property name="Cor">-16777201</property>
+            </component>
+            <component COM_CODIGO="48480" COM_TIPO="H" name="MakerCheckBox1">
+                <property name="Cor">-16777201</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="Altura">18</property>
+                <property name="PosicaoX">11</property>
+                <property name="PosicaoY">83</property>
+                <property name="ValorCheck">S</property>
+                <property name="Nome">MakerCheckBox1</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Tamanho">106</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Campo">USS_ACESSO_EXTERNO</property>
+                <property name="Codigo">48480</property>
+                <property name="Descricao">Acesso Externo</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Tabulacao">3</property>
+                <property name="Ordem">2</property>
+                <property name="ValorUnCheck">N</property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+            </component>
+            <component COM_CODIGO="48481" COM_TIPO="H" name="MakerCheckBox2">
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="ValorUnCheck">N</property>
+                <property name="Tabulacao">2</property>
+                <property name="Tamanho">122</property>
+                <property name="Campo">USS_ADMINISTRADOR</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Ordem">1</property>
+                <property name="ValorCheck">S</property>
+                <property name="Nome">MakerCheckBox2</property>
+                <property name="Codigo">48481</property>
+                <property name="PosicaoY">67</property>
+                <property name="Descricao">Administrador</property>
+                <property name="PosicaoX">11</property>
+                <property name="Altura">18</property>
+                <property name="Cor">-16777201</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+            </component>
+            <component COM_CODIGO="48482" COM_TIPO="H" name="MakerCheckBox3">
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="Cor">-16777201</property>
+                <property name="Altura">17</property>
+                <property name="PosicaoX">11</property>
+                <property name="ValorCheck">S</property>
+                <property name="Tabulacao">1</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Nome">MakerCheckBox3</property>
+                <property name="PosicaoY">51</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Tamanho">97</property>
+                <property name="Campo">USS_ACESSAR</property>
+                <property name="Ordem">3</property>
+                <property name="Codigo">48482</property>
+                <property name="Descricao">Acessar</property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="ValorUnCheck">N</property>
+            </component>
+            <component COM_CODIGO="48483" COM_TIPO="K" name="MakerLookup1">
+                <property name="Mascara"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="FonteDeDados"></property>
+                <property name="Cor">16777215</property>
+                <property name="Campo">SIS_CODIGO</property>
+                <property name="CampoChave">SIS_CODIGO</property>
+                <property name="Descricao">Sistema</property>
+                <property name="Tamanho">194</property>
+                <property name="Paginacao">0</property>
+                <property name="Tabulacao">0</property>
+                <property name="Estilo">0</property>
+                <property name="Ordem">0</property>
+                <property name="CampoLista">SIS_DESCRICAO</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="PosicaoY">27</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="SQL">Select&#13;&#10;  FR_SISTEMA.SIS_CODIGO,&#13;&#10;  FR_SISTEMA.SIS_DESCRICAO&#13;&#10;From&#13;&#10;  FR_SISTEMA&#13;&#10;Where&#13;&#10;  (((Select FR_USUARIO.USR_ADMINISTRADOR From FR_USUARIO Where (FR_USUARIO.USR_CODIGO = :MAKER_CODIGO_USUARIO)) = 'S') Or&#13;&#10;  (FR_SISTEMA.SIS_CODIGO In (Select FR_USUARIO_SISTEMA.SIS_CODIGO From FR_USUARIO_SISTEMA Where (FR_USUARIO_SISTEMA.USR_CODIGO = :MAKER_CODIGO_USUARIO) And (FR_USUARIO_SISTEMA.USS_ADMINISTRADOR = 'S')))&#13;&#10;)&#13;&#10;/*WHERE_ADD*/&#13;&#10;Order By&#13;&#10;  FR_SISTEMA.SIS_DESCRICAO&#13;&#10;/*ORDER_ADD*/&#13;&#10;</property>
+                <property name="CodigoForm"></property>
+                <property name="Altura">21</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="SqlLongo">False</property>
+                <property name="Visivel">True</property>
+                <property name="ChamaSubForm">True</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Nome">MakerLookup1</property>
+                <property name="Codigo">48483</property>
+                <property name="PosicaoX">11</property>
+            </component>
+        </form>
+        <form FRM_CODIGO="7148" FRM_GUID="{44441485-1BCA-4821-A023-D05384C0D4AE}">
+            <property name="IMG_INCLUIR">1</property>
+            <property name="IMG_ALTERAR">2</property>
+            <property name="IMG_EXCLUIR">8</property>
+            <property name="IMG_GRAVAR">12</property>
+            <property name="IMG_CANCELAR">13</property>
+            <property name="IMG_ATUALIZAR">7</property>
+            <property name="IMG_UTILITARIO">1</property>
+            <property name="IMG_SAIR">11</property>
+            <property name="IMG_IMPRIMIR">10</property>
+            <property name="IMG_AJUDA">14</property>
+            <property name="IMG_PROXIMO">5</property>
+            <property name="IMG_ULTIMO">6</property>
+            <property name="IMG_PRIMEIRO">3</property>
+            <property name="IMG_ANTERIOR">4</property>
+            <property name="FRM_DESCRICAO">Sistema X Grupos</property>
+            <property name="FRM_POSICAOX">279</property>
+            <property name="FRM_POSICAOY">165</property>
+            <property name="FRM_TAMANHO">546</property>
+            <property name="FRM_ALTURA">191</property>
+            <property name="FRM_TIPO_CRIACAO">0</property>
+            <property name="FNT_CAMPOCHAVE">GRP_CODIGO&#59;SIS_CODIGO</property>
+            <property name="FNT_TABELA">FR_GRUPO</property>
+            <property name="FNT_SQLSELECT">Select&#13;&#10;  FR_GRUPO.GRP_CODIGO,&#13;&#10;  FR_GRUPO.SIS_CODIGO,&#13;&#10;  FR_GRUPO.GRP_NOME&#13;&#10;From&#13;&#10;  FR_GRUPO&#13;&#10;/*WHERE_NEW*/&#13;&#10;/*ORDER_NEW*/</property>
+            <property name="FNT_SQLINSERT"></property>
+            <property name="FNT_SQLUPDATE">GRP_CODIGO&#13;&#10;SIS_CODIGO&#13;&#10;GRP_NOME&#13;&#10;</property>
+            <property name="FNT_SQLDELETE"></property>
+            <property name="FNT_CAMPOINCREMENTO"></property>
+            <property name="FNT_CAMPOGRADE"></property>
+            <property name="FNT_CAMPOPESQUISA"></property>
+            <property name="FNT_SQLDEFAULT">GRP_CODIGO=SQL("SELECT NVL(MAX(GRP_CODIGO), 0)+1 FROM FR_GRUPO")&#13;&#10;</property>
+            <property name="FNT_SQLMASCARA"></property>
+            <property name="REL_CODIGO"></property>
+            <component COM_CODIGO="48672" COM_TIPO="F" name="">
+                <property name="BarraDeRolagem">False</property>
+                <property name="Cor">-16777201</property>
+                <property name="BotaoMinimizar">True</property>
+                <property name="Centralizado">True</property>
+                <property name="Navegacao">TRUE</property>
+                <property name="AbaLocalizar">TRUE</property>
+                <property name="Abas">TRUE</property>
+                <property name="BotaoFechar">True</property>
+                <property name="BotaoMaximizar">False</property>
+                <property name="EntrarComoPesquisa">FALSE</property>
+                <property name="Apresentacao">0</property>
+                <property name="Ajuda"></property>
+                <property name="ExibicaoImagemFundo"></property>
+                <property name="FonteDeDados"></property>
+                <property name="Imagem"></property>
+            </component>
+            <component COM_CODIGO="48484" COM_TIPO="E" name="MakerEdit3">
+                <property name="Tipo"></property>
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="TamanhoMaximo">0</property>
+                <property name="Conteudo">0</property>
+                <property name="Ordem">0</property>
+                <property name="Tabulacao">0</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Campo">GRP_NOME</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="PosicaoY">27</property>
+                <property name="Altura">21</property>
+                <property name="Descricao">Grupo</property>
+                <property name="Codigo">48484</property>
+                <property name="Tamanho">385</property>
+                <property name="PosicaoX">4</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Senha">False</property>
+                <property name="Nome">MakerEdit3</property>
+                <property name="Cor">-16777211</property>
+            </component>
+        </form>
+        <form FRM_CODIGO="7149" FRM_GUID="{4D559289-EBAD-4F64-8D15-BD2DAFD05901}">
+            <property name="IMG_INCLUIR"></property>
+            <property name="IMG_ALTERAR"></property>
+            <property name="IMG_EXCLUIR"></property>
+            <property name="IMG_GRAVAR"></property>
+            <property name="IMG_CANCELAR"></property>
+            <property name="IMG_ATUALIZAR">7</property>
+            <property name="IMG_UTILITARIO">1</property>
+            <property name="IMG_SAIR">11</property>
+            <property name="IMG_IMPRIMIR"></property>
+            <property name="IMG_AJUDA">14</property>
+            <property name="IMG_PROXIMO">5</property>
+            <property name="IMG_ULTIMO">6</property>
+            <property name="IMG_PRIMEIRO">3</property>
+            <property name="IMG_ANTERIOR">4</property>
+            <property name="FRM_DESCRICAO">Grupos</property>
+            <property name="FRM_POSICAOX">136</property>
+            <property name="FRM_POSICAOY">178</property>
+            <property name="FRM_TAMANHO">574</property>
+            <property name="FRM_ALTURA">581</property>
+            <property name="FRM_TIPO_CRIACAO">0</property>
+            <property name="FNT_CAMPOCHAVE">SIS_CODIGO</property>
+            <property name="FNT_TABELA">FR_SISTEMA</property>
+            <property name="FNT_SQLSELECT">Select&#13;&#10;  FR_SISTEMA.SIS_CODIGO,&#13;&#10;  FR_SISTEMA.SIS_DESCRICAO,&#13;&#10;  FR_SISTEMA.SIS_CODIGO AS Sistema,&#13;&#10;  FR_SISTEMA.SIS_DESCRICAO AS Descricao&#13;&#10;From&#13;&#10;  FR_SISTEMA&#13;&#10;Where&#13;&#10;(  ((Select FR_USUARIO.USR_ADMINISTRADOR From FR_USUARIO Where (FR_USUARIO.USR_CODIGO = :MAKER_CODIGO_USUARIO)) = 'S') Or&#13;&#10;  (FR_SISTEMA.SIS_CODIGO In (Select FR_USUARIO_SISTEMA.SIS_CODIGO From FR_USUARIO_SISTEMA Where (FR_USUARIO_SISTEMA.USR_CODIGO = :MAKER_CODIGO_USUARIO) And (FR_USUARIO_SISTEMA.USS_ADMINISTRADOR = 'S')))&#13;&#10;)&#13;&#10;/*WHERE_ADD*/&#13;&#10;Order By FR_SISTEMA.SIS_DESCRICAO&#13;&#10;/*ORDER_ADD*/</property>
+            <property name="FNT_SQLINSERT"></property>
+            <property name="FNT_SQLUPDATE">SIS_CODIGO&#13;&#10;SIS_DESCRICAO&#13;&#10;</property>
+            <property name="FNT_SQLDELETE"></property>
+            <property name="FNT_CAMPOINCREMENTO"></property>
+            <property name="FNT_CAMPOGRADE">Sistema&#59;Descricao</property>
+            <property name="FNT_CAMPOPESQUISA">Sistema&#59;Descricao</property>
+            <property name="FNT_SQLDEFAULT"></property>
+            <property name="FNT_SQLMASCARA"></property>
+            <property name="REL_CODIGO"></property>
+            <component COM_CODIGO="48485" COM_TIPO="F" name="">
+                <property name="Ajuda"></property>
+                <property name="FonteDeDados"></property>
+                <property name="Imagem"></property>
+                <property name="Apresentacao">0</property>
+                <property name="BarraDeRolagem">False</property>
+                <property name="BotaoMaximizar">False</property>
+                <property name="EntrarComoPesquisa">FALSE</property>
+                <property name="BotaoMinimizar">True</property>
+                <property name="Centralizado">True</property>
+                <property name="Navegacao">TRUE</property>
+                <property name="AbaLocalizar">TRUE</property>
+                <property name="Abas">TRUE</property>
+                <property name="BotaoFechar">True</property>
+                <property name="Cor">-16777201</property>
+            </component>
+            <component COM_CODIGO="48486" COM_TIPO="V" name="MakerBevel1">
+                <property name="Codigo">48486</property>
+                <property name="PosicaoY">16</property>
+                <property name="Estilo">0</property>
+                <property name="Forma">0</property>
+                <property name="Nome">MakerBevel1</property>
+                <property name="Ordem">0</property>
+                <property name="Dica"></property>
+                <property name="Altura">50</property>
+                <property name="PosicaoX">152</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Tamanho">401</property>
+            </component>
+            <component COM_CODIGO="48487" COM_TIPO="E" name="MakerEdit1">
+                <property name="Aba">01-Cadastro</property>
+                <property name="Altura">21</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Ordem">1</property>
+                <property name="Cor">-16777192</property>
+                <property name="Descricao">Código do Sistema</property>
+                <property name="Nome">MakerEdit1</property>
+                <property name="Codigo">48487</property>
+                <property name="Tamanho">54</property>
+                <property name="Campo">SIS_CODIGO</property>
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="Tabulacao">0</property>
+                <property name="TamanhoMaximo">0</property>
+                <property name="Conteudo">0</property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="PosicaoX">19</property>
+                <property name="PosicaoY">43</property>
+                <property name="Senha">False</property>
+                <property name="ApenasLeitura">True</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+            </component>
+            <component COM_CODIGO="48488" COM_TIPO="E" name="MakerEdit2">
+                <property name="ApenasLeitura">True</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="PosicaoY">83</property>
+                <property name="Tamanho">533</property>
+                <property name="Senha">False</property>
+                <property name="Descricao">Descrição</property>
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="Codigo">48488</property>
+                <property name="Conteudo">0</property>
+                <property name="Tabulacao">0</property>
+                <property name="TamanhoMaximo">0</property>
+                <property name="Nome">MakerEdit2</property>
+                <property name="PosicaoX">20</property>
+                <property name="Ordem">2</property>
+                <property name="Cor">-16777192</property>
+                <property name="Campo">SIS_DESCRICAO</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Altura">21</property>
+                <property name="Aba">01-Cadastro</property>
+            </component>
+            <component COM_CODIGO="48489" COM_TIPO="G" name="MakerGrid1">
+                <property name="Aba">01-Cadastro</property>
+                <property name="Colunas">GRP_NOME</property>
+                <property name="PosicaoY">118</property>
+                <property name="PosicaoX">20</property>
+                <property name="Parametros">SIS_CODIGO=SIS_CODIGO</property>
+                <property name="Paginacao">0</property>
+                <property name="Tabulacao">0</property>
+                <property name="Ordem">3</property>
+                <property name="Altura">339</property>
+                <property name="CodigoForm">{44441485-1BCA-4821-A023-D05384C0D4AE}</property>
+                <property name="Dica"></property>
+                <property name="Tipo"></property>
+                <property name="Atributos"></property>
+                <property name="CorCondicional"></property>
+                <property name="Descricao"></property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Cor">-16777211</property>
+                <property name="Codigo">48489</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Nome">MakerGrid1</property>
+                <property name="Visivel">True</property>
+                <property name="Editavel">True</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Tamanho">533</property>
+                <property name="ChamaSubForm">True</property>
+            </component>
+            <component COM_CODIGO="48490" COM_TIPO="L" name="MakerLabel1">
+                <property name="Cor">-16777186</property>
+                <property name="Habilitado">True</property>
+                <property name="Visivel">True</property>
+                <property name="Ordem">5</property>
+                <property name="Altura">17</property>
+                <property name="Campo"></property>
+                <property name="Dica"></property>
+                <property name="Codigo">48490</property>
+                <property name="Nome">MakerLabel1</property>
+                <property name="Tamanho">54</property>
+                <property name="PosicaoY">40</property>
+                <property name="Descricao">do sistema</property>
+                <property name="PosicaoX">320</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clRed</property>
+            </component>
+            <component COM_CODIGO="48491" COM_TIPO="L" name="MakerLabel2">
+                <property name="Fonte">MS Sans Serif,8,0000,clRed</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Codigo">48491</property>
+                <property name="Descricao">Alterações nos grupos só terão efeito após a recarga geral</property>
+                <property name="Campo"></property>
+                <property name="Dica"></property>
+                <property name="Altura">17</property>
+                <property name="PosicaoX">216</property>
+                <property name="PosicaoY">24</property>
+                <property name="Tamanho">279</property>
+                <property name="Cor">-16777186</property>
+                <property name="Habilitado">True</property>
+                <property name="Ordem">4</property>
+                <property name="Visivel">True</property>
+                <property name="Nome">MakerLabel2</property>
+            </component>
+        </form>
+        <form FRM_CODIGO="7150" FRM_GUID="{43AEED6B-15F1-45CC-9EAA-0D73B622BE71}">
+            <property name="IMG_INCLUIR"></property>
+            <property name="IMG_ALTERAR"></property>
+            <property name="IMG_EXCLUIR"></property>
+            <property name="IMG_GRAVAR"></property>
+            <property name="IMG_CANCELAR"></property>
+            <property name="IMG_ATUALIZAR">7</property>
+            <property name="IMG_UTILITARIO">1</property>
+            <property name="IMG_SAIR">11</property>
+            <property name="IMG_IMPRIMIR"></property>
+            <property name="IMG_AJUDA">14</property>
+            <property name="IMG_PROXIMO">5</property>
+            <property name="IMG_ULTIMO">6</property>
+            <property name="IMG_PRIMEIRO">3</property>
+            <property name="IMG_ANTERIOR">4</property>
+            <property name="FRM_DESCRICAO">Formulário Usuários X Sistemas</property>
+            <property name="FRM_POSICAOX">223</property>
+            <property name="FRM_POSICAOY">153</property>
+            <property name="FRM_TAMANHO">423</property>
+            <property name="FRM_ALTURA">336</property>
+            <property name="FRM_TIPO_CRIACAO">0</property>
+            <property name="FNT_CAMPOCHAVE">USR_CODIGO&#59;SIS_CODIGO</property>
+            <property name="FNT_TABELA">FR_USUARIO_SISTEMA</property>
+            <property name="FNT_SQLSELECT">Select&#13;&#10;  FR_USUARIO_SISTEMA.USR_CODIGO,&#13;&#10;  FR_USUARIO_SISTEMA.SIS_CODIGO,&#13;&#10;  FR_SISTEMA.SIS_DESCRICAO,&#13;&#10;  FR_USUARIO.USR_NOME,&#13;&#10;  FR_USUARIO_SISTEMA.SIS_CODIGO As Sistema,&#13;&#10;  FR_SISTEMA.SIS_DESCRICAO As Descricao&#13;&#10;From&#13;&#10;  FR_USUARIO_SISTEMA Inner Join&#13;&#10;  FR_SISTEMA On FR_USUARIO_SISTEMA.SIS_CODIGO = FR_SISTEMA.SIS_CODIGO Inner Join&#13;&#10;  FR_USUARIO On FR_USUARIO_SISTEMA.USR_CODIGO = FR_USUARIO.USR_CODIGO&#13;&#10;&#13;&#10;Where&#13;&#10;(  ((Select FR_USUARIO.USR_ADMINISTRADOR From FR_USUARIO Where (FR_USUARIO.USR_CODIGO = :MAKER_CODIGO_USUARIO)) = 'S') Or&#13;&#10;  (FR_USUARIO_SISTEMA.SIS_CODIGO In (Select FR_USUARIO_SISTEMA.SIS_CODIGO From FR_USUARIO_SISTEMA Where (FR_USUARIO_SISTEMA.USR_CODIGO = :MAKER_CODIGO_USUARIO) And (FR_USUARIO_SISTEMA.USS_ADMINISTRADOR = 'S')))&#13;&#10;)&#13;&#10;&#13;&#10;/*WHERE_ADD*/&#13;&#10;/*ORDER_NEW*/</property>
+            <property name="FNT_SQLINSERT"></property>
+            <property name="FNT_SQLUPDATE">USR_CODIGO&#13;&#10;SIS_CODIGO&#13;&#10;SIS_DESCRICAO&#13;&#10;USR_NOME&#13;&#10;Sistema&#13;&#10;Descricao&#13;&#10;</property>
+            <property name="FNT_SQLDELETE"></property>
+            <property name="FNT_CAMPOINCREMENTO"></property>
+            <property name="FNT_CAMPOGRADE">Sistema&#59;Descricao</property>
+            <property name="FNT_CAMPOPESQUISA">Sistema&#59;Descricao</property>
+            <property name="FNT_SQLDEFAULT"></property>
+            <property name="FNT_SQLMASCARA"></property>
+            <property name="REL_CODIGO"></property>
+            <component COM_CODIGO="48492" COM_TIPO="F" name="">
+                <property name="Ajuda"></property>
+                <property name="ExibicaoImagemFundo"></property>
+                <property name="FonteDeDados"></property>
+                <property name="Imagem"></property>
+                <property name="Apresentacao">0</property>
+                <property name="BarraDeRolagem">False</property>
+                <property name="BotaoMaximizar">False</property>
+                <property name="EntrarComoPesquisa">FALSE</property>
+                <property name="BotaoMinimizar">True</property>
+                <property name="Centralizado">True</property>
+                <property name="Navegacao">TRUE</property>
+                <property name="AbaLocalizar">TRUE</property>
+                <property name="Abas">TRUE</property>
+                <property name="BotaoFechar">True</property>
+                <property name="Cor">-16777201</property>
+            </component>
+            <component COM_CODIGO="48493" COM_TIPO="E" name="MakerEdit1">
+                <property name="ApenasLeitura">False</property>
+                <property name="Senha">False</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="PosicaoY">19</property>
+                <property name="Tamanho">100</property>
+                <property name="Campo">USR_NOME</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Altura">21</property>
+                <property name="Conteudo">0</property>
+                <property name="Ordem">0</property>
+                <property name="Nome">MakerEdit1</property>
+                <property name="PosicaoX">6</property>
+                <property name="Codigo">48493</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Descricao">Usuário</property>
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="Tabulacao">0</property>
+                <property name="TamanhoMaximo">0</property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="Cor">-16777211</property>
+            </component>
+            <component COM_CODIGO="48494" COM_TIPO="E" name="MakerEdit3">
+                <property name="Cor">-16777211</property>
+                <property name="Atributos"></property>
+                <property name="Dica"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="Conteudo">0</property>
+                <property name="TamanhoMaximo">0</property>
+                <property name="Ordem">1</property>
+                <property name="Tabulacao">1</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="PosicaoX">6</property>
+                <property name="Codigo">48494</property>
+                <property name="Altura">21</property>
+                <property name="Senha">False</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Descricao">Sistema</property>
+                <property name="Campo">SIS_DESCRICAO</property>
+                <property name="PosicaoY">67</property>
+                <property name="Nome">MakerEdit3</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="Tamanho">300</property>
+            </component>
+            <component COM_CODIGO="48495" COM_TIPO="G" name="MakerGrid1">
+                <property name="Parametros">USR_CODIGO=USR_CODIGO&#10;SIS_CODIGO=SIS_CODIGO</property>
+                <property name="Visivel">True</property>
+                <property name="Editavel">True</property>
+                <property name="Habilitado">True</property>
+                <property name="Tabular">True</property>
+                <property name="Nome">MakerGrid1</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="ChamaSubForm">False</property>
+                <property name="PosicaoX">6</property>
+                <property name="Altura">108</property>
+                <property name="PosicaoY">104</property>
+                <property name="Ordem">2</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="Codigo">48495</property>
+                <property name="Tamanho">388</property>
+                <property name="Paginacao">0</property>
+                <property name="Tabulacao">0</property>
+                <property name="CodigoForm">{F5DA0BE3-C50E-49B3-BA67-A2182E38329F}</property>
+                <property name="Descricao"></property>
+                <property name="Dica"></property>
+                <property name="Tipo"></property>
+                <property name="Atributos"></property>
+                <property name="Colunas"></property>
+                <property name="CorCondicional"></property>
+                <property name="Cor">-16777211</property>
+            </component>
+        </form>
+        <form FRM_CODIGO="7151" FRM_GUID="{F5DA0BE3-C50E-49B3-BA67-A2182E38329F}">
+            <property name="IMG_INCLUIR">1</property>
+            <property name="IMG_ALTERAR">1</property>
+            <property name="IMG_EXCLUIR">1</property>
+            <property name="IMG_GRAVAR">1</property>
+            <property name="IMG_CANCELAR">1</property>
+            <property name="IMG_ATUALIZAR">1</property>
+            <property name="IMG_UTILITARIO">1</property>
+            <property name="IMG_SAIR">1</property>
+            <property name="IMG_IMPRIMIR">1</property>
+            <property name="IMG_AJUDA">1</property>
+            <property name="IMG_PROXIMO">1</property>
+            <property name="IMG_ULTIMO">1</property>
+            <property name="IMG_PRIMEIRO">1</property>
+            <property name="IMG_ANTERIOR">1</property>
+            <property name="FRM_DESCRICAO">Usuários X Sistemas X Grupos</property>
+            <property name="FRM_POSICAOX">117</property>
+            <property name="FRM_POSICAOY">167</property>
+            <property name="FRM_TAMANHO">622</property>
+            <property name="FRM_ALTURA">414</property>
+            <property name="FRM_TIPO_CRIACAO">0</property>
+            <property name="FNT_CAMPOCHAVE">GRP_CODIGO&#59;SIS_CODIGO&#59;USR_CODIGO</property>
+            <property name="FNT_TABELA">FR_USUARIO_GRUPO</property>
+            <property name="FNT_SQLSELECT">Select&#13;&#10;  FR_USUARIO_GRUPO.GRP_CODIGO,&#13;&#10;  FR_USUARIO_GRUPO.SIS_CODIGO,&#13;&#10;  FR_USUARIO_GRUPO.USR_CODIGO&#13;&#10;From&#13;&#10;  FR_USUARIO_GRUPO&#13;&#10;/*WHERE_NEW*/&#13;&#10;/*ORDER_NEW*/</property>
+            <property name="FNT_SQLINSERT"></property>
+            <property name="FNT_SQLUPDATE">GRP_CODIGO&#13;&#10;SIS_CODIGO&#13;&#10;USR_CODIGO</property>
+            <property name="FNT_SQLDELETE"></property>
+            <property name="FNT_CAMPOINCREMENTO"></property>
+            <property name="FNT_CAMPOGRADE"></property>
+            <property name="FNT_CAMPOPESQUISA"></property>
+            <property name="FNT_SQLDEFAULT"></property>
+            <property name="FNT_SQLMASCARA"></property>
+            <property name="REL_CODIGO"></property>
+            <component COM_CODIGO="48496" COM_TIPO="F" name="">
+            </component>
+            <component COM_CODIGO="48497" COM_TIPO="K" name="MakerLookup1">
+                <property name="Mascara"></property>
+                <property name="Tabela"></property>
+                <property name="Tipo"></property>
+                <property name="Cor">16777215</property>
+                <property name="Estilo">0</property>
+                <property name="PosicaoY">35</property>
+                <property name="Tabulacao">0</property>
+                <property name="Tamanho">267</property>
+                <property name="SQL">Select&#10;  FR_GRUPO.GRP_CODIGO,&#10;  FR_GRUPO.GRP_NOME,&#10;  FR_GRUPO.SIS_CODIGO&#10;From&#10;  FR_GRUPO&#10;Where&#10;(FR_GRUPO.SIS_CODIGO = :SIS_CODIGO)&#10;/*WHERE_ADD*/&#10;/*ORDER_NEW*/</property>
+                <property name="Codigo">48497</property>
+                <property name="Fonte">MS Sans Serif,8,0000,clWindowText</property>
+                <property name="CampoLista">GRP_NOME</property>
+                <property name="CodigoForm">{4D559289-EBAD-4F64-8D15-BD2DAFD05901}</property>
+                <property name="Aba">01-Cadastro</property>
+                <property name="Altura">21</property>
+                <property name="ApenasLeitura">False</property>
+                <property name="SqlLongo">False</property>
+                <property name="Descricao">Grupo</property>
+                <property name="Campo">GRP_CODIGO</property>
+                <property name="CampoChave">GRP_CODIGO</property>
+                <property name="ChamaSubForm">True</property>
+                <property name="Tabular">True</property>
+                <property name="Visivel">True</property>
+                <property name="PosicaoX">11</property>
+                <property name="Nome">MakerLookup1</property>
+            </component>
+        </form>
+        <form FRM_CODIGO="7144" FRM_GUID="{2B5FB32A-E7CC-4E49-BF66-68C268E9416D}">
+            <property name="IMG_INCLUIR"></property>
+            <property name="IMG_ALTERAR"></property>
+            <property name="IMG_EXCLUIR"></property>
+            <property name="IMG_GRAVAR"></property>
+            <property name="IMG_CANCELAR"></property>
+            <property name="IMG_ATUALIZAR"></property>
+            <property name="IMG_UTILITARIO"></property>
+            <property name="IMG_SAIR"></property>
+            <property name="IMG_IMPRIMIR"></property>
+            <property name="IMG_AJUDA"></property>
+            <property name="IMG_PROXIMO"></property>
+            <property name="IMG_ULTIMO"></property>
+            <property name="IMG_PRIMEIRO"></property>
+            <property name="IMG_ANTERIOR"></property>
+            <property name="FRM_DESCRICAO">$_FORMULARIO_DO_SISTEMA</property>
+            <property name="FRM_POSICAOX"></property>
+            <property name="FRM_POSICAOY"></property>
+            <property name="FRM_TAMANHO"></property>
+            <property name="FRM_ALTURA"></property>
+            <property name="FRM_TIPO_CRIACAO">0</property>
+            <property name="FNT_CAMPOCHAVE"></property>
+            <property name="FNT_TABELA"></property>
+            <property name="FNT_SQLSELECT"></property>
+            <property name="FNT_SQLINSERT"></property>
+            <property name="FNT_SQLUPDATE"></property>
+            <property name="FNT_SQLDELETE"></property>
+            <property name="FNT_CAMPOINCREMENTO"></property>
+            <property name="FNT_CAMPOGRADE"></property>
+            <property name="FNT_CAMPOPESQUISA"></property>
+            <property name="FNT_SQLDEFAULT"></property>
+            <property name="FNT_SQLMASCARA"></property>
+            <property name="REL_CODIGO"></property>
+            <component COM_CODIGO="48460" COM_TIPO="S" name="">
+                <property name="RelatoriosExternos"></property>
+                <property name="Avancado"></property>
+                <property name="FluxosExternos"></property>
+                <property name="FormulariosExternos"></property>
+                <property name="CodigoForm"></property>
+                <property name="FormularioDoSerial">0</property>
+                <property name="RequerAutenticacao">True</property>
+            </component>
+        </form>
+        <tempo SESSION="FORMS">00:00</tempo>
+    </system>
+<tempo SESSION="ALL">00:00</tempo>
+<datageracao>18/02/2008 14:46</datageracao>
+</fmaker>

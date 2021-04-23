@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component-dependences>
+  <component name="HTMLMakerFlowComponent"/>
+  <component name="ImageObject"/>
+  <component name="HTMLLabeledComponent"/>
+  <component name="HTMLLabel"/>
+  <component name="HTMLHidden"/>
+  <component name="HTMLButton"/>
+  <component name="HTMLImageButton"/>
+  <component name="HTMLNavigationButton"/>
+  <component name="HTMLNavigationButtonSameImage"/>
+  <component name="HTMLShape"/>
+  <component name="HTMLTreeview"/>
+  <component name="HTMLMultiSelect"/>
+  <component name="HTMLProgressBar"/>
+  <component name="HTMLShapeBase"/>
+  <component name="HTMLTimer"/>
+  <component name="HTMLSerie"/>
+  <component name="HTMLTreeViewLevel"/>
+  <component name="HTMLDualList">
+    <dependent>ImageObject</dependent>
+  </component>
+  <component name="HTMLChart">
+    <dependent>ImageObject</dependent>
+  </component>  
+  <component name="HTMLEdit">
+    <dependent>HTMLLabeledComponent</dependent>
+    <dependent>HTMLLabel</dependent>
+    <dependent>ImageObject</dependent>
+  </component>
+  <component name="HTMLMemo">
+    <dependent>HTMLEdit</dependent>
+  </component>
+  <component name="HTMLGroupBox">
+    <dependent>HTMLLabel</dependent>
+  </component>
+  <component name="HTMLRadioGroup">
+    <dependent>HTMLGroupBox</dependent>
+    <dependent>HTMLHidden</dependent>
+  </component>
+  <component name="HTMLLookup">
+    <dependent>HTMLEdit</dependent>
+    <dependent>HTMLHidden</dependent>
+    <dependent>HTMLButton</dependent>
+    <dependent>ImageObject</dependent>
+  </component>
+  <component name="HTMLComboBox">
+    <dependent>HTMLLookup</dependent>
+  </component>
+  <component name="HTMLCheckbox">
+    <dependent>HTMLHidden</dependent>
+  </component>
+  <component name="HTMLNavigationGrid"/>
+  <component name="HTMLPaging">
+    <dependent>HTMLButton</dependent>
+  </component>
+  <component name="HTMLDetailPanel">
+    <dependent>HTMLGroupBox</dependent>
+  </component>
+  <component name="HTMLImage">
+    <dependent>ImageObject</dependent>
+  </component>
+  <component name="HTMLGrid">
+    <dependent>HTMLNavigationGrid</dependent>
+    <dependent>HTMLPaging</dependent>
+    <dependent>ImageObject</dependent>
+  </component>
+</component-dependences>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="MAKER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RELEASE-DATE"/>
+				<xs:element ref="PUBLISHER"/>
+				<xs:element ref="FLOW"/>
+			</xs:sequence>
+			<xs:attribute name="version" use="required" type="xs:decimal"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RELEASE-DATE" type="xs:string"/>
+	<xs:element name="PUBLISHER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="NAME"/>
+				<xs:element ref="EMAIL"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EMAIL" type="xs:string"/>
+	<xs:element name="FLOW">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="METHODS"/>
+				<xs:element ref="CATEGORIES"/>
+			</xs:sequence>
+			<xs:attribute name="version" use="required" type="xs:decimal"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="METHODS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="METHOD"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="METHOD">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CODE"/>
+				<xs:element ref="LABELS"/>
+				<xs:element ref="CALL-NAME"/>
+				<xs:element ref="PARAMS"/>
+				<xs:element ref="CATEGORY"/>
+				<xs:element ref="RETURN"/>
+				<xs:element ref="SOURCES"/>
+			</xs:sequence>
+			<xs:attribute name="ID" use="required" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CODE" type="xs:integer"/>
+	<xs:element name="LABELS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="NAME"/>
+				<xs:element ref="DESCRIPTION"/>
+				<xs:element ref="SUMMARY"/>
+			</xs:sequence>
+			<xs:attribute name="lang" type="xs:language" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SUMMARY" type="xs:string"/>
+	<xs:element name="CALL-NAME" type="xs:NCName"/>
+	<xs:element name="RETURN" type="xs:NCName"/>
+	<xs:element name="SOURCES">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="SOURCE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PARAMS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="PARAM"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PARAM">
+		<xs:complexType mixed="true">
+			<xs:attribute name="ORDER" type="xs:integer" use="required"/>
+			<xs:attribute name="CARDINALITY" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SOURCE">
+		<xs:complexType mixed="true">
+			<xs:attribute name="LANGUAGE" use="required" type="xs:NCName"/>
+			<xs:attribute name="NATIVE" type="xs:boolean"/>
+			<xs:attribute name="VERSION" use="required" type="xs:NMTOKEN"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NAME" type="xs:string"/>
+	<xs:element name="DESCRIPTION" type="xs:string"/>
+	<xs:element name="CATEGORY">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="CATEGORIES"/>
+				<xs:element ref="DESCRIPTION"/>
+			</xs:choice>
+			<xs:attribute name="ID" use="required" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CATEGORIES">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="CATEGORY"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

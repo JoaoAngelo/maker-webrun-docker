@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info>
+  <mime-type type="text/plain">
+    <glob pattern="*.rem"/>
+  </mime-type>
+  <mime-type type="text/plain">
+    <glob pattern="*.ret"/>
+  </mime-type>
+  <mime-type type="text/plain">
+    <glob pattern="*.rcm"/>
+  </mime-type>
+</mime-info>

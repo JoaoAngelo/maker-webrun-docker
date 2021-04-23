@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ITENS>
+<ITEM FIELD="TotalRegras" DESCRIPTION="Quantidade de Regras" RULE ="">Select
+  Count(fr_regras.reg_cod) As TotalRegras
+From
+  fr_regras
+</ITEM>
+<ITEM FIELD="TotalFormulario" DESCRIPTION="Quantidade de Formulários" RULE ="">Select
+  Count(fr_formulario_sistema.sis_codigo) as TotalFormulario
+From
+  fr_formulario
+  Inner Join
+  fr_formulario_sistema On (fr_formulario.frm_codigo = fr_formulario_sistema.frm_codigo)
+where 
+fr_formulario_sistema.sis_codigo =  '[SYS]'
+</ITEM>
+<ITEM FIELD="TotalRelatorio" DESCRIPTION="Quantidade de Relatórios" RULE ="">
+Select
+  Count(fr_relatorio.rel_codigo) as TotalRelatorio
+From
+  fr_relatorio
+Where
+  (fr_relatorio.sis_codigo = '[SYS]')
+</ITEM>
+<ITEM FIELD="reg_script" DESCRIPTION="Média Geral dos Fluxos" RULE ="Ficha Técnica - Calcular Media Fluxo">select reg_script from fr_regras
+</ITEM>
+<ITEM FIELD="TempoOcioso" DESCRIPTION="Tempo Ocioso" RULE ="">
+</ITEM>
+<ITEM FIELD="TempoDesenvolvimento" DESCRIPTION="Tempo de Desenvolvimento" RULE ="">
+</ITEM>
+<ITEM FIELD="TempoTotal" DESCRIPTION="Tempo Total" RULE ="">
+</ITEM>
+<ITEM FIELD="Produtividade" DESCRIPTION="Produtividade" RULE ="">
+</ITEM>
+<ITEM FIELD="FluxoPorHora" DESCRIPTION="Fluxos por Hora" RULE ="">
+</ITEM>
+<ITEM FIELD="RelatorioPorHora" DESCRIPTION="Relatorios por Hora" RULE ="">
+</ITEM>
+</ITENS>

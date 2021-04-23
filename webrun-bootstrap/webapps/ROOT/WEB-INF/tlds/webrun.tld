@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- não modifcar a string do encoding [ encoding="ISO-8859-1"] por causa do ant -->
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd" version="2.0">
+
+  <tlib-version>1.2</tlib-version>
+  <short-name>webrun</short-name>
+  <uri>webrun</uri>
+
+  <tag>
+    <name>controller</name>
+    <tag-class>wfr.tags.JSPControllerTag</tag-class>
+    <body-content>JSP</body-content>
+
+    <attribute>
+      <description>Parameter</description>
+      <name>isCacheable</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>Parameter</description>
+      <name>requiresAuthentication</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>Parameter</description>
+      <name>isInnerPrintWriter</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>Parameter</description>
+      <name>requiresManagerUser</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>Parameter</description>
+      <name>showLoadTime</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>Parameter</description>
+      <name>allowsExternalAccess</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>Parameter</description>
+      <name>checkFormAuthorization</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>Parameter</description>
+      <name>checkRuleAuthorization</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>Parameter</description>
+      <name>checkReportAuthorization</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+
+  </tag>
+
+  <tag>
+    <name>admincontroller</name>
+    <tag-class>wfr.tags.JSPAdminControllerTag</tag-class>
+    <body-content>scriptless</body-content>
+
+    <attribute>
+      <description>Define if the authentication should be verified. Default is true.</description>
+      <name>requiresAuthentication</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>message</name>
+    <tag-class>wfr.tags.MessageTag</tag-class>
+    <body-content>scriptless</body-content>
+
+    <attribute>
+      <description>The message key.</description>
+      <name>key</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>If you define a value to this property, the message will not appear. It'll be put in the page context.</description>
+      <name>var</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>It's false by default. Use true to format the message to Javascript.</description>
+      <name>js</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>It's true by default. Use false to see the literal defined key.</description>
+      <name>useProperties</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>It's false by default. Use true and the message will use single quotes.</description>
+      <name>useSingleQuotes</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>messageParam</name>
+    <tag-class>wfr.tags.MessageParamTag</tag-class>
+    <body-content>scriptless</body-content>
+
+    <attribute>
+      <description>The parameter value.</description>
+      <name>value</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>It's false by default. Use true to format the parameter to Javascript.</description>
+      <name>js</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>It's false by default. Use true to read the value in the properties file.</description>
+      <name>useProperties</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>import</name>
+    <tag-class>wfr.tags.ImportTag</tag-class>
+    <body-content>scriptless</body-content>
+
+    <attribute>
+      <description>The file source path.</description>
+      <name>src</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>The version of the fils. Default is "Javascript1.2".</description>
+      <name>version</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>errorMessage</name>
+    <tag-class>wfr.tags.ErrorMessageTag</tag-class>
+    <body-content>scriptless</body-content>
+
+    <attribute>
+      <description>The element that will be focused after click on Ok.</description>
+      <name>focusElement</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+      <description>The method that must be invoked instead of the regular one.</description>
+      <name>forceMethodCall</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <function>
+    <name>charset</name>
+    <function-class>wfr.tags.JspFunctionsTag</function-class>
+    <function-signature>java.lang.String charset()</function-signature>
+  </function>
+
+  <function>
+    <name>version</name>
+    <function-class>wfr.tags.JspFunctionsTag</function-class>
+    <function-signature>java.lang.String version()</function-signature>
+  </function>
+
+  <function>
+    <name>type</name>
+    <function-class>wfr.tags.JspFunctionsTag</function-class>
+    <function-signature>java.lang.String type()</function-signature>
+  </function>
+
+  <function>
+    <name>isEnterpriseType</name>
+    <function-class>wfr.tags.JspFunctionsTag</function-class>
+    <function-signature>java.lang.Boolean isEnterpriseType()</function-signature>
+  </function>
+
+  <function>
+    <name>isProfessionalType</name>
+    <function-class>wfr.tags.JspFunctionsTag</function-class>
+    <function-signature>java.lang.Boolean isProfessionalType()</function-signature>
+  </function>
+
+  <function>
+    <name>isStandardType</name>
+    <function-class>wfr.tags.JspFunctionsTag</function-class>
+    <function-signature>java.lang.Boolean isStandardType()</function-signature>
+  </function>
+
+  <function>
+    <name>locales</name>
+    <function-class>wfr.tags.JspFunctionsTag</function-class>
+    <function-signature>java.util.Map locales()</function-signature>
+  </function>
+
+  <function>
+    <name>locale</name>
+    <function-class>wfr.tags.JspFunctionsTag</function-class>
+    <function-signature>java.util.Locale locale(javax.servlet.http.HttpServletRequest)</function-signature>
+  </function>
+
+  <function>
+    <name>translate</name>
+    <function-class>wfr.tags.JspFunctionsTag</function-class>
+    <function-signature>java.lang.String translate(java.lang.String, wfr.com.WFRForm, wfr.util.ApplicationResources)</function-signature>
+  </function>
+
+  <function>
+    <name>toHTML</name>
+    <function-class>wfr.tags.JspFunctionsTag</function-class>
+    <function-signature>java.lang.String toHTML(java.lang.String)</function-signature>
+  </function>
+
+</taglib>

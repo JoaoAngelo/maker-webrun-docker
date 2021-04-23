@@ -1,0 +1,74 @@
+/***************TELA DE LOGIN LIGHT******************/
+
+#MenuContainer {
+  box-shadow: 3px 3px 15px #ccc;
+  position: relative !important;
+  min-height: 162px !important;
+  box-sizing: border-box;
+  left: unset !important;
+  margin: auto !important;
+}
+
+/*************** MEDIA QUERIES TELA DE LOGIN ***********/
+
+@media (min-width: 576px) {
+  div#MenuContainer {
+    min-width: 60%;
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 1080px) and (max-width: 479px) {
+  div#MenuContainer {
+    width: 95% !important;
+    max-width: 95%;
+    min-width: 95%;
+    transform: translateY(60%);
+  }
+  #biometric {
+    margin-left: 84% !important;
+  }
+}
+
+/*************** FIM TELA DE LOGIN ******************/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/***************TELA PRINCIPAL LIGHT******************/
+
+.navController [webrun-type="HTMLActionButton"] {
+  left: 0px !important;
+}
+
+.navController {
+  position: absolute !important;
+  right: 0 !important;
+}
+
+.navController #seta {
+  width: 100% !important;
+}
+
+.navController #seta img {
+  width: 24px !important;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 24px !important;
+}
+
+/*************** MEDIA QUERIES TELA PRINCIPAL ***********/
+
+@media (max-width: 575.98px) {
+  #MenuPrincipal {
+    width: 87% !important;
+  }
+
+
+  #MenuPrincipal #Menu-content {
+    padding: 2% !important;
+  }
+  #MenuPrincipal .menu-search {
+    margin: 2% !important;
+  }
+}

@@ -1,0 +1,59 @@
+package <%PACKAGE%>;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
+import wfr.com.WFRAction;
+import wfr.com.WFRComponent;
+import wfr.com.WFRForm;
+import wfr.com.WebrunProperties;
+import wfr.database.DBConnection;
+import wfr.util.Functions;
+import wfr.com.ActionType;
+import wfr.exceptions.*;
+
+/**
+ * Essa classe representa o componente <%COMPONENT_NAME%> do formulário <%FORM_NAME%> </br>
+ * do sistema <%SYSTEM_NAME%>.
+ * @author Webrun
+ * @version 1.0
+ */
+public class <%CLASS%> extends WFRComponent {
+  /*Obtém-se o diretório da classe compilada*/
+  private static String dir = Functions.classFolder(<%CLASS%>.class)+File.separatorChar;
+
+  /**
+   * Construtor do component <%COMPONENT_NAME%>.
+   * @param db Conexão corrente.
+   * @param form Formulário pai.
+   * @throws Exception
+   */
+  public <%CLASS%>(DBConnection db, WFRForm form) throws Exception {
+    super(db, form, <%CODE%>, '<%TYPE%>');
+  }
+  
+  /**
+   * Carregam-se as propriedades do componente. Essas propriedades devem estar</br>
+   * definidas no arquivo <%CLASS%>.xml na mesma pasta da classe compilada. 
+   * @see wfr.com.WFRComponent#createComponentProperties()
+   */   
+  protected WebrunProperties createComponentProperties() throws Exception {
+<%CREATE_COMPONENT_PROPERTIES%>    
+    return properties;
+  }  
+  
+  /**
+   * Carregam-se os eventos e ações do componente. Esses eventos devem estar </br>
+   * definidos no arquivo <%CLASS%>.actions.xml dentro da pasta da classe compilada.
+   * @see wfr.com.WFRComponent#createComponentActions()
+   */  
+  protected Map<String, List<WFRAction>> createComponentActions() throws Exception {
+<%CREATE_COMPONENT_ACTIONS%>        
+    return actions;
+  }  
+
+
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!-- não modifcar a string do charset "charset=ISO-8859-1" por causa do ant -->
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<title>Servidor de impressão Bematech (CLIENTE)</title>
+</head>
+<body>
+<p>wfr.sys.HTMLInterface.HTMLBematechPrinterApplet will appear below in a Java enabled browser.<br></p>
+<APPLET CODEBASE="."
+      NAME="WEBRUNBematechPrinter"
+      CODE="wfr.sys.HTMLInterface.HTMLBematechPrinterApplet.class"
+      ARCHIVE="SBematechPrinter.jar"
+      WIDTH=0
+      HEIGHT=0 MAYSCRIPT>
+      <param name="fiscal" value="false">
+</applet>
+<script language="JavaScript">
+
+function getURLParam(name) {
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var tmpURL = window.location.href;
+  var results = regex.exec(tmpURL);
+  if( results == null )
+    return "";
+  else
+    return unescape(results[1]);
+}
+
+var model = getURLParam('model');
+var port  = getURLParam('port');
+
+if(port != "") {
+  document.WEBRUNBematechPrinter.executeCommand("IniciaPorta", port);
+  document.WEBRUNBematechPrinter.executeCommand("ConfiguraModeloImpressora", model);
+}
+</script>  
+</body>
+</html>

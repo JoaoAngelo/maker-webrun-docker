@@ -1,0 +1,102 @@
+
+/***************TELA DE LOGIN OFFICE******************/
+#biometric {
+  left: unset !important;
+  right: 50px !important;
+}
+
+#BttLogar button {
+  background: #216178;
+  border: none;
+  color: #fff;
+}
+
+#biometric img {
+  position: absolute;
+  top: 0px;
+  margin: 0 auto !important;
+  right: 0 !important;
+  width: auto !important;
+}
+
+/*************** MEDIA QUERIES TELA DE LOGIN ***********/
+
+@media (max-width: 575.98px) {
+  #ContainerMenu {
+    width: 93% !important;
+    top: 160px !important;
+    left: 0% !important;
+    margin: 0 auto;
+  }
+
+  #biometric {
+    float: right;
+    right: -5px !important;
+    width: auto !important;
+    min-width: auto !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1080px) {
+  #ContainerMenu {
+    width: 70% !important;
+    margin: 0 auto;
+    left: 0 !important;
+    position: relative !important;
+  }
+
+  #biometric {
+    left: unset !important;
+    right: 13% !important;
+    float: right;
+  }
+}
+
+/*************** FIM TELA DE LOGIN ******************/
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/***************TELA PRINCIPAL OFFICE******************/
+
+#Dock .form-label {
+  height: 32px !important;
+  text-align: center !important;
+  width: 54px !important;
+  top: 50px !important;
+}
+
+#Dock{
+  position: absolute !important;
+}
+
+
+/*************** MEDIA QUERIES TELA PRINCIPAL ***********/
+
+@media (max-width: 768px) {
+  #Dock {
+    overflow-y: hidden !important;
+    overflow-x: auto;
+    width: 100% !important;
+    top: 10px !important;
+    background: #fff;
+  }
+  #Dock::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+#Menu {
+  left: 0px !important;
+  width: 100vw !important;
+  top: 92px !important;
+}
+
+@media (max-width: 575.98px) {
+  #MenuPrincipal .menu-item-text {
+    white-space: normal !important;
+  }
+
+  #MenuPrincipal .menu-search {
+    margin: 2% !important;
+  }
+}

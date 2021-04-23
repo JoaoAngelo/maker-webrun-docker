@@ -1,0 +1,176 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+
+<DICTIONARIES>
+  <DICTIONARY LANG="pt_BR">
+    <TRANSLATE TEXT="Controle de Usuários do Webrun">
+      <TRANSLATION LANG="en_US">Webrun Users Control</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Control de Usuarios del Webrun</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Contrôle des Utilisateurs du Webrun</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Usuários">
+      <TRANSLATION LANG="en_US">Users</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Usuarios</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Utilisateurs</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Grupos aos quais pertence">
+      <TRANSLATION LANG="en_US">Groups to which belongs</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Grupos a los cuales pertenece</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Les groupes de qui appartient</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Administrador Geral">
+      <TRANSLATION LANG="en_US">General Administrator</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Gestor General</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Administrateur Général</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Senha">
+      <TRANSLATION LANG="en_US">Password</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Contraseña</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Mot de passe</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Login">
+      <TRANSLATION LANG="en_US">Login</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Login</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Login</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Dias para expiração">
+      <TRANSLATION LANG="en_US">Days to expire</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Días para expiración</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Jours à l\&#39;expiration</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Nome do Usuário">
+      <TRANSLATION LANG="en_US">Username</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Nombre del Usuario</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Nom d\&#39;utilisateur</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="E-mail">
+      <TRANSLATION LANG="en_US">E-mail</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Correo Electrónico</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">E-mail</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Data de Referência">
+      <TRANSLATION LANG="en_US">Reference date</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Fecha de Referencia</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Date de Référence</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Cadastro">
+      <TRANSLATION LANG="en_US">Data</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Registro</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Enregistrement</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Fotografia do usuário">
+      <TRANSLATION LANG="en_US">User Photo</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Foto de usuario</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Photographie d\&#39;utilisateur</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Impressão digital">
+      <TRANSLATION LANG="en_US">Fingerprint</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Huella dactilar</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Empreinte digitale</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Limite de Senha">
+      <TRANSLATION LANG="en_US">Password Limit</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Límite de Contraseña</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Limite de mot de passe</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Usuários X Sistemas">
+      <TRANSLATION LANG="en_US">Users X Systems</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Usuarios X Sistemas</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Utilisateurs X Systèmes</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Acesso Externo">
+      <TRANSLATION LANG="en_US">External Access</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Acceso Externo</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Accès externe</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Administrador">
+      <TRANSLATION LANG="en_US">Administrator</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Gestor</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Administrateur</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Acessar">
+      <TRANSLATION LANG="en_US">Access</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Acceder</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Accès</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Sistema">
+      <TRANSLATION LANG="en_US">System</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Sistema</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Système</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Sistema X Grupos">
+      <TRANSLATION LANG="en_US">System X Groups</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Sistema X Grupos</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Système X Groupes</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Grupo">
+      <TRANSLATION LANG="en_US">Group</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Grupo</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Groupe</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Grupos">
+      <TRANSLATION LANG="en_US">Groups</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Grupos</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Groupes</TRANSLATION>
+    </TRANSLATE>   
+    <TRANSLATE TEXT="Código do Sistema">
+      <TRANSLATION LANG="en_US">System Code</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Código del Sistema</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Code du Système</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Descrição">
+      <TRANSLATION LANG="en_US">Description</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Descripción</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Description</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="do sistema">
+      <TRANSLATION LANG="en_US">of the system</TRANSLATION>
+      <TRANSLATION LANG="es_ES">del sistema</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">du système</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Alterações nos grupos só terão efeito após a recarga geral">
+      <TRANSLATION LANG="en_US">Changes in groups will take effect only after the general loading</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Los cambios en los grupos tendrán efecto después de la recarga general</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Changements dans les groupes ne prendra effet après le rechargement général</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Formulário Usuários X Sistemas">
+      <TRANSLATION LANG="en_US">Users X Systems Form</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Formulario Usuarios X Sistemas</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Formulaire Utilisateurs X Systèmes</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Usuário">
+      <TRANSLATION LANG="en_US">User</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Usuario</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Utilisateur</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Sistema">
+      <TRANSLATION LANG="en_US">System</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Sistema</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Système</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Usuários X Sistemas X Grupos">
+      <TRANSLATION LANG="en_US">Users X Systems X Groups</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Usuarios X Sistemas X Grupos</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Utilisateurs X Systèmes X Groupes</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Nunca expira">
+      <TRANSLATION LANG="en_US">Never expires</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Nunca expira</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Jamais expire</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Expira em determinado número de dias">
+      <TRANSLATION LANG="en_US">Days to expire</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Expira en un determinado número de días</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Expire dans une déterminé numéro de jours</TRANSLATION>
+    </TRANSLATE> 
+    <TRANSLATE TEXT="Troca de senha a cada número de dias">
+      <TRANSLATION LANG="en_US">Days to password renewal</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Cambia la contraseña a cada número de días</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Change le mot de passe a chaque numéro de jours</TRANSLATION>
+    </TRANSLATE>
+    <TRANSLATE TEXT="Nome">
+      <TRANSLATION LANG="en_US">Name</TRANSLATION>
+      <TRANSLATION LANG="es_ES">Nombre</TRANSLATION>
+      <TRANSLATION LANG="fr_FR">Nom</TRANSLATION>
+    </TRANSLATE> 
+  </DICTIONARY>
+</DICTIONARIES>
